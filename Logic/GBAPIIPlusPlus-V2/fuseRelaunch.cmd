@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "uni9000_ver" -lib "aim_ver" -lib "cpld_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Matze/Documents/GitHub/A500-Graka/Logic/GBAPIIPlusPlus-V2/AutoConfigTest_isim_beh.exe" -prj "C:/Users/Matze/Documents/GitHub/A500-Graka/Logic/GBAPIIPlusPlus-V2/AutoConfigTest_beh.prj" "work.AutoConfigTest" "work.glbl" 
