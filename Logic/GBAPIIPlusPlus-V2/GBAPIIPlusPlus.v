@@ -93,7 +93,7 @@ module GBAPIIPlusPlus(
 
 	//assign IO[1]		= memAdrHit;
 	//assign IO[2]		= ioAdrHit;
-	//assign IO[3]		= sigMONITORSW;
+	assign IO[3]		= sigBALE;
 
 	assign BALE			= sigBALE;
 	//assign XRDYD		= vgaStatemachine ==4'h0 ? 1'bz : sigXRDY;
@@ -104,10 +104,10 @@ module GBAPIIPlusPlus(
 	assign IOR			= sigIOR;
 	assign MEMW			= sigMEMW;
 	assign MEMR			= sigMEMR;
-	assign DG			= DG_R;
-	assign DA			= DA_R;
-	//assign DG[15:0]	= ( vgaStatemachine !=4'h0  && RW==0)? DA : 16'bz; // just buffer the write	
-	//assign DA[15:0]	= (RW == 1 && autoConfigAdrHit == 1)? autoConfigDataWide : (RW == 1 && (memAdrHit == 1  || ioAdrHit ==1) ? DG : 16'bz);
+	//assign DG			= DG_R;
+	//assign DA			= DA_R;
+	assign DG[15:0]	= (RW == 0 && (memAdrHit == 1  || ioAdrHit ==1))? DG_R : 16'bz; 
+	assign DA[15:0]	= (RW == 1 && (autoConfigAdrHit == 1))? autoConfigDataWide : ( RW == 1 && (memAdrHit == 1  || ioAdrHit ==1) ? DA_R : 16'bz);
 
 	//assign SA0			= ioSelect ==1 ? (A[12] || UDS ? 1 : 0) : UDS;
 	//assign SA12			= ioSelect ==1 ? 0 : A[12];
@@ -126,94 +126,51 @@ module GBAPIIPlusPlus(
 			ioAdrHit 			<= 0;
 			ds						<= 0;
 			AS_D0					<= 1;
-			DG_R					<= 16'bz;
-			DA_R					<= 16'bz;
-			sigSA0				<= 1'bz;
-			sigSA12				<= 1'bz;
 		end
 		else begin //decode the address on every as-strobe and hold it until next as-strobe
 			ds <= LDS==0 || UDS==0; //datastrobe indicator
 			AS_D0	<= AS;
-			//data to VGA
-			if(vgaStatemachine !=4'h0  && RW==0) begin
-				DG_R		<=  DA; // just buffer the write
-			end
-			else begin
-				DG_R		<= 16'bz;
-			end
-			//data to Amiga
-			if(RW == 1) begin
-				if(autoConfigAdrHit == 1) begin
-					DA_R	<=	autoConfigDataWide;
-				end
-				else if (memAdrHit == 1  || ioAdrHit ==1) begin
-					DA_R	<= DG;
-				end
-				else begin
-					DA_R	<= 16'bz;					
-				end
-			end
-			else begin
-				DA_R	<= 16'bz;
-			end
-
-			
 			
 			if(highAddr == 8'hE8 && autoconfigDone != 2'b11 && CFGIN == 0 && BERR ==1 && reset == 1 && AS_D0==0 && (LDS==0 || UDS==0)) begin //ac hit
 				autoConfigAdrHit 	<= 1;
 				memAdrHit 			<= 0;
 				ioAdrHit 			<= 0;
-				sigSA0				<= UDS; //not necassary, but do not leave two address lines floating!
-				sigSA12				<= A[12]; //not necassary, but do not leave two address lines floating!
 			end
 			else if (A[23:21] == memSpace && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS_D0==0) begin //mem hit
 				autoConfigAdrHit 	<= 0;
 				memAdrHit 			<= 1;
 				ioAdrHit 			<= 0;
-				sigSA0				<= UDS;
-				sigSA12				<= A[12];
 			end
 			else if (highAddr == ioSpace  && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS_D0==0) begin //io hit
 				autoConfigAdrHit 	<= 0;
 				memAdrHit 			<= 0;
 				ioAdrHit 			<= 1;
-				sigSA0				<= A[12] || UDS;
-				sigSA12				<= 0;
 			end
 			else begin // no hit
 				autoConfigAdrHit 	<= 0;
 				memAdrHit 			<= 0;
 				ioAdrHit 			<= 0;
-				sigSA0				<= 1'bZ;
-				sigSA12				<= 1'bZ;
 			end
 		end
 	end
 	
-	//monitor switch
-	always @(negedge sigIOW, negedge reset)
-	begin
-		if( reset == 0 ) begin// async reset
-			sigMONITORSW	<= 1;
-		end
-		else begin //wait for io to correct address
-			if(A[15] == 1 && UDS == 0) //Moni_G
-			begin
-				sigMONITORSW <= A[12];
-			end					
-		end
-	end
 	// state/waitemachine VGA access
 	always @(posedge mclk, negedge reset)
 	begin
 		if( reset == 0 ) begin// async reset
 			vgaStatemachine <= 4'h0;
-			sigBALE	<=1;
-			sigIOR	<=1;
-			sigIOW	<=1;
-			sigMEMR	<=1;
-			sigMEMW	<=1;
-			sigXRDY	<=1;
+			sigBALE			<= 1;
+			sigIOR			<= 1;
+			sigIOW			<= 1;
+			sigMEMR			<= 1;
+			sigMEMW			<= 1;
+			sigXRDY			<= 1;
+			sigMONITORSW	<= 1;
+			sigSA0			<= 1;
+			sigSA12			<= 1;			
+			DG_R				<= 16'b1;			
+			DA_R					<= 16'b1;
+			
 		end
 		else begin// beginning of statemachine
 			//statemachine
@@ -235,10 +192,25 @@ module GBAPIIPlusPlus(
 					vgaStatemachine <= 4'h2;
 				4'h2: // 3:wait for datastrobe
 					if(ds == 1) begin
-						vgaStatemachine <= 4'h3;					
+						vgaStatemachine <= 4'h3;	
+						//determine the addess lines
+						if( memAdrHit == 1) begin
+							sigSA0	<= UDS;
+							sigSA12	<= A[12];
+						end
+						else if(ioAdrHit == 1) begin
+							sigSA0	<= A[12] || UDS;
+							sigSA12	<= 0;						
+						end
 					end
 				4'h3: // 3:just transit
-					vgaStatemachine <= 4'h4;
+					begin
+						vgaStatemachine <= 4'h4;
+						//buffer the write data
+						if(RW == 0) begin
+							DG_R		<=  DA;
+						end
+					end
 				4'h4: // 4:just transit
 					vgaStatemachine <= 4'h5;
 				4'h5:// 5:just transit
@@ -257,6 +229,9 @@ module GBAPIIPlusPlus(
 						else begin//write
 							sigIOW	<= ~ioAdrHit; // just the invertion of the signals
 							sigMEMW	<= ~memAdrHit;
+							if(ioAdrHit == 1 && A[15] == 1 && UDS == 0)begin //monitor switch
+								sigMONITORSW <= A[12];
+							end												
 						end
 						vgaStatemachine <= 4'h7;
 					end
@@ -279,6 +254,9 @@ module GBAPIIPlusPlus(
 						sigIOW	<= 1;
 						sigMEMW	<= 1;
 						vgaStatemachine <= 4'hC;
+						if(RW==1)begin
+							DA_R	<= DG;
+						end
 					end
 				4'hC://12: just transit
 					begin
@@ -292,12 +270,18 @@ module GBAPIIPlusPlus(
 					begin
 						//end of vga-memcycle
 						sigBALE	<= 1;
+						sigSA0	<= 1;
+						sigSA12	<= 1;
 						vgaStatemachine <= 4'hE;
 					end
 				4'hE://14: just transit
-					vgaStatemachine <= 4'hF;
+					begin
+						DG_R				<= 16'b1;	//reset the data
+						vgaStatemachine <= 4'hF;
+					end
 				4'hF://15: wait for end of cycle
 					if(ioAdrHit == 0 && memAdrHit == 0) begin
+						DA_R	<= 16'b1;
 						vgaStatemachine <= 4'h0;						
 					end
 			endcase
