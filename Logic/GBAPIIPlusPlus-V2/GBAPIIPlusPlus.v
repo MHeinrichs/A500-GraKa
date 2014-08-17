@@ -294,8 +294,8 @@ module GBAPIIPlusPlus(
 		if( reset == 0 ) begin//async reset
 			autoconfigDone  	<= 2'b0; // start autoconfig			
 			shutUp	 			<= 1'b1; // shut up for now		
-			ioSpace				<= 8'hEA;
-			memSpace				<= 3'b110;
+			ioSpace				<= 8'hFF;
+			memSpace				<= 3'b111;
 		end
 		else begin// sync beginning of cycle
 			
