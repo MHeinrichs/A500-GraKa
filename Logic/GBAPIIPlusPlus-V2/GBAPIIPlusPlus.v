@@ -28,7 +28,7 @@ module GBAPIIPlusPlus(
 	input BERR,			//Amiga bus error signal
 	input CFGIN,		//Amiga AutoConfigIn 0=active
 	input reset,		//Amiga reset
-	input mclk,			//VGA- clock ~28Mhz
+	input mclk,			//VGA- clock 50Mhz
 	input WAIT,			//VGA wait
 	output [3:1] IO,	//spare IO pins: IO3 is a solder jumper
 	output SLAVE,		//Amiga signal: slave active
@@ -78,7 +78,7 @@ module GBAPIIPlusPlus(
 	assign highAddr	= A[23:16];
 	assign lowAddr		= A[6:1];
 	//assign boardSelect = memSelect == 1  || ioSelect == 1 ? 1 : 0;
-	assign autoconfig = autoConfigAdrHit == 1 && ds==1	 		&& AS == 0 ? 1 : 0;
+	assign autoconfig = autoConfigAdrHit == 1       	 		&& AS == 0 ? 1 : 0;
 	assign memSelect 	= memAdrHit	== 1								&& AS == 0 ? 1 : 0;
 	assign ioSelect 	= ioAdrHit	== 1								&& AS == 0 ? 1 : 0;
 	//assign autoconfig = highAddr == 8'hE8 && autoconfigDone != 2'b11 && CFGIN == 0	&& correctAS == 1 && ds ==1? 1:0;
@@ -121,36 +121,11 @@ module GBAPIIPlusPlus(
 	always @(negedge mclk, negedge reset)	
 	begin
 		if(reset==0) begin
-			autoConfigAdrHit 	<= 0;
-			memAdrHit 			<= 0;
-			ioAdrHit 			<= 0;
-			ds						<= 0;
 			AS_D0					<= 1;
 		end
 		else begin //decode the address on every as-strobe and hold it until next as-strobe
-			ds <= LDS==0 || UDS==0; //datastrobe indicator
-			AS_D0	<= AS;
 			
-			if(highAddr == 8'hE8 && autoconfigDone != 2'b11 && CFGIN == 0 && BERR ==1 && reset == 1 && AS_D0==0 && (LDS==0 || UDS==0)) begin //ac hit
-				autoConfigAdrHit 	<= 1;
-				memAdrHit 			<= 0;
-				ioAdrHit 			<= 0;
-			end
-			else if (A[23:21] == memSpace && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS_D0==0) begin //mem hit
-				autoConfigAdrHit 	<= 0;
-				memAdrHit 			<= 1;
-				ioAdrHit 			<= 0;
-			end
-			else if (highAddr == ioSpace  && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS_D0==0) begin //io hit
-				autoConfigAdrHit 	<= 0;
-				memAdrHit 			<= 0;
-				ioAdrHit 			<= 1;
-			end
-			else begin // no hit
-				autoConfigAdrHit 	<= 0;
-				memAdrHit 			<= 0;
-				ioAdrHit 			<= 0;
-			end
+			AS_D0	<= AS;
 		end
 	end
 	
@@ -169,16 +144,44 @@ module GBAPIIPlusPlus(
 			sigSA0			<= 1;
 			sigSA12			<= 1;			
 			DG_R				<= 16'b1;			
-			DA_R					<= 16'b1;
-			
+			DA_R				<= 16'b1;
+			autoConfigAdrHit 	<= 0;
+			memAdrHit 			<= 0;
+			ioAdrHit 			<= 0;
+			ds						<= 0;
 		end
 		else begin// beginning of statemachine
+			
+			ds <= LDS==0 || UDS==0; //datastrobe indicator
+
+			if(highAddr == 8'hE8 && autoconfigDone != 2'b11 && CFGIN == 0 && BERR ==1 && reset == 1 && AS==0 && (LDS==0 || UDS==0)) begin //ac hit
+				autoConfigAdrHit 	<= 1;
+				memAdrHit 			<= 0;
+				ioAdrHit 			<= 0;
+			end
+			else if (A[23:21] == memSpace && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS==0) begin //mem hit
+				autoConfigAdrHit 	<= 0;
+				memAdrHit 			<= 1;
+				ioAdrHit 			<= 0;
+			end
+			else if (highAddr == ioSpace  && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS==0) begin //io hit
+				autoConfigAdrHit 	<= 0;
+				memAdrHit 			<= 0;
+				ioAdrHit 			<= 1;
+			end
+			else begin // no hit
+				autoConfigAdrHit 	<= 0;
+				memAdrHit 			<= 0;
+				ioAdrHit 			<= 0;
+			end
+
+		
 			//statemachine
 			case(vgaStatemachine)
 				4'h0: // 1: wait for start
 					if(memAdrHit == 1  || ioAdrHit == 1) begin
 						sigXRDY <= 0;
-						vgaStatemachine <= 4'h1;						
+						vgaStatemachine <= 4'h2;	//because the memAdrHit and ioAdrHit are delayed by one clock jump to state 2 immediately!
 					end
 					else begin
 						sigBALE	<=1;
@@ -191,7 +194,7 @@ module GBAPIIPlusPlus(
 				4'h1: // 2: just tansit
 					vgaStatemachine <= 4'h2;
 				4'h2: // 3:wait for datastrobe
-					if(ds == 1) begin
+					if(ds == 1) begin // on write we loose a clock here again!
 						vgaStatemachine <= 4'h3;	
 						//determine the addess lines
 						if( memAdrHit == 1) begin
@@ -209,6 +212,10 @@ module GBAPIIPlusPlus(
 						//buffer the write data
 						if(RW == 0) begin
 							DG_R		<=  DA;
+							vgaStatemachine <= 4'h5; //compensate the lost clock from above!
+						end
+						else begin
+							vgaStatemachine <= 4'h4;
 						end
 					end
 				4'h4: // 4:just transit
