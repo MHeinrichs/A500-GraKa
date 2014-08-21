@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="impact" timeStamp="Mon Aug 18 21:39:24 2014">
+<application name="impact" timeStamp="Thu Aug 21 12:53:45 2014">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="a5d4f22d023f46f2a46a8c256a043894"/>
+<property name="ProjectID" value="672e97a8c3014c9da3d54a3a65abc247"/>
 <property name="ProjectIteration" value="1"/>
 </section>
 <section name="iMPACT Project Info" visible="true">
@@ -27,11 +27,23 @@ This means code written to parse this file will need to be revisited each subseq
 <item name="Boundary Scan Operations Statistics">
 <property name="BSCAN Operation" value="Program -p 0 -e -v
 "/>
+<property name="BSCAN Operation" value="Program -p 0 -e -v
+"/>
+<property name="BSCAN Operation" value="Program -p 0 -e -v
+"/>
+<property name="BSCAN Operation" value="Program -p 0 -e -v
+"/>
+<property name="BSCAN Operation" value="Program -p 0 -e -v
+"/>
+<property name="BSCAN Operation" value="Program -p 0 -e -v
+"/>
+<property name="BSCAN Operation" value="Program -p 0 -e -v
+"/>
 </item>
 <item name="Cable Summary">
-<property name="Cable Type" value="Parallel III"/>
-<property name="Cable Speed" value="200 KHz"/>
-<property name="Port" value="LPT1"/>
+<property name="Cable Type" value=""/>
+<property name="Cable Speed" value="0"/>
+<property name="Port" value="NULL"/>
 <property name="Local_Server_Mode" value="Local"/>
 </item>
 </section>

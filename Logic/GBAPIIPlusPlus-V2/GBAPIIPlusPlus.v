@@ -276,6 +276,7 @@ module GBAPIIPlusPlus(
 				4'hD://13: just transit
 					begin
 						//end of vga-memcycle
+						DG_R				<= 16'b1;	//reset the data
 						sigBALE	<= 1;
 						sigSA0	<= 1;
 						sigSA12	<= 1;
@@ -283,7 +284,6 @@ module GBAPIIPlusPlus(
 					end
 				4'hE://14: just transit
 					begin
-						DG_R				<= 16'b1;	//reset the data
 						vgaStatemachine <= 4'hF;
 					end
 				4'hF://15: wait for end of cycle
