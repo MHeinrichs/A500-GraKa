@@ -1,14 +1,226 @@
+Reading design: GBAPIIPlusPlus.prj
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "GBAPIIPlusPlus.v" in library work
+Module <GBAPIIPlusPlus> compiled
+No errors in compilation
+Analysis of file <"GBAPIIPlusPlus.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <GBAPIIPlusPlus> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <GBAPIIPlusPlus>.
+Module <GBAPIIPlusPlus> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <GBAPIIPlusPlus>.
+    Related source file is "GBAPIIPlusPlus.v".
+WARNING:Xst:1306 - Output <IO<2:1>> is never assigned.
+WARNING:Xst:647 - Input <A<14:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <A<11:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <A<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <memSelect> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ioSelect> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <autoconfig> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <DG_R> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <DA_R> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <AS_D0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+INFO:Xst:1799 - State 0001 is never reached in FSM <vgaStatemachine>.
+    Found finite state machine <FSM_0> for signal <vgaStatemachine>.
+    -----------------------------------------------------------------------
+    | States             | 15                                             |
+    | Transitions        | 23                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 9                                              |
+    | Clock              | mclk                      (rising_edge)        |
+    | Reset              | reset                     (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <autoconfigDone>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 11                                             |
+    | Clock              | autoConfigAdrHit          (rising_edge)        |
+    | Clock enable       | RW                        (negative)           |
+    | Reset              | reset                     (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 16-bit tristate buffer for signal <DA>.
+    Found 16-bit tristate buffer for signal <DG>.
+    Found 1-bit tristate buffer for signal <SLAVE>.
+    Found 1-bit register for signal <autoConfigAdrHit>.
+    Found 4-bit register for signal <autoConfigDataOut>.
+    Found 1-bit register for signal <ds>.
+    Found 1-bit register for signal <ioAdrHit>.
+    Found 8-bit comparator equal for signal <ioAdrHit$cmp_eq0000> created at line 167.
+    Found 8-bit register for signal <ioSpace>.
+    Found 1-bit register for signal <memAdrHit>.
+    Found 3-bit comparator equal for signal <memAdrHit$cmp_eq0000> created at line 162.
+    Found 3-bit register for signal <memSpace>.
+    Found 1-bit register for signal <shutUp>.
+    Found 1-bit register for signal <sigBALE>.
+    Found 1-bit register for signal <sigConfigOut>.
+    Found 1-bit register for signal <sigIOR>.
+    Found 1-bit register for signal <sigIOW>.
+    Found 1-bit register for signal <sigMEMR>.
+    Found 1-bit register for signal <sigMEMW>.
+    Found 1-bit register for signal <sigMONITORSW>.
+    Found 1-bit register for signal <sigSA0>.
+    Found 1-bit register for signal <sigSA12>.
+    Found 1-bit register for signal <sigXRDY>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred  15 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  33 Tristate(s).
+Unit <GBAPIIPlusPlus> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 18
+ 1-bit register                                        : 15
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 2
+ 3-bit comparator equal                                : 1
+ 8-bit comparator equal                                : 1
+# Tristates                                            : 3
+ 1-bit tristate buffer                                 : 1
+ 16-bit tristate buffer                                : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <autoconfigDone/FSM> on signal <autoconfigDone[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <vgaStatemachine/FSM> on signal <vgaStatemachine[1:15]> with one-hot encoding.
+--------------------------
+ State | Encoding
+--------------------------
+ 0000  | 000000000000001
+ 0010  | 000000000000010
+ 0001  | unreached
+ 0011  | 000000000000100
+ 0101  | 000000000001000
+ 0100  | 000000000010000
+ 0110  | 000000000100000
+ 0111  | 000000001000000
+ 1000  | 000000010000000
+ 1001  | 000000100000000
+ 1010  | 000001000000000
+ 1011  | 000010000000000
+ 1100  | 000100000000000
+ 1101  | 001000000000000
+ 1110  | 010000000000000
+ 1111  | 100000000000000
+--------------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Registers                                            : 15
+ Flip-Flops                                            : 15
+# Comparators                                          : 2
+ 3-bit comparator equal                                : 1
+ 8-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <GBAPIIPlusPlus> ...
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Command Line: c:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -uc pinlist.ucf -p xc9572xl-TQ100-10 GBAPIIPlusPlus.ngc
+GBAPIIPlusPlus.ngd
+
+Reading NGO file
+"C:/Users/Matze/Documents/GitHub/A500-Graka/Logic/GBAPIIPlusPlus-V2/GBAPIIPlusPl
+us.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "pinlist.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Writing NGD file "GBAPIIPlusPlus.ngd" ...
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   4 sec
+
+Writing NGDBUILD log file "GBAPIIPlusPlus.bld"...
+
+NGDBUILD done.
 WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
    use the default filename of 'GBAPIIPlusPlus.ise'.
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XST_GND prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -27,6 +239,42 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigConfigOut\/$1I41 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigConfigOut\/$1I41 prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12\/Q\/FDCP prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12\/Q\/X_ONE prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12\/$1I41 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12\/$1I41 prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0\/Q\/FDCP prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0\/Q\/X_ONE prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0\/$1I41 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0\/$1I41 prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -138,39 +386,159 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_7\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_7\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_7\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_7\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_6\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_6\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit\/$1I43 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_6\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_6\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_5\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_5\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_5\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_5\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit\/$1I43 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_4\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_4\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_4\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_4\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_3\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_3\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_3\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_3\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_2\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_2\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_2\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_2\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_1\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_1\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_1\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_1\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_0\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_0\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_0\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_0\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_2\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_2\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_2\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_2\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_1\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_1\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_1\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_1\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_0\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_0\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_0\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_0\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds\/$1I55 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -182,7 +550,43 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit\/$1I43 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit\/$1I55 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit\/$1I55 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit\/$1I55 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/Q prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDPE"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/shutUp\/X_ZERO prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -215,94 +619,6 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigDataOut_0\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_7\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_7\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_6\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_6\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_5\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_5\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_4\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_4\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_3\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_3\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_2\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_2\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_1\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_1\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_0\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_0\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_2\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_2\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_1\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_1\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_0\/Q prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_0\/X_ZERO prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCE"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -492,31 +808,31 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
 
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15\/Q\/FDCP prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15\/$1I55 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15\/Q\/X_ONE prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16\/Q\/FDCP prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15\/$1I41 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16\/Q\/FDCP prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16\/Q\/X_ONE prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "FDCP"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16\/Q\/X_ONE prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15\/$1I41 prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16\/$1I41 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GND"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_memAdrHit_cmp_eq0000_Mxor_or0000_xor0000\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16\/$1I41 prop_name=FPGAINIT prop_terse=XDM_PROPERTY_INT32 "FPGAINIT" 1
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_memAdrHit_cmp_eq0000_Mxor_or0000_xor0001\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_memAdrHit_cmp_eq0000_Mxor_AEB_xor0000\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -528,15 +844,55 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_ioAdrHit_cmp_eq0000_Mxor_AEB_xor0000\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_ioAdrHit_cmp_eq0000_Mxor_or0001_xor0000\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_ioAdrHit_cmp_eq0000_Mxor_or0001_xor0001\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_and00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_ioAdrHit_cmp_eq0000_Mxor_or0002_xor0000\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_ioAdrHit_cmp_eq0000_Mxor_or0002_xor0001\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_ioAdrHit_cmp_eq0000_Mxor_or0003_xor0000\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/Mcompar_ioAdrHit_cmp_eq0000_Mxor_or0003_xor0001\/Xo<0>1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "XOR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds_or00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigDataOut_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SLAVE_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -704,43 +1060,7 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ds_or00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfig_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfig_and00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSelect_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSelect_and00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSelect_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSelect_and00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/DG_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -748,55 +1068,23 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_not00011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit__and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit__and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_0_not00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfigDone_FSM_Out101 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd12-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd12-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16-In3 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd12-In3 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd16-In4 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd14-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd14-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd14-In3 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd13-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd11-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -816,91 +1104,55 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd1-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_N01 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd1-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfigDone_FSM_FFd1_N11 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd1-In3 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_Clk_INV1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfigDone_FSM_FFd1_N01 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and000013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XRDYD_not00011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XRDYD_not00012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd14-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XRDYD_not00013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd14-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd14-In3 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd14-In4 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_or00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd1-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SA121 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SA122 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfigDone_not00011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfigDone_not00012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigDataOut_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SA0_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SA0_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd1-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoconfigDone_FSM_FFd1-In11 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -916,39 +1168,19 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15-In11 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15-In3 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SLAVE_or000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SLAVE_or00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SLAVE_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1012,51 +1244,11 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/DA_not000111 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/DA_not000112 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/DA_not000111 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/DA_not00011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000021 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000022 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_mux00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00004 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1065,14 +1257,6 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMEMR_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOW_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMEMW_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1120,54 +1304,6 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or000021 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or000022 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or000023 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or00004 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or00005 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or00004 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or00005 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or00006 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigDataOut_mux0000<1>11 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
@@ -1193,6 +1329,14 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigDataOut_mux0000<1>4 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux000021 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux000022 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1232,51 +1376,79 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_mux000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_mux000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and000013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_mux000013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and000014 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/autoConfigAdrHit_and00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_and00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_and00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_and00004 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND4"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or000013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memAdrHit_or000014 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_mux00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioAdrHit_or000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15-In1 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_not000121 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/vgaStatemachine_FSM_FFd15-In2 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux000012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux000013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux000014 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000021 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOR_mux000022 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_not000121 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1284,15 +1456,7 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_not000123 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_not000124 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_not000125 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/ioSpace_not000123 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1305,6 +1469,62 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/memSpace_not00012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOW_mux000021 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOW_mux000022 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_not00011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_not00012 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_not00013 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMONITORSW_not00014 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMEMW_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMEMW_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMEMW_mux00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigMEMW_mux00004 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOW_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOW_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOW_mux00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigIOW_mux00004 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1360,79 +1580,55 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_110 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12_mux000011 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_210 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_37 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA12_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_41 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_51 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigSA0_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_61 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_71 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_72 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigBALE_mux00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_73 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00001 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_81 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00002 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_82 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00003 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_83 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/sigXRDY_mux00004 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_91 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_92 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_93 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_101 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_102 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_103 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_104 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_110 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1440,15 +1636,103 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_112 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_112 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_113 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_26 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_121 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_27 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_28 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_31 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_32 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_33 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_34 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_41 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_42 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_43 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_51 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_61 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_62 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_63 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_71 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_81 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_82 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_91 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_101 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_102 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_103 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_113 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_114 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_121 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1460,35 +1744,15 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_124 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_131 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_125 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_132 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_131 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_132 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_133 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_134 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_135 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_141 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_141 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1500,51 +1764,19 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_144 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_144 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_145 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_151 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_151 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_152 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_152 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_153 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_154 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_155 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_161 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_162 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_163 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_164 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_165 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_161 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1556,15 +1788,11 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_173 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_173 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_174 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_175 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_174 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1576,15 +1804,11 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_183 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_183 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_184 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_185 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_184 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1596,19 +1820,11 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_193 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_193 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_194 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_195 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_201 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_201 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1620,15 +1836,11 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_204 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_205 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_211 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_212 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1640,7 +1852,15 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_231 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR3"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_231 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_232 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
+
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_233 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1648,15 +1868,7 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_242 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_243 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_244 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_242 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -1665,114 +1877,6 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_252 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_261 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_271 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_272 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_273 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_281 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_282 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_283 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_291 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_292 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_301 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_302 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_303 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_311 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_312 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_321 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_322 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_323 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_331 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_332 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_341 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_342 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_343 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_351 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_352 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OR2"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_361 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_362 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "INV"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
-
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/SFDecomp_363 prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "AND3"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -2346,9 +2450,9 @@ CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPl
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XRDYD_OBUFE\/X_TRI prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OBUFE"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XRDYD_OBUF prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "OBUF"
 
-CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XRDYD_OBUFE\/X_TRI prop_name=IOCOMP prop_terse=XDM_PROPERTY_BOOL "IOCOMP"
+CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus/XRDYD_OBUF prop_name=IOCOMP prop_terse=XDM_PROPERTY_BOOL "IOCOMP"
 
 CS: block property: block_name=/GBAPIIPlusPlus/EXPANDED_FlattenFull/GBAPIIPlusPlus prop_name=TYPE prop_terse=XDM_PROPERTY_STRING "TYPE" "GBAPIIPlusPlus"
 
@@ -2712,12 +2816,13 @@ WARNING:Cpld:936 - The output buffer 'IO<1>_OBUF' is missing an input and will
 WARNING:Cpld:1239 - The global clock designation (BUFG) on signal 'DG_14_IOBUFE'
    is ignored. Most likely the signal is gated and therefore cannot be used as a
    global control signal.
-Considering device XC95144XL-10-TQ100.
+Considering device XC9572XL-10-TQ100.
 Multi-level logic optimization...
-Density optimization...................   
+Density optimization.................. .............  
 General global resource optimization........
 Re-checking device resources ...
-Mapping a total of 96 equations into 8 function blocks...................................
-
-Design GBAPIIPlusPlus has been optimized and fit into device
-XC95144XL-10-TQ100.
+ERROR:Cpld:837 - Insufficient number of macrocells. The design needs at least 85
+   but only 72 left after allocating other resources.
+Device 9572XL100 was disqualified.
+ERROR:Cpld:868 - Cannot fit the design into any of the specified devices with
+   the selected implementation options.

@@ -52,7 +52,10 @@ module GBAPIIPlusPlus(
 	
 	wire [15:0] autoConfigDataWide;
 
-	reg AS_D0;
+	reg VGA_D0;
+	reg VGA_D1;
+	reg AC_D0;
+	reg AC_D1;
 	reg autoConfigAdrHit, ioAdrHit, memAdrHit;
 	reg [3:0] vgaStatemachine;
 	reg sigBALE;
@@ -86,7 +89,7 @@ module GBAPIIPlusPlus(
 	//assign ioSelect 	= highAddr == ioSpace  && shutUp == 1'b0 && autoconfigDone[1] == 1'b1			&& correctAS == 1 ? 1:0;
 
 	assign CFGOUT		= sigConfigOut;
-	assign SLAVE		= memAdrHit == 1  || ioAdrHit == 1 || autoConfigAdrHit ==1 ? 0 : 1'bz;
+	assign SLAVE		= memAdrHit == 1  || ioAdrHit == 1 || autoConfigAdrHit ==1 ? 0 : 1;
 	assign CLRG			= reset;
 	assign autoConfigDataWide = {autoConfigDataOut, 12'b1};
 	assign MONISW		= sigMONITORSW;
@@ -107,7 +110,7 @@ module GBAPIIPlusPlus(
 	//assign DG			= DG_R;
 	//assign DA			= DA_R;
 	assign DG[15:0]	= (RW == 0 && (memAdrHit == 1  || ioAdrHit ==1))? DG_R : 16'bz; 
-	assign DA[15:0]	= (RW == 1 && (autoConfigAdrHit == 1))? autoConfigDataWide : ( RW == 1 && (memAdrHit == 1  || ioAdrHit ==1) ? DA_R : 16'bz);
+	assign DA[15:0]	= (RW == 1 && (autoConfigAdrHit == 1 || AC_D1 == 1))? autoConfigDataWide : ( RW == 1 && (memAdrHit == 1  || ioAdrHit ==1 ||VGA_D1 == 1) ? DA_R : 16'bz);
 
 	//assign SA0			= ioSelect ==1 ? (A[12] || UDS ? 1 : 0) : UDS;
 	//assign SA12			= ioSelect ==1 ? 0 : A[12];
@@ -118,14 +121,30 @@ module GBAPIIPlusPlus(
 	assign SA12			= sigSA12;
 
 	//memdecode
-	always @(negedge mclk, negedge reset)	
+	always @(posedge mclk, negedge reset)	
 	begin
 		if(reset==0) begin
-			AS_D0					<= 1;
+			VGA_D0					<= 0;
+			VGA_D1					<= 0;
 		end
 		else begin //decode the address on every as-strobe and hold it until next as-strobe
 			
-			AS_D0	<= AS;
+			VGA_D0	<= memAdrHit == 1  || ioAdrHit ==1 ;
+			VGA_D1	<= VGA_D0;
+		end
+	end
+
+	//memdecode
+	always @(posedge mclk, negedge reset)	
+	begin
+		if(reset==0) begin
+			AC_D0					<= 0;
+			AC_D1					<= 0;
+		end
+		else begin //decode the address on every as-strobe and hold it until next as-strobe
+			
+			AC_D0	<= autoConfigAdrHit == 1;
+			AC_D1	<= AC_D0;
 		end
 	end
 	
@@ -288,7 +307,7 @@ module GBAPIIPlusPlus(
 					end
 				4'hF://15: wait for end of cycle
 					if(ioAdrHit == 0 && memAdrHit == 0) begin
-						DA_R	<= 16'b1;
+						//DA_R	<= 16'b1;
 						vgaStatemachine <= 4'h0;						
 					end
 			endcase
