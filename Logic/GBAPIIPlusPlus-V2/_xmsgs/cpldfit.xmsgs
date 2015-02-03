@@ -11,9 +11,6 @@
 <msg type="info" file="Cpld" num="0" delta="new" >Inferring BUFG constraint for signal &apos;<arg fmt="%s" index="1">AS</arg>&apos; based upon the LOC constraint &apos;<arg fmt="%s" index="2">P23</arg>&apos;. It is recommended that you declare this BUFG explicitedly in your design. Note that for certain device families the output of a BUFG constraint can not drive a gated clock, and the BUFG constraint will be ignored.
 </msg>
 
-<msg type="info" file="Cpld" num="0" delta="new" >Inferring BUFG constraint for signal &apos;<arg fmt="%s" index="1">DA&lt;14&gt;</arg>&apos; based upon the LOC constraint &apos;<arg fmt="%s" index="2">P27</arg>&apos;. It is recommended that you declare this BUFG explicitedly in your design. Note that for certain device families the output of a BUFG constraint can not drive a gated clock, and the BUFG constraint will be ignored.
-</msg>
-
 <msg type="info" file="Cpld" num="0" delta="new" >Inferring BUFG constraint for signal &apos;<arg fmt="%s" index="1">mclk</arg>&apos; based upon the LOC constraint &apos;<arg fmt="%s" index="2">P22</arg>&apos;. It is recommended that you declare this BUFG explicitedly in your design. Note that for certain device families the output of a BUFG constraint can not drive a gated clock, and the BUFG constraint will be ignored.
 </msg>
 
@@ -21,9 +18,6 @@
 </msg>
 
 <msg type="warning" file="Cpld" num="936" delta="old" >The output buffer &apos;<arg fmt="%s" index="1">IO&lt;1&gt;_OBUF</arg>&apos; is missing an input and will be deleted.
-</msg>
-
-<msg type="warning" file="Cpld" num="1239" delta="new" >The global <arg fmt="%s" index="1">clock</arg> designation (BUFG) on signal &apos;<arg fmt="%s" index="2">N29</arg>&apos; is ignored. Most likely the signal is gated and therefore cannot be used as a global control signal.
 </msg>
 
 </messages>

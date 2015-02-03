@@ -34,6 +34,8 @@ module GBAPIIPlusPlus(
 	output SLAVE,		//Amiga signal: slave active
 	output CFGOUT,		//Amiga signal: Config out
 	output XRDYD,		//Amiga signal not ready (Zorro bus wait)
+	output OVR,			//Amiga signal override (Take over DTACK)
+	output DTACK,		//Amiga signal DTACK
 	output MONISW,//Signal for monitor switch: 1= Amiga, 0= VGA
 	output SA0,	//VGA address 0
 	output SA12,	//VGA address 12
@@ -76,6 +78,7 @@ module GBAPIIPlusPlus(
 	reg [15:0] DG_R;
 	reg sigSA0;
 	reg sigSA12;
+	reg sigDTACK;
 		
 	//assigns
 	assign highAddr	= A[23:16];
@@ -97,11 +100,17 @@ module GBAPIIPlusPlus(
 	//assign IO[1]		= memAdrHit;
 	//assign IO[2]		= ioAdrHit;
 	assign IO[3]		= sigBALE;
-
-	assign BALE			= sigBALE;
-	//assign XRDYD		= vgaStatemachine ==4'h0 ? 1'bz : sigXRDY;
-	assign XRDYD		= sigXRDY;
+	assign BALE			= sigBALE;	
+	
+	//either with XRDY
 	//assign XRDYD		= sigXRDY==1 ? 1'bz : 1'b0;
+	//assign DTACK		= 1'bz;
+	//assign OVR			= 1'bz;
+	
+	//alternatively with ovr and dtack:
+	assign XRDYD		= 1'bz;
+	assign DTACK		= sigDTACK == 0 || autoConfigAdrHit ==1? 1'b0 : 1'bz;
+	assign OVR			= memAdrHit == 1  || ioAdrHit == 1 || autoConfigAdrHit ==1? 0 : 1'bz;
 	
 	assign IOW			= sigIOW;
 	assign IOR			= sigIOR;
@@ -168,6 +177,7 @@ module GBAPIIPlusPlus(
 			memAdrHit 			<= 0;
 			ioAdrHit 			<= 0;
 			ds						<= 0;
+			sigDTACK			<= 1;
 		end
 		else begin// beginning of statemachine
 			
@@ -208,7 +218,8 @@ module GBAPIIPlusPlus(
 						sigIOW	<=1;
 						sigMEMR	<=1;
 						sigMEMW	<=1;
-						sigXRDY	<=1;					
+						sigXRDY	<=1;	
+						sigDTACK	<=1;						
 					end
 				4'h1: // 2: just tansit
 					vgaStatemachine <= 4'h2;
@@ -264,9 +275,13 @@ module GBAPIIPlusPlus(
 				4'h7:// 7:just transit
 					vgaStatemachine <= 4'h8;
 				4'h8:// 8:just transit
-					vgaStatemachine <= 4'h9;
+					begin
+						vgaStatemachine <= 4'h9;
+					end
 				4'h9:// 9: wait for mem ready or for io: just transit
 					if(ioAdrHit == 1 || WAIT == 1 ) begin//mem ready or IO selected
+						sigDTACK	<= 0;
+						sigXRDY <= 1;
 						vgaStatemachine <= 4'hA;
 					end
 				4'hA://10: just transit
@@ -308,7 +323,8 @@ module GBAPIIPlusPlus(
 				4'hF://15: wait for end of cycle
 					if(ioAdrHit == 0 && memAdrHit == 0) begin
 						//DA_R	<= 16'b1;
-						vgaStatemachine <= 4'h0;						
+						vgaStatemachine <= 4'h0;	
+						sigDTACK	<= 1;						
 					end
 			endcase
 		end
