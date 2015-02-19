@@ -58,7 +58,7 @@ module GBAPIIPlusPlus(
 	reg VGA_D1;
 	reg AC_D0;
 	reg AC_D1;
-	reg autoConfigAdrHit, ioAdrHit, memAdrHit;
+	reg autoConfigAdrHit, autoConfigAdrDSHit, ioAdrHit, memAdrHit;
 	reg [3:0] vgaStatemachine;
 	reg sigBALE;
 	reg sigIOR;
@@ -174,6 +174,7 @@ module GBAPIIPlusPlus(
 			DG_R				<= 16'b1;			
 			DA_R				<= 16'b1;
 			autoConfigAdrHit 	<= 0;
+			autoConfigAdrDSHit<= 0;
 			memAdrHit 			<= 0;
 			ioAdrHit 			<= 0;
 			ds						<= 0;
@@ -185,21 +186,30 @@ module GBAPIIPlusPlus(
 
 			if(highAddr == 8'hE8 && autoconfigDone != 2'b11 && CFGIN == 0 && BERR ==1 && reset == 1 && AS==0 && (LDS==0 || UDS==0)) begin //ac hit
 				autoConfigAdrHit 	<= 1;
+				if(LDS==0 || UDS==0)begin
+					autoConfigAdrDSHit<= 1;			
+				end
+				else begin
+					autoConfigAdrDSHit<= 0;
+				end
 				memAdrHit 			<= 0;
 				ioAdrHit 			<= 0;
 			end
 			else if (A[23:21] == memSpace && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS==0) begin //mem hit
 				autoConfigAdrHit 	<= 0;
+				autoConfigAdrDSHit<= 0;
 				memAdrHit 			<= 1;
 				ioAdrHit 			<= 0;
 			end
 			else if (highAddr == ioSpace  && shutUp == 1'b0 && BERR ==1 && reset == 1 && AS==0) begin //io hit
 				autoConfigAdrHit 	<= 0;
+				autoConfigAdrDSHit<= 0;
 				memAdrHit 			<= 0;
 				ioAdrHit 			<= 1;
 			end
 			else begin // no hit
 				autoConfigAdrHit 	<= 0;
+				autoConfigAdrDSHit<= 0;
 				memAdrHit 			<= 0;
 				ioAdrHit 			<= 0;
 			end
@@ -226,6 +236,9 @@ module GBAPIIPlusPlus(
 				4'h2: // 3:wait for datastrobe
 					if(ds == 1) begin // on write we loose a clock here again!
 						vgaStatemachine <= 4'h3;	
+					end
+				4'h3: // 3:just transit
+					begin
 						//determine the addess lines
 						if( memAdrHit == 1) begin
 							sigSA0	<= UDS;
@@ -235,13 +248,10 @@ module GBAPIIPlusPlus(
 							sigSA0	<= A[12] || UDS;
 							sigSA12	<= 0;						
 						end
-					end
-				4'h3: // 3:just transit
-					begin
 						vgaStatemachine <= 4'h4;
 						//buffer the write data
 						if(RW == 0) begin
-							DG_R		<=  DA;
+						//	DG_R		<=  DA;
 							vgaStatemachine <= 4'h5; //compensate the lost clock from above!
 						end
 						else begin
@@ -252,6 +262,10 @@ module GBAPIIPlusPlus(
 					vgaStatemachine <= 4'h5;
 				4'h5:// 5:just transit
 					begin
+						//buffer the write data
+						if(RW == 0) begin
+						//	DG_R		<=  DA;
+						end
 						//start of vga-memcycle
 						sigBALE	<= 0;
 						vgaStatemachine <= 4'h6;
@@ -264,6 +278,7 @@ module GBAPIIPlusPlus(
 							sigMEMR	<= ~memAdrHit;
 						end
 						else begin//write
+							DG_R		<=  DA;
 							sigIOW	<= ~ioAdrHit; // just the invertion of the signals
 							sigMEMW	<= ~memAdrHit;
 							if(ioAdrHit == 1 && A[15] == 1 && UDS == 0)begin //monitor switch
@@ -288,6 +303,9 @@ module GBAPIIPlusPlus(
 					begin
 						vgaStatemachine <= 4'hB;
 						sigXRDY <= 1;
+						if(RW==1)begin
+							DA_R	<= DG;
+						end
 					end
 				4'hB://11: just transit
 					begin
@@ -331,7 +349,7 @@ module GBAPIIPlusPlus(
 	end
 
 	// autoconfig data forming
-	always @(posedge autoConfigAdrHit, negedge reset)
+	always @(posedge autoConfigAdrDSHit, negedge reset)
 	begin
 		if( reset == 0 ) begin//async reset
 			autoconfigDone  	<= 2'b0; // start autoconfig			
