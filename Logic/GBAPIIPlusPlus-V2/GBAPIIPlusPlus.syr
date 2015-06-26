@@ -1,0 +1,318 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: GBAPIIPlusPlus.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "GBAPIIPlusPlus.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "GBAPIIPlusPlus"
+Output Format                      : NGC
+Target Device                      : XC9500XL CPLDs
+
+---- Source Options
+Top Module Name                    : GBAPIIPlusPlus
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 2
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : Rebuilt
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "GBAPIIPlusPlus.v" in library work
+Module <GBAPIIPlusPlus> compiled
+No errors in compilation
+Analysis of file <"GBAPIIPlusPlus.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <GBAPIIPlusPlus> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <GBAPIIPlusPlus>.
+Module <GBAPIIPlusPlus> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <GBAPIIPlusPlus>.
+    Related source file is "GBAPIIPlusPlus.v".
+WARNING:Xst:1306 - Output <IO<2:1>> is never assigned.
+WARNING:Xst:647 - Input <A<14:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <A<11:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <A<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <sigXRDY> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <memSelect> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ioSelect> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <autoconfig> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <VGA_D4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+INFO:Xst:1799 - State 0001 is never reached in FSM <vgaStatemachine>.
+    Found finite state machine <FSM_0> for signal <vgaStatemachine>.
+    -----------------------------------------------------------------------
+    | States             | 15                                             |
+    | Transitions        | 23                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 10                                             |
+    | Clock              | mclk                      (rising_edge)        |
+    | Reset              | reset                     (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <autoconfigDone>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 11                                             |
+    | Clock              | autoConfigAdrDSHit        (rising_edge)        |
+    | Clock enable       | RW                        (negative)           |
+    | Reset              | reset                     (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 16-bit tristate buffer for signal <DA>.
+    Found 16-bit tristate buffer for signal <DG>.
+    Found 1-bit tristate buffer for signal <DTACK>.
+    Found 1-bit tristate buffer for signal <OVR>.
+    Found 1-bit tristate buffer for signal <XRDYD>.
+    Found 1-bit register for signal <AC_D0>.
+    Found 1-bit register for signal <AC_D1>.
+    Found 1-bit register for signal <autoConfigAdrDSHit>.
+    Found 1-bit register for signal <autoConfigAdrHit>.
+    Found 4-bit register for signal <autoConfigDataOut>.
+    Found 16-bit register for signal <DA_R>.
+    Found 16-bit register for signal <DG_R>.
+    Found 1-bit register for signal <ds>.
+    Found 1-bit register for signal <ioAdrHit>.
+    Found 8-bit comparator equal for signal <ioAdrHit$cmp_eq0000> created at line 190.
+    Found 8-bit register for signal <ioSpace>.
+    Found 1-bit register for signal <memAdrHit>.
+    Found 3-bit comparator equal for signal <memAdrHit$cmp_eq0000> created at line 184.
+    Found 3-bit register for signal <memSpace>.
+    Found 1-bit register for signal <shutUp>.
+    Found 1-bit register for signal <sigBALE>.
+    Found 1-bit register for signal <sigConfigOut>.
+    Found 1-bit register for signal <sigDTACK>.
+    Found 1-bit register for signal <sigIOR>.
+    Found 1-bit register for signal <sigIOW>.
+    Found 1-bit register for signal <sigMEMR>.
+    Found 1-bit register for signal <sigMEMW>.
+    Found 1-bit register for signal <sigMONITORSW>.
+    Found 1-bit register for signal <sigSA0>.
+    Found 1-bit register for signal <sigSA12>.
+    Found 1-bit register for signal <VGA_D0>.
+    Found 1-bit register for signal <VGA_D1>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  35 Tristate(s).
+Unit <GBAPIIPlusPlus> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 25
+ 1-bit register                                        : 20
+ 16-bit register                                       : 2
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 2
+ 3-bit comparator equal                                : 1
+ 8-bit comparator equal                                : 1
+# Tristates                                            : 5
+ 1-bit tristate buffer                                 : 3
+ 16-bit tristate buffer                                : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <autoconfigDone/FSM> on signal <autoconfigDone[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <vgaStatemachine/FSM> on signal <vgaStatemachine[1:15]> with one-hot encoding.
+--------------------------
+ State | Encoding
+--------------------------
+ 0000  | 000000000000001
+ 0010  | 000000000000010
+ 0001  | unreached
+ 0011  | 000000000000100
+ 0101  | 000000000001000
+ 0100  | 000000000010000
+ 0110  | 000000000100000
+ 0111  | 000000001000000
+ 1000  | 000000010000000
+ 1001  | 000000100000000
+ 1010  | 000001000000000
+ 1011  | 000010000000000
+ 1100  | 000100000000000
+ 1101  | 001000000000000
+ 1110  | 010000000000000
+ 1111  | 100000000000000
+--------------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Registers                                            : 20
+ Flip-Flops                                            : 20
+# Comparators                                          : 2
+ 3-bit comparator equal                                : 1
+ 8-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <GBAPIIPlusPlus> ...
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : GBAPIIPlusPlus.ngr
+Top Level Output File Name         : GBAPIIPlusPlus
+Output Format                      : NGC
+Optimization Goal                  : Area
+Keep Hierarchy                     : Yes
+Target Technology                  : XC9500XL CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 82
+
+Cell Usage :
+# BELS                             : 407
+#      AND2                        : 152
+#      AND3                        : 14
+#      AND4                        : 2
+#      GND                         : 1
+#      INV                         : 123
+#      OR2                         : 98
+#      OR3                         : 6
+#      XOR2                        : 11
+# FlipFlops/Latches                : 84
+#      FDC                         : 53
+#      FDCE                        : 6
+#      FDP                         : 12
+#      FDPE                        : 13
+# IO Buffers                       : 72
+#      IBUF                        : 25
+#      IOBUFE                      : 32
+#      OBUF                        : 12
+#      OBUFE                       : 3
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.95 secs
+ 
+--> 
+
+Total memory usage is 262128 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

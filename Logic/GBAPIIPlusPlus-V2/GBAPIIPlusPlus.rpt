@@ -1,0 +1,1525 @@
+ 
+cpldfit:  version P.68d                             Xilinx Inc.
+                                  Fitter Report
+Design Name: GBAPIIPlusPlus                      Date:  4-19-2015,  9:43AM
+Device Used: XC95144XL-5-TQ100
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+109/144 ( 76%) 367 /720  ( 51%) 234/432 ( 54%)   85 /144 ( 59%) 72 /81  ( 89%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+FB1          17/18       30/54       62/90      10/11
+FB2          18/18*      30/54       72/90       8/10
+FB3           9/18       30/54       29/90       9/10
+FB4          18/18*      31/54       52/90      10/10*
+FB5           2/18       28/54       26/90       9/10
+FB6          16/18       30/54       42/90       7/10
+FB7          11/18       25/54       21/90      10/10*
+FB8          18/18*      30/54       63/90       9/10
+             -----       -----       -----      -----    
+            109/144     234/432     367/720     72/81 
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Signal 'mclk' mapped onto global clock net GCK1.
+Signal 'AS' mapped onto global clock net GCK2.
+Global output enable net(s) unused.
+Signal 'reset' mapped onto global set/reset net GSR.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   22          22    |  I/O              :    65      73
+Output        :   15          15    |  GCK/IO           :     3       3
+Bidirectional :   32          32    |  GTS/IO           :     3       4
+GCK           :    2           2    |  GSR/IO           :     1       1
+GTS           :    0           0    |
+GSR           :    1           1    |
+                 ----        ----
+        Total     72          72
+
+** Power Data **
+
+There are 109 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'GBAPIIPlusPlus.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'AS' based upon the LOC
+   constraint 'P23'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+INFO:Cpld - Inferring BUFG constraint for signal 'mclk' based upon the LOC
+   constraint 'P22'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+WARNING:Cpld:936 - The output buffer 'IO<2>_OBUF' is missing an input and will
+   be deleted.
+WARNING:Cpld:936 - The output buffer 'IO<1>_OBUF' is missing an input and will
+   be deleted.
+*************************  Summary of Mapped Logic  ************************
+
+** 47 Outputs **
+
+Signal                              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                Pts   Inps          No.  Type    Use     Mode Rate State
+DA<9>                               3     5     FB1_2   11   I/O     I/O     STD  FAST 
+DA<1>                               3     5     FB1_3   12   I/O     I/O     STD  FAST 
+DA<10>                              3     5     FB1_5   13   I/O     I/O     STD  FAST 
+DA<0>                               3     5     FB1_6   14   I/O     I/O     STD  FAST 
+DA<11>                              3     5     FB1_8   15   I/O     I/O     STD  FAST 
+DA<12>                              5     6     FB1_11  17   I/O     I/O     STD  FAST 
+DA<13>                              5     6     FB1_15  20   I/O     I/O     STD  FAST 
+DA<5>                               3     5     FB2_5   1    GTS/I/O I/O     STD  FAST 
+DA<6>                               3     5     FB2_8   3    GTS/I/O I/O     STD  FAST 
+DA<4>                               3     5     FB2_9   4    GTS/I/O I/O     STD  FAST 
+DA<7>                               3     5     FB2_11  6    I/O     I/O     STD  FAST 
+DA<3>                               3     5     FB2_14  8    I/O     I/O     STD  FAST 
+DA<8>                               3     5     FB2_15  9    I/O     I/O     STD  FAST 
+DA<2>                               3     5     FB2_17  10   I/O     I/O     STD  FAST 
+DA<14>                              5     6     FB3_6   25   I/O     I/O     STD  FAST 
+DTACK                               1     2     FB3_8   27   GCK/I/O O       STD  FAST 
+DA<15>                              5     6     FB3_9   28   I/O     I/O     STD  FAST 
+DG<2>                               4     6     FB4_2   87   I/O     I/O     STD  FAST RESET
+MEMW                                4     7     FB4_5   89   I/O     O       STD  FAST RESET
+MEMR                                4     7     FB4_6   90   I/O     O       STD  FAST RESET
+IOR                                 4     7     FB4_8   91   I/O     O       STD  FAST RESET
+CLRG                                1     1     FB4_9   92   I/O     O       STD  FAST 
+BALE                                4     6     FB4_12  94   I/O     O       STD  FAST RESET
+IOW                                 4     7     FB4_14  95   I/O     O       STD  FAST RESET
+SA12                                4     6     FB4_15  96   I/O     O       STD  FAST RESET
+SA0                                 4     7     FB4_17  97   I/O     O       STD  FAST RESET
+OVR                                 1     3     FB5_17  49   I/O     O       STD  FAST 
+DG<1>                               4     6     FB6_2   74   I/O     I/O     STD  FAST RESET
+IO<3>                               3     6     FB6_5   76   I/O     O       STD  FAST RESET
+DG<5>                               4     6     FB6_9   79   I/O     I/O     STD  FAST RESET
+DG<6>                               4     6     FB6_12  81   I/O     I/O     STD  FAST RESET
+DG<7>                               4     6     FB6_14  82   I/O     I/O     STD  FAST RESET
+DG<4>                               4     6     FB6_15  85   I/O     I/O     STD  FAST RESET
+DG<3>                               4     6     FB6_17  86   I/O     I/O     STD  FAST RESET
+XRDYD                               0     0     FB7_11  56   I/O     O       STD  FAST 
+CFGOUT                              1     1     FB7_14  59   I/O     O       STD  FAST RESET
+SLAVE                               1     3     FB7_15  60   I/O     O       STD  FAST 
+MONISW                              2     6     FB7_17  61   I/O     O       STD  FAST RESET
+DG<8>                               4     6     FB8_2   63   I/O     I/O     STD  FAST RESET
+DG<9>                               4     6     FB8_5   64   I/O     I/O     STD  FAST RESET
+
+Signal                              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                Pts   Inps          No.  Type    Use     Mode Rate State
+DG<10>                              4     6     FB8_6   65   I/O     I/O     STD  FAST RESET
+DG<11>                              4     6     FB8_8   66   I/O     I/O     STD  FAST RESET
+DG<12>                              4     6     FB8_9   67   I/O     I/O     STD  FAST RESET
+DG<13>                              4     6     FB8_11  68   I/O     I/O     STD  FAST RESET
+DG<14>                              4     6     FB8_12  70   I/O     I/O     STD  FAST RESET
+DG<15>                              4     6     FB8_14  71   I/O     I/O     STD  FAST RESET
+DG<0>                               4     6     FB8_15  72   I/O     I/O     STD  FAST RESET
+
+** 62 Buried Nodes **
+
+Signal                              Total Total Loc     Pwr  Reg Init
+Name                                Pts   Inps          Mode State
+VGA_D1                              1     1     FB1_4   STD  RESET
+DA_R<9>                             4     5     FB1_7   STD  RESET
+DA_R<4>                             4     5     FB1_9   STD  RESET
+DA_R<3>                             4     5     FB1_10  STD  RESET
+DA_R<2>                             4     5     FB1_12  STD  RESET
+DA_R<1>                             4     5     FB1_13  STD  RESET
+DA_R<15>                            4     5     FB1_14  STD  RESET
+DA_R<14>                            4     5     FB1_16  STD  RESET
+DA_R<13>                            4     5     FB1_17  STD  RESET
+DA_R<12>                            4     5     FB1_18  STD  RESET
+vgaStatemachine_FSM_FFd12           2     3     FB2_1   STD  RESET
+shutUp                              4     10    FB2_2   STD  RESET
+autoconfigDone_FSM_FFd1             4     10    FB2_3   STD  RESET
+DA_R<8>                             4     5     FB2_4   STD  RESET
+DA_R<7>                             4     5     FB2_6   STD  RESET
+DA_R<6>                             4     5     FB2_7   STD  RESET
+DA_R<5>                             4     5     FB2_10  STD  RESET
+autoConfigDataOut<3>                5     10    FB2_12  STD  RESET
+autoConfigDataOut<2>                5     10    FB2_13  STD  RESET
+autoConfigDataOut<1>                7     10    FB2_16  STD  RESET
+autoConfigDataOut<0>                8     10    FB2_18  STD  RESET
+vgaStatemachine_FSM_FFd9            1     1     FB3_13  STD  RESET
+vgaStatemachine_FSM_FFd8            1     1     FB3_14  STD  RESET
+vgaStatemachine_FSM_FFd3            1     1     FB3_15  STD  RESET
+autoConfigAdrHit                    2     13    FB3_16  STD  RESET
+autoConfigAdrDSHit                  2     14    FB3_17  STD  RESET
+memAdrHit                           11    17    FB3_18  STD  RESET
+vgaStatemachine_FSM_FFd2            1     1     FB4_1   STD  RESET
+vgaStatemachine_FSM_FFd11           1     2     FB4_3   STD  RESET
+vgaStatemachine_FSM_FFd10           1     1     FB4_4   STD  RESET
+VGA_D0                              1     2     FB4_7   STD  RESET
+vgaStatemachine_FSM_FFd15           2     4     FB4_10  STD  RESET
+vgaStatemachine_FSM_FFd1            2     4     FB4_11  STD  RESET
+sigDTACK                            3     6     FB4_13  STD  RESET
+DA_R<10>                            4     5     FB4_16  STD  RESET
+DA_R<0>                             4     5     FB4_18  STD  RESET
+ioAdrHit                            25    25    FB5_3   STD  RESET
+vgaStatemachine_FSM_FFd5            1     1     FB6_4   STD  RESET
+vgaStatemachine_FSM_FFd4            1     1     FB6_6   STD  RESET
+vgaStatemachine_FSM_FFd13           1     2     FB6_7   STD  RESET
+
+Signal                              Total Total Loc     Pwr  Reg Init
+Name                                Pts   Inps          Mode State
+AC_D1                               1     1     FB6_8   STD  RESET
+AC_D0                               1     1     FB6_10  STD  RESET
+$OpTx$$OpTx$FX_DC$23_INV$264        1     2     FB6_11  STD  
+DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT  2     6     FB6_13  STD  
+vgaStatemachine_FSM_FFd14           3     5     FB6_16  STD  RESET
+DA_R<11>                            4     5     FB6_18  STD  RESET
+ds                                  1     2     FB7_8   STD  RESET
+vgaStatemachine_FSM_FFd7            2     4     FB7_9   STD  RESET
+vgaStatemachine_FSM_FFd6            2     3     FB7_10  STD  RESET
+$OpTx$FX_DC$59                      2     2     FB7_12  STD  
+memSpace<2>                         3     10    FB7_13  STD  RESET
+memSpace<1>                         3     10    FB7_16  STD  RESET
+autoconfigDone_FSM_FFd2             4     9     FB7_18  STD  RESET
+memSpace<0>                         3     10    FB8_1   STD  RESET
+ioSpace<7>                          3     10    FB8_3   STD  RESET
+ioSpace<6>                          3     10    FB8_4   STD  RESET
+ioSpace<5>                          3     10    FB8_7   STD  RESET
+ioSpace<4>                          3     10    FB8_10  STD  RESET
+ioSpace<3>                          3     10    FB8_13  STD  RESET
+ioSpace<2>                          3     10    FB8_16  STD  RESET
+ioSpace<1>                          3     10    FB8_17  STD  RESET
+ioSpace<0>                          3     10    FB8_18  STD  RESET
+
+** 25 Inputs **
+
+Signal                              Loc     Pin  Pin     Pin     
+Name                                        No.  Type    Use     
+UDS                                 FB1_9   16   I/O     I
+LDS                                 FB1_12  18   I/O     I
+mclk                                FB1_17  22   GCK/I/O GCK
+reset                               FB2_2   99   GSR/I/O GSR/I
+AS                                  FB3_2   23   GCK/I/O GCK/I
+RW                                  FB3_5   24   I/O     I
+A<23>                               FB3_11  29   I/O     I
+A<21>                               FB3_12  30   I/O     I
+A<22>                               FB3_14  32   I/O     I
+A<20>                               FB3_15  33   I/O     I
+WAIT                                FB4_11  93   I/O     I
+A<19>                               FB5_2   35   I/O     I
+A<18>                               FB5_5   36   I/O     I
+A<17>                               FB5_6   37   I/O     I
+BERR                                FB5_8   39   I/O     I
+A<16>                               FB5_9   40   I/O     I
+A<15>                               FB5_11  41   I/O     I
+A<12>                               FB5_12  42   I/O     I
+A<1>                                FB5_15  46   I/O     I
+A<2>                                FB7_2   50   I/O     I
+A<3>                                FB7_5   52   I/O     I
+A<4>                                FB7_6   53   I/O     I
+A<6>                                FB7_8   54   I/O     I
+A<5>                                FB7_9   55   I/O     I
+CFGIN                               FB7_12  58   I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X            - Signal used as input to the macrocell logic.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               30/24
+Number of signals used by logic mapping into function block:  30
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB1_1         (b)     
+DA<9>                 3       0     0   2     FB1_2   11    I/O     I/O
+DA<1>                 3       0     0   2     FB1_3   12    I/O     I/O
+VGA_D1                1       0     0   4     FB1_4         (b)     (b)
+DA<10>                3       0     0   2     FB1_5   13    I/O     I/O
+DA<0>                 3       0     0   2     FB1_6   14    I/O     I/O
+DA_R<9>               4       0     0   1     FB1_7         (b)     (b)
+DA<11>                3       0     0   2     FB1_8   15    I/O     I/O
+DA_R<4>               4       0     0   1     FB1_9   16    I/O     I
+DA_R<3>               4       0     0   1     FB1_10        (b)     (b)
+DA<12>                5       0     0   0     FB1_11  17    I/O     I/O
+DA_R<2>               4       0     0   1     FB1_12  18    I/O     I
+DA_R<1>               4       0     0   1     FB1_13        (b)     (b)
+DA_R<15>              4       0     0   1     FB1_14  19    I/O     (b)
+DA<13>                5       0     0   0     FB1_15  20    I/O     I/O
+DA_R<14>              4       0     0   1     FB1_16        (b)     (b)
+DA_R<13>              4       0     0   1     FB1_17  22    GCK/I/O GCK
+DA_R<12>              4       0     0   1     FB1_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AC_D1                               11: DA_R<2>           21: DG<3>.PIN 
+  2: DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT  12: DA_R<3>           22: DG<2>.PIN 
+  3: DA_R<0>                             13: DA_R<4>           23: DG<1>.PIN 
+  4: DA_R<10>                            14: DA_R<9>           24: RW 
+  5: DA_R<11>                            15: DG<15>.PIN        25: VGA_D0 
+  6: DA_R<12>                            16: DG<14>.PIN        26: autoConfigAdrHit 
+  7: DA_R<13>                            17: DG<13>.PIN        27: autoConfigDataOut<0> 
+  8: DA_R<14>                            18: DG<12>.PIN        28: autoConfigDataOut<1> 
+  9: DA_R<15>                            19: DG<9>.PIN         29: vgaStatemachine_FSM_FFd5 
+ 10: DA_R<1>                             20: DG<4>.PIN         30: vgaStatemachine_FSM_FFd6 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+DA<9>                XX...........X.........X.X.............. 5
+DA<1>                XX.......X.............X.X.............. 5
+VGA_D1               ........................X............... 1
+DA<10>               XX.X...................X.X.............. 5
+DA<0>                XXX....................X.X.............. 5
+DA_R<9>              .............X....X....X....XX.......... 5
+DA<11>               XX..X..................X.X.............. 5
+DA_R<4>              ............X......X...X....XX.......... 5
+DA_R<3>              ...........X........X..X....XX.......... 5
+DA<12>               XX...X.................X.XX............. 6
+DA_R<2>              ..........X..........X.X....XX.......... 5
+DA_R<1>              .........X............XX....XX.......... 5
+DA_R<15>             ........X.....X........X....XX.......... 5
+DA<13>               XX....X................X.X.X............ 6
+DA_R<14>             .......X.......X.......X....XX.......... 5
+DA_R<13>             ......X.........X......X....XX.......... 5
+DA_R<12>             .....X...........X.....X....XX.......... 5
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               30/24
+Number of signals used by logic mapping into function block:  30
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+vgaStatemachine_FSM_FFd12
+                      2       0   /\1   2     FB2_1         (b)     (b)
+shutUp                4       0     0   1     FB2_2   99    GSR/I/O GSR/I
+autoconfigDone_FSM_FFd1
+                      4       0     0   1     FB2_3         (b)     (b)
+DA_R<8>               4       0     0   1     FB2_4         (b)     (b)
+DA<5>                 3       0     0   2     FB2_5   1     GTS/I/O I/O
+DA_R<7>               4       0     0   1     FB2_6   2     GTS/I/O (b)
+DA_R<6>               4       0     0   1     FB2_7         (b)     (b)
+DA<6>                 3       0     0   2     FB2_8   3     GTS/I/O I/O
+DA<4>                 3       0     0   2     FB2_9   4     GTS/I/O I/O
+DA_R<5>               4       0     0   1     FB2_10        (b)     (b)
+DA<7>                 3       0     0   2     FB2_11  6     I/O     I/O
+autoConfigDataOut<3>
+                      5       0     0   0     FB2_12  7     I/O     (b)
+autoConfigDataOut<2>
+                      5       0     0   0     FB2_13        (b)     (b)
+DA<3>                 3       0     0   2     FB2_14  8     I/O     I/O
+DA<8>                 3       0   \/2   0     FB2_15  9     I/O     I/O
+autoConfigDataOut<1>
+                      7       2<-   0   0     FB2_16        (b)     (b)
+DA<2>                 3       0   \/2   0     FB2_17  10    I/O     I/O
+autoConfigDataOut<0>
+                      8       3<-   0   0     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AC_D1                               11: DA_R<3>           21: RW 
+  2: A<1>                                12: DA_R<4>           22: autoConfigAdrDSHit 
+  3: A<2>                                13: DA_R<5>           23: autoConfigAdrHit 
+  4: A<3>                                14: DA_R<6>           24: autoconfigDone_FSM_FFd1 
+  5: A<4>                                15: DA_R<7>           25: autoconfigDone_FSM_FFd2 
+  6: A<5>                                16: DA_R<8>           26: shutUp 
+  7: A<6>                                17: DG<8>.PIN         27: vgaStatemachine_FSM_FFd11 
+  8: reset                               18: DG<7>.PIN         28: vgaStatemachine_FSM_FFd13 
+  9: DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT  19: DG<6>.PIN         29: vgaStatemachine_FSM_FFd5 
+ 10: DA_R<2>                             20: DG<5>.PIN         30: vgaStatemachine_FSM_FFd6 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+vgaStatemachine_FSM_FFd12 
+                     ....................X.....XX............ 3
+shutUp               .XXXXXX.............XX..XX.............. 10
+autoconfigDone_FSM_FFd1 
+                     .XXXXXX.............XX.XX............... 10
+DA_R<8>              ...............XX...X.......XX.......... 5
+DA<5>                X.......X...X.......X.X................. 5
+DA_R<7>              ..............X..X..X.......XX.......... 5
+DA_R<6>              .............X....X.X.......XX.......... 5
+DA<6>                X.......X....X......X.X................. 5
+DA<4>                X.......X..X........X.X................. 5
+DA_R<5>              ............X......XX.......XX.......... 5
+DA<7>                X.......X.....X.....X.X................. 5
+autoConfigDataOut<3> 
+                     .XXXXXXX............XX..X............... 10
+autoConfigDataOut<2> 
+                     .XXXXXXX............XX..X............... 10
+DA<3>                X.......X.X.........X.X................. 5
+DA<8>                X.......X......X....X.X................. 5
+autoConfigDataOut<1> 
+                     .XXXXXXX............XX..X............... 10
+DA<2>                X.......XX..........X.X................. 5
+autoConfigDataOut<0> 
+                     .XXXXXXX............XX..X............... 10
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               30/24
+Number of signals used by logic mapping into function block:  30
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0   /\4   1     FB3_1         (b)     (b)
+(unused)              0       0     0   5     FB3_2   23    GCK/I/O GCK/I
+(unused)              0       0     0   5     FB3_3         (b)     
+(unused)              0       0     0   5     FB3_4         (b)     
+(unused)              0       0     0   5     FB3_5   24    I/O     I
+DA<14>                5       0     0   0     FB3_6   25    I/O     I/O
+(unused)              0       0     0   5     FB3_7         (b)     
+DTACK                 1       0     0   4     FB3_8   27    GCK/I/O O
+DA<15>                5       0     0   0     FB3_9   28    I/O     I/O
+(unused)              0       0     0   5     FB3_10        (b)     
+(unused)              0       0     0   5     FB3_11  29    I/O     I
+(unused)              0       0     0   5     FB3_12  30    I/O     I
+vgaStatemachine_FSM_FFd9
+                      1       0     0   4     FB3_13        (b)     (b)
+vgaStatemachine_FSM_FFd8
+                      1       0     0   4     FB3_14  32    I/O     I
+vgaStatemachine_FSM_FFd3
+                      1       0     0   4     FB3_15  33    I/O     I
+autoConfigAdrHit      2       0     0   3     FB3_16        (b)     (b)
+autoConfigAdrDSHit    2       0   \/2   1     FB3_17  34    I/O     (b)
+memAdrHit            11       6<-   0   0     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: AC_D1             11: BERR                                21: autoconfigDone_FSM_FFd2 
+  2: AS                12: CFGIN                               22: ds 
+  3: A<16>             13: DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT  23: memSpace<0> 
+  4: A<17>             14: DA_R<14>                            24: memSpace<1> 
+  5: A<18>             15: DA_R<15>                            25: memSpace<2> 
+  6: A<19>             16: RW                                  26: shutUp 
+  7: A<20>             17: autoConfigAdrHit                    27: sigDTACK 
+  8: A<21>             18: autoConfigDataOut<2>                28: vgaStatemachine_FSM_FFd10 
+  9: A<22>             19: autoConfigDataOut<3>                29: vgaStatemachine_FSM_FFd4 
+ 10: A<23>             20: autoconfigDone_FSM_FFd1             30: vgaStatemachine_FSM_FFd9 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+DA<14>               X...........XX.XXX...................... 6
+DTACK                ................X.........X............. 2
+DA<15>               X...........X.XXX.X..................... 6
+vgaStatemachine_FSM_FFd9 
+                     ...........................X............ 1
+vgaStatemachine_FSM_FFd8 
+                     .............................X.......... 1
+vgaStatemachine_FSM_FFd3 
+                     ............................X........... 1
+autoConfigAdrHit     .XXXXXXXXXXX.......XX................... 13
+autoConfigAdrDSHit   .XXXXXXXXXXX.......XXX.................. 14
+memAdrHit            .XXXXXXXXXXX.......XX.XXXX.............. 17
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               31/23
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+vgaStatemachine_FSM_FFd2
+                      1       0     0   4     FB4_1         (b)     (b)
+DG<2>                 4       0     0   1     FB4_2   87    I/O     I/O
+vgaStatemachine_FSM_FFd11
+                      1       0     0   4     FB4_3         (b)     (b)
+vgaStatemachine_FSM_FFd10
+                      1       0     0   4     FB4_4         (b)     (b)
+MEMW                  4       0     0   1     FB4_5   89    I/O     O
+MEMR                  4       0     0   1     FB4_6   90    I/O     O
+VGA_D0                1       0     0   4     FB4_7         (b)     (b)
+IOR                   4       0     0   1     FB4_8   91    I/O     O
+CLRG                  1       0     0   4     FB4_9   92    I/O     O
+vgaStatemachine_FSM_FFd15
+                      2       0     0   3     FB4_10        (b)     (b)
+vgaStatemachine_FSM_FFd1
+                      2       0     0   3     FB4_11  93    I/O     I
+BALE                  4       0     0   1     FB4_12  94    I/O     O
+sigDTACK              3       0     0   2     FB4_13        (b)     (b)
+IOW                   4       0     0   1     FB4_14  95    I/O     O
+SA12                  4       0     0   1     FB4_15  96    I/O     O
+DA_R<10>              4       0     0   1     FB4_16        (b)     (b)
+SA0                   4       0     0   1     FB4_17  97    I/O     O
+DA_R<0>               4       0     0   1     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$23_INV$264  12: DA<2>.PIN         22: vgaStatemachine_FSM_FFd1 
+  2: A<12>                         13: DG<10>.PIN        23: vgaStatemachine_FSM_FFd10 
+  3: reset                         14: DG<0>.PIN         24: vgaStatemachine_FSM_FFd12 
+  4: DA_R<0>                       15: RW                25: vgaStatemachine_FSM_FFd13 
+  5: DA_R<10>                      16: SA0               26: vgaStatemachine_FSM_FFd15 
+  6: DG<2>                         17: SA12              27: vgaStatemachine_FSM_FFd2 
+  7: IO<3>                         18: UDS               28: vgaStatemachine_FSM_FFd3 
+  8: IOR                           19: ioAdrHit          29: vgaStatemachine_FSM_FFd4 
+  9: IOW                           20: memAdrHit         30: vgaStatemachine_FSM_FFd5 
+ 10: MEMR                          21: sigDTACK          31: vgaStatemachine_FSM_FFd6 
+ 11: MEMW                         
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+vgaStatemachine_FSM_FFd2 
+                     ...........................X............ 1
+DG<2>                X....X.....X..X........X...X............ 6
+vgaStatemachine_FSM_FFd11 
+                     ..............X.........X............... 2
+vgaStatemachine_FSM_FFd10 
+                     .......................X................ 1
+MEMW                 ..........X...X...XX..X..X...X.......... 7
+MEMR                 .........X....X...XX..X..X..X........... 7
+VGA_D0               ..................XX.................... 2
+IOR                  .......X......X...XX..X..X..X........... 7
+CLRG                 ..X..................................... 1
+vgaStatemachine_FSM_FFd15 
+                     ..................XX.X...X.............. 4
+vgaStatemachine_FSM_FFd1 
+                     ..................XX.X....X............. 4
+BALE                 ......X...........XX...X.X.X............ 6
+sigDTACK             ..................XXXX...X....X......... 6
+IOW                  ........X.....X...XX..X..X...X.......... 7
+SA12                 .X..............X.XX....X..X............ 6
+DA_R<10>             ....X.......X.X..............XX......... 5
+SA0                  .X.............X.XXX....X..X............ 7
+DA_R<0>              ...X.........XX..............XX......... 5
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB5  ***********************************
+Number of function block inputs used/remaining:               28/26
+Number of signals used by logic mapping into function block:  28
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0   \/5   0     FB5_1         (b)     (b)
+(unused)              0       0   \/5   0     FB5_2   35    I/O     I
+ioAdrHit             25      20<-   0   0     FB5_3         (b)     (b)
+(unused)              0       0   /\5   0     FB5_4         (b)     (b)
+(unused)              0       0   /\5   0     FB5_5   36    I/O     I
+(unused)              0       0     0   5     FB5_6   37    I/O     I
+(unused)              0       0     0   5     FB5_7         (b)     
+(unused)              0       0     0   5     FB5_8   39    I/O     I
+(unused)              0       0     0   5     FB5_9   40    I/O     I
+(unused)              0       0     0   5     FB5_10        (b)     
+(unused)              0       0     0   5     FB5_11  41    I/O     I
+(unused)              0       0     0   5     FB5_12  42    I/O     I
+(unused)              0       0     0   5     FB5_13        (b)     
+(unused)              0       0     0   5     FB5_14  43    I/O     
+(unused)              0       0     0   5     FB5_15  46    I/O     I
+(unused)              0       0     0   5     FB5_16        (b)     
+OVR                   1       0     0   4     FB5_17  49    I/O     O
+(unused)              0       0     0   5     FB5_18        (b)     
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$59    11: BERR                     20: ioSpace<3> 
+  2: AS                12: CFGIN                    21: ioSpace<4> 
+  3: A<16>             13: autoConfigAdrHit         22: ioSpace<5> 
+  4: A<17>             14: autoconfigDone_FSM_FFd1  23: ioSpace<6> 
+  5: A<18>             15: autoconfigDone_FSM_FFd2  24: ioSpace<7> 
+  6: A<19>             16: ioAdrHit                 25: memAdrHit 
+  7: A<20>             17: ioSpace<0>               26: memSpace<0> 
+  8: A<21>             18: ioSpace<1>               27: memSpace<1> 
+  9: A<22>             19: ioSpace<2>               28: shutUp 
+ 10: A<23>            
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+ioAdrHit             XXXXXXXXXXXX.XX.XXXXXXXX.XXX............ 25
+OVR                  ............X..X........X............... 3
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB6  ***********************************
+Number of function block inputs used/remaining:               30/24
+Number of signals used by logic mapping into function block:  30
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB6_1         (b)     
+DG<1>                 4       0     0   1     FB6_2   74    I/O     I/O
+(unused)              0       0     0   5     FB6_3         (b)     
+vgaStatemachine_FSM_FFd5
+                      1       0     0   4     FB6_4         (b)     (b)
+IO<3>                 3       0     0   2     FB6_5   76    I/O     O
+vgaStatemachine_FSM_FFd4
+                      1       0     0   4     FB6_6   77    I/O     (b)
+vgaStatemachine_FSM_FFd13
+                      1       0     0   4     FB6_7         (b)     (b)
+AC_D1                 1       0     0   4     FB6_8   78    I/O     (b)
+DG<5>                 4       0     0   1     FB6_9   79    I/O     I/O
+AC_D0                 1       0     0   4     FB6_10        (b)     (b)
+$OpTx$$OpTx$FX_DC$23_INV$264
+                      1       0     0   4     FB6_11  80    I/O     (b)
+DG<6>                 4       0     0   1     FB6_12  81    I/O     I/O
+DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+                      2       0     0   3     FB6_13        (b)     (b)
+DG<7>                 4       0     0   1     FB6_14  82    I/O     I/O
+DG<4>                 4       0     0   1     FB6_15  85    I/O     I/O
+vgaStatemachine_FSM_FFd14
+                      3       0     0   2     FB6_16        (b)     (b)
+DG<3>                 4       0     0   1     FB6_17  86    I/O     I/O
+DA_R<11>              4       0     0   1     FB6_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$23_INV$264  11: IO<3>             21: autoConfigAdrHit 
+  2: AC_D0                         12: DA<7>.PIN         22: ds 
+  3: AC_D1                         13: DA<6>.PIN         23: ioAdrHit 
+  4: DA_R<11>                      14: DA<5>.PIN         24: memAdrHit 
+  5: DG<1>                         15: DA<4>.PIN         25: vgaStatemachine_FSM_FFd12 
+  6: DG<3>                         16: DA<3>.PIN         26: vgaStatemachine_FSM_FFd14 
+  7: DG<4>                         17: DA<1>.PIN         27: vgaStatemachine_FSM_FFd15 
+  8: DG<5>                         18: DG<11>.PIN        28: vgaStatemachine_FSM_FFd3 
+  9: DG<6>                         19: RW                29: vgaStatemachine_FSM_FFd5 
+ 10: DG<7>                         20: VGA_D1            30: vgaStatemachine_FSM_FFd6 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+DG<1>                X...X...........X.X.....X..X............ 6
+vgaStatemachine_FSM_FFd5 
+                     .............................X.......... 1
+IO<3>                ..........X...........XXX.XX............ 6
+vgaStatemachine_FSM_FFd4 
+                     ............................X........... 1
+vgaStatemachine_FSM_FFd13 
+                     .....................X...X.............. 2
+AC_D1                .X...................................... 1
+DG<5>                X......X.....X....X.....X..X............ 6
+AC_D0                ....................X................... 1
+$OpTx$$OpTx$FX_DC$23_INV$264 
+                     ......................XX................ 2
+DG<6>                X.......X...X.....X.....X..X............ 6
+DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT 
+                     ..X...............XXX.XX................ 6
+DG<7>                X........X.X......X.....X..X............ 6
+DG<4>                X.....X.......X...X.....X..X............ 6
+vgaStatemachine_FSM_FFd14 
+                     .....................XXX.XX............. 5
+DG<3>                X....X.........X..X.....X..X............ 6
+DA_R<11>             ...X.............XX.........XX.......... 5
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB7  ***********************************
+Number of function block inputs used/remaining:               25/29
+Number of signals used by logic mapping into function block:  25
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB7_1         (b)     
+(unused)              0       0     0   5     FB7_2   50    I/O     I
+(unused)              0       0     0   5     FB7_3         (b)     
+(unused)              0       0     0   5     FB7_4         (b)     
+(unused)              0       0     0   5     FB7_5   52    I/O     I
+(unused)              0       0     0   5     FB7_6   53    I/O     I
+(unused)              0       0     0   5     FB7_7         (b)     
+ds                    1       0     0   4     FB7_8   54    I/O     I
+vgaStatemachine_FSM_FFd7
+                      2       0     0   3     FB7_9   55    I/O     I
+vgaStatemachine_FSM_FFd6
+                      2       0     0   3     FB7_10        (b)     (b)
+XRDYD                 0       0     0   5     FB7_11  56    I/O     O
+$OpTx$FX_DC$59        2       0     0   3     FB7_12  58    I/O     I
+memSpace<2>           3       0     0   2     FB7_13        (b)     (b)
+CFGOUT                1       0     0   4     FB7_14  59    I/O     O
+SLAVE                 1       0     0   4     FB7_15  60    I/O     O
+memSpace<1>           3       0     0   2     FB7_16        (b)     (b)
+MONISW                2       0     0   3     FB7_17  61    I/O     O
+autoconfigDone_FSM_FFd2
+                      4       0     0   1     FB7_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: A<12>             10: LDS                 18: autoconfigDone_FSM_FFd1 
+  2: A<15>             11: DA<15>.PIN          19: autoconfigDone_FSM_FFd2 
+  3: A<1>              12: DA<14>.PIN          20: ioAdrHit 
+  4: A<23>             13: RW                  21: memAdrHit 
+  5: A<2>              14: UDS                 22: memSpace<2> 
+  6: A<3>              15: WAIT                23: vgaStatemachine_FSM_FFd10 
+  7: A<4>              16: autoConfigAdrDSHit  24: vgaStatemachine_FSM_FFd7 
+  8: A<5>              17: autoConfigAdrHit    25: vgaStatemachine_FSM_FFd8 
+  9: A<6>             
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+ds                   .........X...X.......................... 2
+vgaStatemachine_FSM_FFd7 
+                     ..............X....X...XX............... 4
+vgaStatemachine_FSM_FFd6 
+                     ..............X....X...X................ 3
+XRDYD                ........................................ 0
+$OpTx$FX_DC$59       ...X.................X.................. 2
+memSpace<2>          ..X.XXXXX.X.X..X..X..................... 10
+CFGOUT               .................X...................... 1
+SLAVE                ................X..XX................... 3
+memSpace<1>          ..X.XXXXX..XX..X..X..................... 10
+MONISW               XX..........XX.....X..X................. 6
+autoconfigDone_FSM_FFd2 
+                     ..X..XXXX...X..X.XX..................... 9
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB8  ***********************************
+Number of function block inputs used/remaining:               30/24
+Number of signals used by logic mapping into function block:  30
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+memSpace<0>           3       0     0   2     FB8_1         (b)     (b)
+DG<8>                 4       0     0   1     FB8_2   63    I/O     I/O
+ioSpace<7>            3       0     0   2     FB8_3         (b)     (b)
+ioSpace<6>            3       0     0   2     FB8_4         (b)     (b)
+DG<9>                 4       0     0   1     FB8_5   64    I/O     I/O
+DG<10>                4       0     0   1     FB8_6   65    I/O     I/O
+ioSpace<5>            3       0     0   2     FB8_7         (b)     (b)
+DG<11>                4       0     0   1     FB8_8   66    I/O     I/O
+DG<12>                4       0     0   1     FB8_9   67    I/O     I/O
+ioSpace<4>            3       0     0   2     FB8_10        (b)     (b)
+DG<13>                4       0     0   1     FB8_11  68    I/O     I/O
+DG<14>                4       0     0   1     FB8_12  70    I/O     I/O
+ioSpace<3>            3       0     0   2     FB8_13        (b)     (b)
+DG<15>                4       0     0   1     FB8_14  71    I/O     I/O
+DG<0>                 4       0     0   1     FB8_15  72    I/O     I/O
+ioSpace<2>            3       0     0   2     FB8_16        (b)     (b)
+ioSpace<1>            3       0     0   2     FB8_17  73    I/O     (b)
+ioSpace<0>            3       0     0   2     FB8_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$23_INV$264  11: DG<12>            21: DA<11>.PIN 
+  2: A<1>                          12: DG<13>            22: DA<10>.PIN 
+  3: A<2>                          13: DG<14>            23: DA<9>.PIN 
+  4: A<3>                          14: DG<15>            24: DA<8>.PIN 
+  5: A<4>                          15: DG<8>             25: DA<0>.PIN 
+  6: A<5>                          16: DG<9>             26: RW 
+  7: A<6>                          17: DA<15>.PIN        27: autoConfigAdrDSHit 
+  8: DG<0>                         18: DA<14>.PIN        28: autoconfigDone_FSM_FFd2 
+  9: DG<10>                        19: DA<13>.PIN        29: vgaStatemachine_FSM_FFd12 
+ 10: DG<11>                        20: DA<12>.PIN        30: vgaStatemachine_FSM_FFd3 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+memSpace<0>          .XXXXXX...........X......XXX............ 10
+DG<8>                X.............X........X.X..XX.......... 6
+ioSpace<7>           .XXXXXX.........X........XXX............ 10
+ioSpace<6>           .XXXXXX..........X.......XXX............ 10
+DG<9>                X..............X......X..X..XX.......... 6
+DG<10>               X.......X............X...X..XX.......... 6
+ioSpace<5>           .XXXXXX...........X......XXX............ 10
+DG<11>               X........X..........X....X..XX.......... 6
+DG<12>               X.........X........X.....X..XX.......... 6
+ioSpace<4>           .XXXXXX............X.....XXX............ 10
+DG<13>               X..........X......X......X..XX.......... 6
+DG<14>               X...........X....X.......X..XX.......... 6
+ioSpace<3>           .XXXXXX.............X....XXX............ 10
+DG<15>               X............X..X........X..XX.......... 6
+DG<0>                X......X................XX..XX.......... 6
+ioSpace<2>           .XXXXXX..............X...XXX............ 10
+ioSpace<1>           .XXXXXX...............X..XXX............ 10
+ioSpace<0>           .XXXXXX................X.XXX............ 10
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+$OpTx$$OpTx$FX_DC$23_INV$264 <= (NOT ioAdrHit AND NOT memAdrHit);
+
+
+$OpTx$FX_DC$59 <= NOT (A(23)
+	 XOR 
+$OpTx$FX_DC$59 <= NOT (memSpace(2));
+
+FDCPE_AC_D0: FDCPE port map (AC_D0,autoConfigAdrHit,mclk,NOT reset,'0');
+
+FDCPE_AC_D1: FDCPE port map (AC_D1,AC_D0,mclk,NOT reset,'0');
+
+FDCPE_BALE: FDCPE port map (BALE,BALE_D,mclk,'0',NOT reset);
+BALE_D <= ((vgaStatemachine_FSM_FFd3)
+	OR (IO(3) AND vgaStatemachine_FSM_FFd15)
+	OR (IO(3) AND NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND NOT memAdrHit));
+
+FDCPE_CFGOUT: FDCPE port map (CFGOUT,NOT autoconfigDone_FSM_FFd1,AS,'0',NOT reset);
+
+
+CLRG <= reset;
+
+
+DA_I(0) <= NOT (((NOT RW AND NOT DA_R(0))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND NOT DA_R(0))));
+DA(0) <= DA_I(0) when DA_OE(0) = '1' else 'Z';
+DA_OE(0) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(1) <= ((NOT RW AND DA_R(1))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(1)));
+DA(1) <= DA_I(1) when DA_OE(1) = '1' else 'Z';
+DA_OE(1) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(2) <= ((NOT RW AND DA_R(2))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(2)));
+DA(2) <= DA_I(2) when DA_OE(2) = '1' else 'Z';
+DA_OE(2) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(3) <= ((NOT RW AND DA_R(3))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(3)));
+DA(3) <= DA_I(3) when DA_OE(3) = '1' else 'Z';
+DA_OE(3) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(4) <= ((NOT RW AND DA_R(4))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(4)));
+DA(4) <= DA_I(4) when DA_OE(4) = '1' else 'Z';
+DA_OE(4) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(5) <= ((NOT RW AND DA_R(5))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(5)));
+DA(5) <= DA_I(5) when DA_OE(5) = '1' else 'Z';
+DA_OE(5) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(6) <= ((NOT RW AND DA_R(6))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(6)));
+DA(6) <= DA_I(6) when DA_OE(6) = '1' else 'Z';
+DA_OE(6) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(7) <= ((NOT RW AND DA_R(7))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(7)));
+DA(7) <= DA_I(7) when DA_OE(7) = '1' else 'Z';
+DA_OE(7) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(8) <= ((NOT RW AND DA_R(8))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(8)));
+DA(8) <= DA_I(8) when DA_OE(8) = '1' else 'Z';
+DA_OE(8) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(9) <= ((NOT RW AND DA_R(9))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(9)));
+DA(9) <= DA_I(9) when DA_OE(9) = '1' else 'Z';
+DA_OE(9) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(10) <= ((NOT RW AND DA_R(10))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(10)));
+DA(10) <= DA_I(10) when DA_OE(10) = '1' else 'Z';
+DA_OE(10) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(11) <= ((NOT RW AND DA_R(11))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(11)));
+DA(11) <= DA_I(11) when DA_OE(11) = '1' else 'Z';
+DA_OE(11) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(12) <= ((NOT RW AND DA_R(12))
+	OR (RW AND autoConfigAdrHit AND autoConfigDataOut(0))
+	OR (RW AND AC_D1 AND autoConfigDataOut(0))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(12)));
+DA(12) <= DA_I(12) when DA_OE(12) = '1' else 'Z';
+DA_OE(12) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(13) <= ((NOT RW AND DA_R(13))
+	OR (RW AND autoConfigAdrHit AND autoConfigDataOut(1))
+	OR (RW AND AC_D1 AND autoConfigDataOut(1))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(13)));
+DA(13) <= DA_I(13) when DA_OE(13) = '1' else 'Z';
+DA_OE(13) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(14) <= ((NOT RW AND DA_R(14))
+	OR (RW AND autoConfigAdrHit AND autoConfigDataOut(2))
+	OR (RW AND AC_D1 AND autoConfigDataOut(2))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(14)));
+DA(14) <= DA_I(14) when DA_OE(14) = '1' else 'Z';
+DA_OE(14) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_I(15) <= ((NOT RW AND DA_R(15))
+	OR (RW AND autoConfigAdrHit AND autoConfigDataOut(3))
+	OR (RW AND AC_D1 AND autoConfigDataOut(3))
+	OR (NOT autoConfigAdrHit AND NOT AC_D1 AND DA_R(15)));
+DA(15) <= DA_I(15) when DA_OE(15) = '1' else 'Z';
+DA_OE(15) <= NOT DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+
+DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT <= ((NOT RW)
+	OR (NOT ioAdrHit AND NOT memAdrHit AND NOT autoConfigAdrHit AND NOT AC_D1 AND 
+	NOT VGA_D1));
+
+FDCPE_DA_R0: FDCPE port map (DA_R(0),DA_R_D(0),mclk,'0',NOT reset);
+DA_R_D(0) <= ((NOT RW AND DA_R(0))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(0).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(0).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(0)));
+
+FDCPE_DA_R1: FDCPE port map (DA_R(1),DA_R_D(1),mclk,NOT reset,'0');
+DA_R_D(1) <= ((NOT RW AND DA_R(1))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(1).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(1).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(1)));
+
+FDCPE_DA_R2: FDCPE port map (DA_R(2),DA_R_D(2),mclk,NOT reset,'0');
+DA_R_D(2) <= ((NOT RW AND DA_R(2))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(2).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(2).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(2)));
+
+FDCPE_DA_R3: FDCPE port map (DA_R(3),DA_R_D(3),mclk,NOT reset,'0');
+DA_R_D(3) <= ((NOT RW AND DA_R(3))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(3).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(3).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(3)));
+
+FDCPE_DA_R4: FDCPE port map (DA_R(4),DA_R_D(4),mclk,NOT reset,'0');
+DA_R_D(4) <= ((NOT RW AND DA_R(4))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(4).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(4).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(4)));
+
+FDCPE_DA_R5: FDCPE port map (DA_R(5),DA_R_D(5),mclk,NOT reset,'0');
+DA_R_D(5) <= ((NOT RW AND DA_R(5))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(5).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(5).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(5)));
+
+FDCPE_DA_R6: FDCPE port map (DA_R(6),DA_R_D(6),mclk,NOT reset,'0');
+DA_R_D(6) <= ((NOT RW AND DA_R(6))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(6).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(6).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(6)));
+
+FDCPE_DA_R7: FDCPE port map (DA_R(7),DA_R_D(7),mclk,NOT reset,'0');
+DA_R_D(7) <= ((NOT RW AND DA_R(7))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(7).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(7).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(7)));
+
+FDCPE_DA_R8: FDCPE port map (DA_R(8),DA_R_D(8),mclk,NOT reset,'0');
+DA_R_D(8) <= ((NOT RW AND DA_R(8))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(8).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(8).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(8)));
+
+FDCPE_DA_R9: FDCPE port map (DA_R(9),DA_R_D(9),mclk,NOT reset,'0');
+DA_R_D(9) <= ((NOT RW AND DA_R(9))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(9).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(9).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(9)));
+
+FDCPE_DA_R10: FDCPE port map (DA_R(10),DA_R_D(10),mclk,NOT reset,'0');
+DA_R_D(10) <= ((NOT RW AND DA_R(10))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(10).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(10).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(10)));
+
+FDCPE_DA_R11: FDCPE port map (DA_R(11),DA_R_D(11),mclk,NOT reset,'0');
+DA_R_D(11) <= ((NOT RW AND DA_R(11))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(11).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(11).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(11)));
+
+FDCPE_DA_R12: FDCPE port map (DA_R(12),DA_R_D(12),mclk,NOT reset,'0');
+DA_R_D(12) <= ((NOT RW AND DA_R(12))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(12).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(12).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(12)));
+
+FDCPE_DA_R13: FDCPE port map (DA_R(13),DA_R_D(13),mclk,NOT reset,'0');
+DA_R_D(13) <= ((NOT RW AND DA_R(13))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(13).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(13).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(13)));
+
+FDCPE_DA_R14: FDCPE port map (DA_R(14),DA_R_D(14),mclk,NOT reset,'0');
+DA_R_D(14) <= ((NOT RW AND DA_R(14))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(14).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(14).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(14)));
+
+FDCPE_DA_R15: FDCPE port map (DA_R(15),DA_R_D(15),mclk,NOT reset,'0');
+DA_R_D(15) <= ((NOT RW AND DA_R(15))
+	OR (RW AND vgaStatemachine_FSM_FFd5 AND DG(15).PIN)
+	OR (RW AND vgaStatemachine_FSM_FFd6 AND DG(15).PIN)
+	OR (NOT vgaStatemachine_FSM_FFd5 AND 
+	NOT vgaStatemachine_FSM_FFd6 AND DA_R(15)));
+
+FDCPE_DG0: FDCPE port map (DG_I(0),DG(0),mclk,'0',NOT reset);
+DG(0) <= ((NOT DG(0) AND RW AND NOT vgaStatemachine_FSM_FFd3)
+	OR (NOT DG(0) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND NOT vgaStatemachine_FSM_FFd3 AND 
+	vgaStatemachine_FSM_FFd12 AND NOT DA(0).PIN));
+DG(0) <= DG_I(0) when DG_OE(0) = '1' else 'Z';
+DG_OE(0) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG1: FDCPE port map (DG_I(1),DG(1),mclk,NOT reset,'0');
+DG(1) <= ((DG(1) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(1) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd12 AND DA(1).PIN));
+DG(1) <= DG_I(1) when DG_OE(1) = '1' else 'Z';
+DG_OE(1) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG2: FDCPE port map (DG_I(2),DG(2),mclk,NOT reset,'0');
+DG(2) <= ((DG(2) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(2) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd12 AND DA(2).PIN));
+DG(2) <= DG_I(2) when DG_OE(2) = '1' else 'Z';
+DG_OE(2) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG3: FDCPE port map (DG_I(3),DG(3),mclk,NOT reset,'0');
+DG(3) <= ((DG(3) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(3) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd12 AND DA(3).PIN));
+DG(3) <= DG_I(3) when DG_OE(3) = '1' else 'Z';
+DG_OE(3) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG4: FDCPE port map (DG_I(4),DG(4),mclk,NOT reset,'0');
+DG(4) <= ((DG(4) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(4) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd12 AND DA(4).PIN));
+DG(4) <= DG_I(4) when DG_OE(4) = '1' else 'Z';
+DG_OE(4) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG5: FDCPE port map (DG_I(5),DG(5),mclk,NOT reset,'0');
+DG(5) <= ((DG(5) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(5) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd12 AND DA(5).PIN));
+DG(5) <= DG_I(5) when DG_OE(5) = '1' else 'Z';
+DG_OE(5) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG6: FDCPE port map (DG_I(6),DG(6),mclk,NOT reset,'0');
+DG(6) <= ((DG(6) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(6) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd12 AND DA(6).PIN));
+DG(6) <= DG_I(6) when DG_OE(6) = '1' else 'Z';
+DG_OE(6) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG7: FDCPE port map (DG_I(7),DG(7),mclk,NOT reset,'0');
+DG(7) <= ((DG(7) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(7) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd12 AND DA(7).PIN));
+DG(7) <= DG_I(7) when DG_OE(7) = '1' else 'Z';
+DG_OE(7) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG8: FDCPE port map (DG_I(8),DG(8),mclk,NOT reset,'0');
+DG(8) <= ((DG(8) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(8) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(8).PIN AND vgaStatemachine_FSM_FFd12));
+DG(8) <= DG_I(8) when DG_OE(8) = '1' else 'Z';
+DG_OE(8) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG9: FDCPE port map (DG_I(9),DG(9),mclk,NOT reset,'0');
+DG(9) <= ((DG(9) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(9) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(9).PIN AND vgaStatemachine_FSM_FFd12));
+DG(9) <= DG_I(9) when DG_OE(9) = '1' else 'Z';
+DG_OE(9) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG10: FDCPE port map (DG_I(10),DG(10),mclk,NOT reset,'0');
+DG(10) <= ((DG(10) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(10) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(10).PIN AND vgaStatemachine_FSM_FFd12));
+DG(10) <= DG_I(10) when DG_OE(10) = '1' else 'Z';
+DG_OE(10) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG11: FDCPE port map (DG_I(11),DG(11),mclk,NOT reset,'0');
+DG(11) <= ((DG(11) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(11) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(11).PIN AND vgaStatemachine_FSM_FFd12));
+DG(11) <= DG_I(11) when DG_OE(11) = '1' else 'Z';
+DG_OE(11) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG12: FDCPE port map (DG_I(12),DG(12),mclk,NOT reset,'0');
+DG(12) <= ((DG(12) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(12) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(12).PIN AND vgaStatemachine_FSM_FFd12));
+DG(12) <= DG_I(12) when DG_OE(12) = '1' else 'Z';
+DG_OE(12) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG13: FDCPE port map (DG_I(13),DG(13),mclk,NOT reset,'0');
+DG(13) <= ((DG(13) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(13) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(13).PIN AND vgaStatemachine_FSM_FFd12));
+DG(13) <= DG_I(13) when DG_OE(13) = '1' else 'Z';
+DG_OE(13) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG14: FDCPE port map (DG_I(14),DG(14),mclk,NOT reset,'0');
+DG(14) <= ((DG(14) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(14) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(14).PIN AND vgaStatemachine_FSM_FFd12));
+DG(14) <= DG_I(14) when DG_OE(14) = '1' else 'Z';
+DG_OE(14) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+FDCPE_DG15: FDCPE port map (DG_I(15),DG(15),mclk,NOT reset,'0');
+DG(15) <= ((DG(15) AND RW AND vgaStatemachine_FSM_FFd12)
+	OR (DG(15) AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd12)
+	OR (NOT RW AND DA(15).PIN AND vgaStatemachine_FSM_FFd12));
+DG(15) <= DG_I(15) when DG_OE(15) = '1' else 'Z';
+DG_OE(15) <= (NOT RW AND NOT $OpTx$$OpTx$FX_DC$23_INV$264);
+
+
+DTACK_I <= '0';
+DTACK <= DTACK_I when DTACK_OE = '1' else 'Z';
+DTACK_OE <= NOT ((NOT autoConfigAdrHit AND sigDTACK));
+
+
+
+
+
+
+
+
+
+
+
+FTCPE_IO3: FTCPE port map (IO(3),IO_T(3),mclk,'0',NOT reset);
+IO_T(3) <= ((NOT IO(3) AND vgaStatemachine_FSM_FFd3)
+	OR (IO(3) AND NOT vgaStatemachine_FSM_FFd15 AND 
+	NOT vgaStatemachine_FSM_FFd3 AND vgaStatemachine_FSM_FFd12)
+	OR (NOT IO(3) AND NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND 
+	NOT memAdrHit));
+
+FTCPE_IOR: FTCPE port map (IOR,IOR_T,mclk,'0',NOT reset);
+IOR_T <= ((NOT IOR AND vgaStatemachine_FSM_FFd4)
+	OR (RW AND NOT IOR AND NOT ioAdrHit AND vgaStatemachine_FSM_FFd10)
+	OR (NOT IOR AND NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND 
+	NOT memAdrHit)
+	OR (RW AND IOR AND ioAdrHit AND NOT vgaStatemachine_FSM_FFd15 AND 
+	vgaStatemachine_FSM_FFd10 AND NOT vgaStatemachine_FSM_FFd4));
+
+FTCPE_IOW: FTCPE port map (IOW,IOW_T,mclk,'0',NOT reset);
+IOW_T <= ((NOT IOW AND vgaStatemachine_FSM_FFd5)
+	OR (NOT RW AND NOT IOW AND NOT ioAdrHit AND vgaStatemachine_FSM_FFd10)
+	OR (NOT IOW AND NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND 
+	NOT memAdrHit)
+	OR (NOT RW AND IOW AND ioAdrHit AND NOT vgaStatemachine_FSM_FFd15 AND 
+	vgaStatemachine_FSM_FFd10 AND NOT vgaStatemachine_FSM_FFd5));
+
+FTCPE_MEMR: FTCPE port map (MEMR,MEMR_T,mclk,'0',NOT reset);
+MEMR_T <= ((NOT MEMR AND vgaStatemachine_FSM_FFd4)
+	OR (RW AND NOT MEMR AND NOT memAdrHit AND 
+	vgaStatemachine_FSM_FFd10)
+	OR (NOT MEMR AND NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND 
+	NOT memAdrHit)
+	OR (RW AND MEMR AND NOT vgaStatemachine_FSM_FFd15 AND 
+	memAdrHit AND vgaStatemachine_FSM_FFd10 AND 
+	NOT vgaStatemachine_FSM_FFd4));
+
+FTCPE_MEMW: FTCPE port map (MEMW,MEMW_T,mclk,'0',NOT reset);
+MEMW_T <= ((NOT MEMW AND vgaStatemachine_FSM_FFd5)
+	OR (NOT RW AND NOT MEMW AND NOT memAdrHit AND 
+	vgaStatemachine_FSM_FFd10)
+	OR (NOT MEMW AND NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND 
+	NOT memAdrHit)
+	OR (NOT RW AND MEMW AND NOT vgaStatemachine_FSM_FFd15 AND 
+	memAdrHit AND vgaStatemachine_FSM_FFd10 AND 
+	NOT vgaStatemachine_FSM_FFd5));
+
+FDCPE_MONISW: FDCPE port map (MONISW,A(12),mclk,'0',NOT reset,MONISW_CE);
+MONISW_CE <= (NOT RW AND ioAdrHit AND vgaStatemachine_FSM_FFd10 AND NOT UDS AND 
+	A(15));
+
+
+OVR_I <= '0';
+OVR <= OVR_I when OVR_OE = '1' else 'Z';
+OVR_OE <= NOT ((NOT ioAdrHit AND NOT memAdrHit AND NOT autoConfigAdrHit));
+
+FDCPE_SA0: FDCPE port map (SA0,SA0_D,mclk,'0',NOT reset);
+SA0_D <= ((NOT SA0 AND NOT vgaStatemachine_FSM_FFd3 AND 
+	NOT vgaStatemachine_FSM_FFd13)
+	OR (NOT SA0 AND NOT ioAdrHit AND NOT memAdrHit AND 
+	NOT vgaStatemachine_FSM_FFd3)
+	OR (memAdrHit AND NOT vgaStatemachine_FSM_FFd3 AND 
+	vgaStatemachine_FSM_FFd13 AND NOT UDS)
+	OR (NOT A(12) AND ioAdrHit AND NOT vgaStatemachine_FSM_FFd3 AND 
+	vgaStatemachine_FSM_FFd13 AND NOT UDS));
+
+FDCPE_SA12: FDCPE port map (SA12,SA12_D,mclk,'0',NOT reset);
+SA12_D <= ((vgaStatemachine_FSM_FFd3)
+	OR (SA12 AND NOT vgaStatemachine_FSM_FFd13)
+	OR (A(12) AND memAdrHit AND vgaStatemachine_FSM_FFd13)
+	OR (SA12 AND NOT ioAdrHit AND NOT memAdrHit));
+
+
+SLAVE <= (NOT ioAdrHit AND NOT memAdrHit AND NOT autoConfigAdrHit);
+
+FDCPE_VGA_D0: FDCPE port map (VGA_D0,VGA_D0_D,mclk,NOT reset,'0');
+VGA_D0_D <= (NOT ioAdrHit AND NOT memAdrHit);
+
+FDCPE_VGA_D1: FDCPE port map (VGA_D1,VGA_D0,mclk,NOT reset,'0');
+
+
+XRDYD_I <= '0';
+XRDYD <= XRDYD_I when XRDYD_OE = '1' else 'Z';
+XRDYD_OE <= '0';
+
+FDCPE_autoConfigAdrDSHit: FDCPE port map (autoConfigAdrDSHit,autoConfigAdrDSHit_D,mclk,NOT reset,'0');
+autoConfigAdrDSHit_D <= ((NOT autoconfigDone_FSM_FFd2 AND ds AND BERR AND NOT AS AND 
+	NOT A(18) AND NOT A(17) AND NOT A(16) AND A(22) AND NOT A(20) AND A(23) AND A(19) AND 
+	A(21) AND NOT CFGIN)
+	OR (NOT autoconfigDone_FSM_FFd1 AND ds AND BERR AND NOT AS AND 
+	NOT A(18) AND NOT A(17) AND NOT A(16) AND A(22) AND NOT A(20) AND A(23) AND A(19) AND 
+	A(21) AND NOT CFGIN));
+
+FDCPE_autoConfigAdrHit: FDCPE port map (autoConfigAdrHit,autoConfigAdrHit_D,mclk,NOT reset,'0');
+autoConfigAdrHit_D <= ((NOT autoconfigDone_FSM_FFd2 AND BERR AND NOT AS AND NOT A(18) AND 
+	NOT A(17) AND NOT A(16) AND A(22) AND NOT A(20) AND A(23) AND A(19) AND A(21) AND 
+	NOT CFGIN)
+	OR (NOT autoconfigDone_FSM_FFd1 AND BERR AND NOT AS AND NOT A(18) AND 
+	NOT A(17) AND NOT A(16) AND A(22) AND NOT A(20) AND A(23) AND A(19) AND A(21) AND 
+	NOT CFGIN));
+
+FDCPE_autoConfigDataOut0: FDCPE port map (autoConfigDataOut(0),autoConfigDataOut_D(0),autoConfigAdrDSHit,'0','0',autoConfigDataOut_CE(0));
+autoConfigDataOut_D(0) <= ((NOT autoconfigDone_FSM_FFd2 AND NOT A(2) AND NOT A(3) AND NOT A(4) AND 
+	NOT A(5))
+	OR (autoconfigDone_FSM_FFd2 AND A(2) AND NOT A(3) AND NOT A(6) AND 
+	NOT A(5))
+	OR (A(2) AND NOT A(3) AND NOT A(6) AND NOT A(1) AND NOT A(5))
+	OR (A(2) AND NOT A(6) AND A(4) AND A(1) AND NOT A(5))
+	OR (NOT A(2) AND NOT A(3) AND A(6) AND NOT A(4) AND NOT A(5))
+	OR (NOT A(3) AND NOT A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5)));
+autoConfigDataOut_CE(0) <= (reset AND RW);
+
+FDCPE_autoConfigDataOut1: FDCPE port map (autoConfigDataOut(1),autoConfigDataOut_D(1),autoConfigAdrDSHit,'0','0',autoConfigDataOut_CE(1));
+autoConfigDataOut_D(1) <= ((NOT A(2) AND NOT A(3) AND A(6) AND NOT A(4) AND NOT A(5))
+	OR (NOT A(2) AND NOT A(3) AND NOT A(4) AND NOT A(1) AND NOT A(5))
+	OR (autoconfigDone_FSM_FFd2 AND NOT A(2) AND NOT A(3) AND NOT A(4) AND 
+	NOT A(5))
+	OR (A(2) AND NOT A(3) AND NOT A(6) AND A(4) AND NOT A(5))
+	OR (A(2) AND NOT A(6) AND A(4) AND A(1) AND NOT A(5)));
+autoConfigDataOut_CE(1) <= (reset AND RW);
+
+FDCPE_autoConfigDataOut2: FDCPE port map (autoConfigDataOut(2),autoConfigDataOut_D(2),autoConfigAdrDSHit,'0','0',autoConfigDataOut_CE(2));
+autoConfigDataOut_D(2) <= ((A(2) AND NOT A(3) AND NOT A(6) AND A(4) AND NOT A(5))
+	OR (NOT A(2) AND NOT A(3) AND A(6) AND NOT A(4) AND NOT A(5))
+	OR (autoconfigDone_FSM_FFd2 AND NOT A(2) AND NOT A(3) AND NOT A(4) AND 
+	A(1) AND NOT A(5)));
+autoConfigDataOut_CE(2) <= (reset AND RW);
+
+FDCPE_autoConfigDataOut3: FDCPE port map (autoConfigDataOut(3),autoConfigDataOut_D(3),autoConfigAdrDSHit,'0','0',autoConfigDataOut_CE(3));
+autoConfigDataOut_D(3) <= ((NOT A(2) AND NOT A(3) AND A(6) AND NOT A(4) AND NOT A(5))
+	OR (autoconfigDone_FSM_FFd2 AND NOT A(2) AND NOT A(3) AND NOT A(6) AND 
+	A(1) AND NOT A(5))
+	OR (NOT A(2) AND NOT A(3) AND NOT A(6) AND A(4) AND A(1) AND NOT A(5)));
+autoConfigDataOut_CE(3) <= (reset AND RW);
+
+FTCPE_autoconfigDone_FSM_FFd1: FTCPE port map (autoconfigDone_FSM_FFd1,autoconfigDone_FSM_FFd1_T,autoConfigAdrDSHit,NOT reset,'0',NOT RW);
+autoconfigDone_FSM_FFd1_T <= ((autoconfigDone_FSM_FFd2 AND NOT autoconfigDone_FSM_FFd1 AND 
+	A(3) AND A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5))
+	OR (NOT autoconfigDone_FSM_FFd1 AND A(2) AND A(3) AND A(6) AND 
+	NOT A(4) AND NOT A(1) AND NOT A(5)));
+
+FTCPE_autoconfigDone_FSM_FFd2: FTCPE port map (autoconfigDone_FSM_FFd2,autoconfigDone_FSM_FFd2_T,autoConfigAdrDSHit,NOT reset,'0',NOT RW);
+autoconfigDone_FSM_FFd2_T <= ((NOT autoconfigDone_FSM_FFd2 AND autoconfigDone_FSM_FFd1)
+	OR (NOT autoconfigDone_FSM_FFd2 AND A(3) AND A(6) AND NOT A(4) AND 
+	NOT A(1) AND NOT A(5)));
+
+FDCPE_ds: FDCPE port map (ds,ds_D,mclk,NOT reset,'0');
+ds_D <= (UDS AND LDS);
+
+FDCPE_ioAdrHit: FDCPE port map (ioAdrHit,ioAdrHit_D,mclk,NOT reset,'0');
+ioAdrHit_D <= ((shutUp)
+	OR (NOT BERR)
+	OR (AS)
+	OR (EXP11_.EXP)
+	OR (ioSpace(1) AND NOT A(17))
+	OR (NOT ioSpace(1) AND A(17))
+	OR (ioSpace(2) AND NOT A(18))
+	OR (NOT ioSpace(2) AND A(18))
+	OR (ioSpace(3) AND NOT A(19))
+	OR (EXP14_.EXP)
+	OR (NOT ioSpace(3) AND A(19))
+	OR (ioSpace(4) AND NOT A(20))
+	OR (NOT ioSpace(4) AND A(20))
+	OR (ioSpace(7) AND NOT A(23))
+	OR (NOT ioSpace(7) AND A(23))
+	OR (ioSpace(0) AND NOT A(16))
+	OR (NOT ioSpace(0) AND A(16)));
+
+FDCPE_ioSpace0: FDCPE port map (ioSpace(0),DA(8).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(0));
+ioSpace_CE(0) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_ioSpace1: FDCPE port map (ioSpace(1),DA(9).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(1));
+ioSpace_CE(1) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_ioSpace2: FDCPE port map (ioSpace(2),DA(10).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(2));
+ioSpace_CE(2) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_ioSpace3: FDCPE port map (ioSpace(3),DA(11).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(3));
+ioSpace_CE(3) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_ioSpace4: FDCPE port map (ioSpace(4),DA(12).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(4));
+ioSpace_CE(4) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_ioSpace5: FDCPE port map (ioSpace(5),DA(13).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(5));
+ioSpace_CE(5) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_ioSpace6: FDCPE port map (ioSpace(6),DA(14).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(6));
+ioSpace_CE(6) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_ioSpace7: FDCPE port map (ioSpace(7),DA(15).PIN,autoConfigAdrDSHit,'0',NOT reset,ioSpace_CE(7));
+ioSpace_CE(7) <= (NOT RW AND autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_memAdrHit: FDCPE port map (memAdrHit,memAdrHit_D,mclk,NOT reset,'0');
+memAdrHit_D <= ((shutUp)
+	OR (NOT BERR)
+	OR (AS)
+	OR (memSpace(2) AND NOT A(23))
+	OR (NOT memSpace(2) AND A(23))
+	OR (NOT autoconfigDone_FSM_FFd2 AND NOT A(18) AND NOT A(17) AND NOT A(16) AND 
+	A(22) AND NOT A(20) AND A(23) AND A(19) AND A(21) AND NOT CFGIN)
+	OR (NOT autoconfigDone_FSM_FFd1 AND NOT A(18) AND NOT A(17) AND NOT A(16) AND 
+	A(22) AND NOT A(20) AND A(23) AND A(19) AND A(21) AND NOT CFGIN)
+	OR (memSpace(1) AND NOT A(22))
+	OR (NOT memSpace(1) AND A(22))
+	OR (memSpace(0) AND NOT A(21))
+	OR (NOT memSpace(0) AND A(21)));
+
+FDCPE_memSpace0: FDCPE port map (memSpace(0),DA(13).PIN,autoConfigAdrDSHit,'0',NOT reset,memSpace_CE(0));
+memSpace_CE(0) <= (NOT RW AND NOT autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_memSpace1: FDCPE port map (memSpace(1),DA(14).PIN,autoConfigAdrDSHit,'0',NOT reset,memSpace_CE(1));
+memSpace_CE(1) <= (NOT RW AND NOT autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FDCPE_memSpace2: FDCPE port map (memSpace(2),DA(15).PIN,autoConfigAdrDSHit,'0',NOT reset,memSpace_CE(2));
+memSpace_CE(2) <= (NOT RW AND NOT autoconfigDone_FSM_FFd2 AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5));
+
+FTCPE_shutUp: FTCPE port map (shutUp,shutUp_T,autoConfigAdrDSHit,'0',NOT reset,NOT RW);
+shutUp_T <= ((NOT shutUp AND A(2) AND A(3) AND A(6) AND NOT A(4) AND NOT A(1) AND 
+	NOT A(5))
+	OR (autoconfigDone_FSM_FFd2 AND shutUp AND NOT A(2) AND A(3) AND 
+	A(6) AND NOT A(4) AND NOT A(1) AND NOT A(5)));
+
+FTCPE_sigDTACK: FTCPE port map (sigDTACK,sigDTACK_T,mclk,'0',NOT reset);
+sigDTACK_T <= ((NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND NOT memAdrHit AND 
+	NOT sigDTACK)
+	OR (NOT ioAdrHit AND NOT memAdrHit AND NOT sigDTACK AND 
+	vgaStatemachine_FSM_FFd1)
+	OR (NOT vgaStatemachine_FSM_FFd15 AND 
+	vgaStatemachine_FSM_FFd6 AND sigDTACK AND NOT vgaStatemachine_FSM_FFd1));
+
+FDCPE_vgaStatemachine_FSM_FFd1: FDCPE port map (vgaStatemachine_FSM_FFd1,vgaStatemachine_FSM_FFd1_D,mclk,NOT reset,'0');
+vgaStatemachine_FSM_FFd1_D <= ((NOT vgaStatemachine_FSM_FFd1 AND 
+	NOT vgaStatemachine_FSM_FFd2)
+	OR (NOT ioAdrHit AND NOT memAdrHit AND NOT vgaStatemachine_FSM_FFd2));
+
+FDCPE_vgaStatemachine_FSM_FFd10: FDCPE port map (vgaStatemachine_FSM_FFd10,vgaStatemachine_FSM_FFd12,mclk,NOT reset,'0');
+
+FDCPE_vgaStatemachine_FSM_FFd11: FDCPE port map (vgaStatemachine_FSM_FFd11,vgaStatemachine_FSM_FFd11_D,mclk,NOT reset,'0');
+vgaStatemachine_FSM_FFd11_D <= (RW AND vgaStatemachine_FSM_FFd13);
+
+FDCPE_vgaStatemachine_FSM_FFd12: FDCPE port map (vgaStatemachine_FSM_FFd12,vgaStatemachine_FSM_FFd12_D,mclk,NOT reset,'0');
+vgaStatemachine_FSM_FFd12_D <= ((vgaStatemachine_FSM_FFd11)
+	OR (NOT RW AND vgaStatemachine_FSM_FFd13));
+
+FDCPE_vgaStatemachine_FSM_FFd13: FDCPE port map (vgaStatemachine_FSM_FFd13,vgaStatemachine_FSM_FFd13_D,mclk,NOT reset,'0');
+vgaStatemachine_FSM_FFd13_D <= (ds AND vgaStatemachine_FSM_FFd14);
+
+FDCPE_vgaStatemachine_FSM_FFd14: FDCPE port map (vgaStatemachine_FSM_FFd14,vgaStatemachine_FSM_FFd14_D,mclk,NOT reset,'0');
+vgaStatemachine_FSM_FFd14_D <= ((ioAdrHit AND vgaStatemachine_FSM_FFd15)
+	OR (vgaStatemachine_FSM_FFd15 AND memAdrHit)
+	OR (NOT ds AND vgaStatemachine_FSM_FFd14));
+
+FDCPE_vgaStatemachine_FSM_FFd15: FDCPE port map (vgaStatemachine_FSM_FFd15,vgaStatemachine_FSM_FFd15_D,mclk,'0',NOT reset);
+vgaStatemachine_FSM_FFd15_D <= ((NOT ioAdrHit AND vgaStatemachine_FSM_FFd15 AND NOT memAdrHit)
+	OR (NOT ioAdrHit AND NOT memAdrHit AND vgaStatemachine_FSM_FFd1));
+
+FDCPE_vgaStatemachine_FSM_FFd2: FDCPE port map (vgaStatemachine_FSM_FFd2,vgaStatemachine_FSM_FFd3,mclk,NOT reset,'0');
+
+FDCPE_vgaStatemachine_FSM_FFd3: FDCPE port map (vgaStatemachine_FSM_FFd3,vgaStatemachine_FSM_FFd4,mclk,NOT reset,'0');
+
+FDCPE_vgaStatemachine_FSM_FFd4: FDCPE port map (vgaStatemachine_FSM_FFd4,vgaStatemachine_FSM_FFd5,mclk,NOT reset,'0');
+
+FDCPE_vgaStatemachine_FSM_FFd5: FDCPE port map (vgaStatemachine_FSM_FFd5,vgaStatemachine_FSM_FFd6,mclk,NOT reset,'0');
+
+FDCPE_vgaStatemachine_FSM_FFd6: FDCPE port map (vgaStatemachine_FSM_FFd6,vgaStatemachine_FSM_FFd6_D,mclk,NOT reset,'0');
+vgaStatemachine_FSM_FFd6_D <= ((ioAdrHit AND vgaStatemachine_FSM_FFd7)
+	OR (vgaStatemachine_FSM_FFd7 AND WAIT));
+
+FDCPE_vgaStatemachine_FSM_FFd7: FDCPE port map (vgaStatemachine_FSM_FFd7,vgaStatemachine_FSM_FFd7_D,mclk,NOT reset,'0');
+vgaStatemachine_FSM_FFd7_D <= ((vgaStatemachine_FSM_FFd8)
+	OR (NOT ioAdrHit AND vgaStatemachine_FSM_FFd7 AND NOT WAIT));
+
+FDCPE_vgaStatemachine_FSM_FFd8: FDCPE port map (vgaStatemachine_FSM_FFd8,vgaStatemachine_FSM_FFd9,mclk,NOT reset,'0');
+
+FDCPE_vgaStatemachine_FSM_FFd9: FDCPE port map (vgaStatemachine_FSM_FFd9,vgaStatemachine_FSM_FFd10,mclk,NOT reset,'0');
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC95144XL-5-TQ100
+
+
+   --------------------------------------------------  
+  /100 98  96  94  92  90  88  86  84  82  80  78  76  \
+ |   99  97  95  93  91  89  87  85  83  81  79  77    |
+ | 1                                               75  | 
+ | 2                                               74  | 
+ | 3                                               73  | 
+ | 4                                               72  | 
+ | 5                                               71  | 
+ | 6                                               70  | 
+ | 7                                               69  | 
+ | 8                                               68  | 
+ | 9                                               67  | 
+ | 10                                              66  | 
+ | 11                                              65  | 
+ | 12                                              64  | 
+ | 13               XC95144XL-5-TQ100              63  | 
+ | 14                                              62  | 
+ | 15                                              61  | 
+ | 16                                              60  | 
+ | 17                                              59  | 
+ | 18                                              58  | 
+ | 19                                              57  | 
+ | 20                                              56  | 
+ | 21                                              55  | 
+ | 22                                              54  | 
+ | 23                                              53  | 
+ | 24                                              52  | 
+ | 25                                              51  | 
+ |   27  29  31  33  35  37  39  41  43  45  47  49    |
+  \26  28  30  32  34  36  38  40  42  44  46  48  50  /
+   --------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 DA<5>                            51 VCC                           
+  2 KPR                              52 A<3>                          
+  3 DA<6>                            53 A<4>                          
+  4 DA<4>                            54 A<6>                          
+  5 VCC                              55 A<5>                          
+  6 DA<7>                            56 XRDYD                         
+  7 KPR                              57 VCC                           
+  8 DA<3>                            58 CFGIN                         
+  9 DA<8>                            59 CFGOUT                        
+ 10 DA<2>                            60 SLAVE                         
+ 11 DA<9>                            61 MONISW                        
+ 12 DA<1>                            62 GND                           
+ 13 DA<10>                           63 DG<8>                         
+ 14 DA<0>                            64 DG<9>                         
+ 15 DA<11>                           65 DG<10>                        
+ 16 UDS                              66 DG<11>                        
+ 17 DA<12>                           67 DG<12>                        
+ 18 LDS                              68 DG<13>                        
+ 19 KPR                              69 GND                           
+ 20 DA<13>                           70 DG<14>                        
+ 21 GND                              71 DG<15>                        
+ 22 mclk                             72 DG<0>                         
+ 23 AS                               73 KPR                           
+ 24 RW                               74 DG<1>                         
+ 25 DA<14>                           75 GND                           
+ 26 VCC                              76 IO<3>                         
+ 27 DTACK                            77 KPR                           
+ 28 DA<15>                           78 KPR                           
+ 29 A<23>                            79 DG<5>                         
+ 30 A<21>                            80 KPR                           
+ 31 GND                              81 DG<6>                         
+ 32 A<22>                            82 DG<7>                         
+ 33 A<20>                            83 TDO                           
+ 34 KPR                              84 GND                           
+ 35 A<19>                            85 DG<4>                         
+ 36 A<18>                            86 DG<3>                         
+ 37 A<17>                            87 DG<2>                         
+ 38 VCC                              88 VCC                           
+ 39 BERR                             89 MEMW                          
+ 40 A<16>                            90 MEMR                          
+ 41 A<15>                            91 IOR                           
+ 42 A<12>                            92 CLRG                          
+ 43 KPR                              93 WAIT                          
+ 44 GND                              94 BALE                          
+ 45 TDI                              95 IOW                           
+ 46 A<1>                             96 SA12                          
+ 47 TMS                              97 SA0                           
+ 48 TCK                              98 VCC                           
+ 49 OVR                              99 reset                         
+ 50 A<2>                            100 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95144xl-5-TQ100
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Set I/O Pin Termination                     : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Input Limit                                 : 54
+Pterm Limit                                 : 25

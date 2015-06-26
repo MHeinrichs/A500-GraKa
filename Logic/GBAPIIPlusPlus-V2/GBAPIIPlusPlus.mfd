@@ -1,0 +1,1720 @@
+MDF Database:  version 1.0
+MDF_INFO | GBAPIIPlusPlus | XC95144XL-5-TQ100
+MACROCELL | 7 | 14 | DG_R<0>
+ATTRIBUTES | 8820482 | 0
+OUTPUTMC | 1 | 7 | 14
+INPUTS | 6 | DG<0>  | RW  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | DA<0>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 14 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 22
+EQ | 8 | 
+   !DG<0>.D = !DG<0> & RW & !vgaStatemachine_FSM_FFd3
+	# !DG<0> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & !vgaStatemachine_FSM_FFd3 & 
+	vgaStatemachine_FSM_FFd12 & !DA<0>.PIN;
+   DG<0>.CLK = mclk;	// GCK
+   !DG<0>.AP = reset;	// GSR
+   DG<0>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 7 | 5 | DG_R<10>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 5
+INPUTS | 6 | DG<10>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<10>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 5 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 21
+EQ | 7 | 
+   DG<10>.D = DG<10> & RW & vgaStatemachine_FSM_FFd12
+	# DG<10> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<10>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<10>.CLK = mclk;	// GCK
+   !DG<10>.AR = reset;	// GSR
+   DG<10>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 7 | 7 | DG_R<11>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 7
+INPUTS | 6 | DG<11>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<11>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 7 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 23
+EQ | 7 | 
+   DG<11>.D = DG<11> & RW & vgaStatemachine_FSM_FFd12
+	# DG<11> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<11>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<11>.CLK = mclk;	// GCK
+   !DG<11>.AR = reset;	// GSR
+   DG<11>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 7 | 8 | DG_R<12>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 8
+INPUTS | 6 | DG<12>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<12>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 8 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 26
+EQ | 7 | 
+   DG<12>.D = DG<12> & RW & vgaStatemachine_FSM_FFd12
+	# DG<12> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<12>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<12>.CLK = mclk;	// GCK
+   !DG<12>.AR = reset;	// GSR
+   DG<12>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 7 | 10 | DG_R<13>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 10
+INPUTS | 6 | DG<13>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<13>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 10 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 30
+EQ | 7 | 
+   DG<13>.D = DG<13> & RW & vgaStatemachine_FSM_FFd12
+	# DG<13> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<13>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<13>.CLK = mclk;	// GCK
+   !DG<13>.AR = reset;	// GSR
+   DG<13>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 7 | 11 | DG_R<14>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 11
+INPUTS | 6 | DG<14>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<14>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 11 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 37
+EQ | 7 | 
+   DG<14>.D = DG<14> & RW & vgaStatemachine_FSM_FFd12
+	# DG<14> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<14>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<14>.CLK = mclk;	// GCK
+   !DG<14>.AR = reset;	// GSR
+   DG<14>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 7 | 13 | DG_R<15>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 13
+INPUTS | 6 | DG<15>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<15>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 13 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 44
+EQ | 7 | 
+   DG<15>.D = DG<15> & RW & vgaStatemachine_FSM_FFd12
+	# DG<15> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<15>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<15>.CLK = mclk;	// GCK
+   !DG<15>.AR = reset;	// GSR
+   DG<15>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 1 | DG_R<1>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 5 | 1
+INPUTS | 6 | DG<1>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<1>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 5 | 1 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 19
+EQ | 7 | 
+   DG<1>.D = DG<1> & RW & vgaStatemachine_FSM_FFd12
+	# DG<1> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & vgaStatemachine_FSM_FFd12 & DA<1>.PIN;
+   DG<1>.CLK = mclk;	// GCK
+   !DG<1>.AR = reset;	// GSR
+   DG<1>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 1 | DG_R<2>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 3 | 1
+INPUTS | 6 | DG<2>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<2>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 3 | 1 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 17
+EQ | 7 | 
+   DG<2>.D = DG<2> & RW & vgaStatemachine_FSM_FFd12
+	# DG<2> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & vgaStatemachine_FSM_FFd12 & DA<2>.PIN;
+   DG<2>.CLK = mclk;	// GCK
+   !DG<2>.AR = reset;	// GSR
+   DG<2>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 16 | DG_R<3>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 5 | 16
+INPUTS | 6 | DG<3>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<3>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 5 | 16 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 13
+EQ | 7 | 
+   DG<3>.D = DG<3> & RW & vgaStatemachine_FSM_FFd12
+	# DG<3> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & vgaStatemachine_FSM_FFd12 & DA<3>.PIN;
+   DG<3>.CLK = mclk;	// GCK
+   !DG<3>.AR = reset;	// GSR
+   DG<3>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 14 | DG_R<4>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 5 | 14
+INPUTS | 6 | DG<4>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<4>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 5 | 14 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 8
+EQ | 7 | 
+   DG<4>.D = DG<4> & RW & vgaStatemachine_FSM_FFd12
+	# DG<4> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & vgaStatemachine_FSM_FFd12 & DA<4>.PIN;
+   DG<4>.CLK = mclk;	// GCK
+   !DG<4>.AR = reset;	// GSR
+   DG<4>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 8 | DG_R<5>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 5 | 8
+INPUTS | 6 | DG<5>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<5>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 5 | 8 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 2
+EQ | 7 | 
+   DG<5>.D = DG<5> & RW & vgaStatemachine_FSM_FFd12
+	# DG<5> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & vgaStatemachine_FSM_FFd12 & DA<5>.PIN;
+   DG<5>.CLK = mclk;	// GCK
+   !DG<5>.AR = reset;	// GSR
+   DG<5>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 11 | DG_R<6>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 5 | 11
+INPUTS | 6 | DG<6>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<6>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 5 | 11 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 6
+EQ | 7 | 
+   DG<6>.D = DG<6> & RW & vgaStatemachine_FSM_FFd12
+	# DG<6> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & vgaStatemachine_FSM_FFd12 & DA<6>.PIN;
+   DG<6>.CLK = mclk;	// GCK
+   !DG<6>.AR = reset;	// GSR
+   DG<6>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 13 | DG_R<7>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 5 | 13
+INPUTS | 6 | DG<7>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<7>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 5 | 13 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 11
+EQ | 7 | 
+   DG<7>.D = DG<7> & RW & vgaStatemachine_FSM_FFd12
+	# DG<7> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & vgaStatemachine_FSM_FFd12 & DA<7>.PIN;
+   DG<7>.CLK = mclk;	// GCK
+   !DG<7>.AR = reset;	// GSR
+   DG<7>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 7 | 1 | DG_R<8>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 1
+INPUTS | 6 | DG<8>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<8>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 1 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 15
+EQ | 7 | 
+   DG<8>.D = DG<8> & RW & vgaStatemachine_FSM_FFd12
+	# DG<8> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<8>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<8>.CLK = mclk;	// GCK
+   !DG<8>.AR = reset;	// GSR
+   DG<8>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 7 | 4 | DG_R<9>
+ATTRIBUTES | 8824578 | 0
+OUTPUTMC | 1 | 7 | 4
+INPUTS | 6 | DG<9>  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd12  | RW  | DA<9>.PIN  | $OpTx$$OpTx$FX_DC$23_INV$264
+INPUTMC | 4 | 7 | 4 | 2 | 14 | 1 | 0 | 5 | 10
+INPUTP | 2 | 36 | 18
+EQ | 7 | 
+   DG<9>.D = DG<9> & RW & vgaStatemachine_FSM_FFd12
+	# DG<9> & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd12
+	# !RW & DA<9>.PIN & vgaStatemachine_FSM_FFd12;
+   DG<9>.CLK = mclk;	// GCK
+   !DG<9>.AR = reset;	// GSR
+   DG<9>.OE = !RW & !$OpTx$$OpTx$FX_DC$23_INV$264;
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 6 | 17 | autoconfigDone_FSM_FFd2
+ATTRIBUTES | 4334432 | 0
+OUTPUTMC | 23 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 2 | 16 | 1 | 0 | 2 | 0 | 2 | 15 | 1 | 16 | 1 | 15 | 1 | 12 | 1 | 11 | 4 | 4
+INPUTS | 9 | autoconfigDone_FSM_FFd2  | autoconfigDone_FSM_FFd1  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>  | autoConfigAdrDSHit  | RW
+INPUTMC | 3 | 6 | 17 | 1 | 2 | 2 | 16
+INPUTP | 6 | 82 | 88 | 86 | 72 | 90 | 36
+EQ | 6 | 
+   autoconfigDone_FSM_FFd2.T = !autoconfigDone_FSM_FFd2 & autoconfigDone_FSM_FFd1
+	# !autoconfigDone_FSM_FFd2 & A<3> & A<6> & !A<4> & 
+	!A<1> & !A<5>;
+   autoconfigDone_FSM_FFd2.CLK = autoConfigAdrDSHit;
+   !autoconfigDone_FSM_FFd2.AR = reset;	// GSR
+   autoconfigDone_FSM_FFd2.CE = !RW;
+GLOBALS | 1 | 4 | reset
+
+MACROCELL | 1 | 2 | autoconfigDone_FSM_FFd1
+ATTRIBUTES | 4334432 | 0
+OUTPUTMC | 7 | 6 | 17 | 1 | 2 | 2 | 16 | 6 | 13 | 2 | 0 | 2 | 15 | 4 | 4
+INPUTS | 10 | autoconfigDone_FSM_FFd1  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>  | autoconfigDone_FSM_FFd2  | autoConfigAdrDSHit  | RW
+INPUTMC | 3 | 1 | 2 | 6 | 17 | 2 | 16
+INPUTP | 7 | 79 | 82 | 88 | 86 | 72 | 90 | 36
+EQ | 7 | 
+   autoconfigDone_FSM_FFd1.T = autoconfigDone_FSM_FFd2 & !autoconfigDone_FSM_FFd1 & 
+	A<3> & A<6> & !A<4> & !A<1> & !A<5>
+	# !autoconfigDone_FSM_FFd1 & A<2> & A<3> & A<6> & 
+	!A<4> & !A<1> & !A<5>;
+   autoconfigDone_FSM_FFd1.CLK = autoConfigAdrDSHit;
+   !autoconfigDone_FSM_FFd1.AR = reset;	// GSR
+   autoconfigDone_FSM_FFd1.CE = !RW;
+GLOBALS | 1 | 4 | reset
+
+MACROCELL | 1 | 1 | shutUp
+ATTRIBUTES | 4330336 | 0
+OUTPUTMC | 3 | 1 | 1 | 4 | 2 | 2 | 17
+INPUTS | 10 | shutUp  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>  | autoconfigDone_FSM_FFd2  | autoConfigAdrDSHit  | RW
+INPUTMC | 3 | 1 | 1 | 6 | 17 | 2 | 16
+INPUTP | 7 | 79 | 82 | 88 | 86 | 72 | 90 | 36
+EQ | 7 | 
+   shutUp.T = !shutUp & A<2> & A<3> & A<6> & !A<4> & !A<1> & 
+	!A<5>
+	# autoconfigDone_FSM_FFd2 & shutUp & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+   shutUp.CLK = autoConfigAdrDSHit;
+   !shutUp.AP = reset;	// GSR
+   shutUp.CE = !RW;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 17 | ioSpace<0>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 4 | 2 | 4 | 4
+INPUTS | 10 | DA<8>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 15 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<0>.D = DA<8>.PIN;
+   ioSpace<0>.CLK = autoConfigAdrDSHit;
+   !ioSpace<0>.AP = reset;	// GSR
+   ioSpace<0>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 16 | ioSpace<1>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 4 | 1 | 4 | 4
+INPUTS | 10 | DA<9>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 18 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<1>.D = DA<9>.PIN;
+   ioSpace<1>.CLK = autoConfigAdrDSHit;
+   !ioSpace<1>.AP = reset;	// GSR
+   ioSpace<1>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 15 | ioSpace<2>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 4 | 1 | 4 | 4
+INPUTS | 10 | DA<10>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 21 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<2>.D = DA<10>.PIN;
+   ioSpace<2>.CLK = autoConfigAdrDSHit;
+   !ioSpace<2>.AP = reset;	// GSR
+   ioSpace<2>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 12 | ioSpace<3>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 3 | 4 | 1 | 4 | 3 | 4 | 4
+INPUTS | 10 | DA<11>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 23 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<3>.D = DA<11>.PIN;
+   ioSpace<3>.CLK = autoConfigAdrDSHit;
+   !ioSpace<3>.AP = reset;	// GSR
+   ioSpace<3>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 9 | ioSpace<4>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 4 | 3 | 4 | 4
+INPUTS | 10 | DA<12>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 26 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<4>.D = DA<12>.PIN;
+   ioSpace<4>.CLK = autoConfigAdrDSHit;
+   !ioSpace<4>.AP = reset;	// GSR
+   ioSpace<4>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 6 | ioSpace<5>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 4 | 0 | 4 | 4
+INPUTS | 10 | DA<13>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 30 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<5>.D = DA<13>.PIN;
+   ioSpace<5>.CLK = autoConfigAdrDSHit;
+   !ioSpace<5>.AP = reset;	// GSR
+   ioSpace<5>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 3 | ioSpace<6>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 4 | 0 | 4 | 4
+INPUTS | 10 | DA<14>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 37 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<6>.D = DA<14>.PIN;
+   ioSpace<6>.CLK = autoConfigAdrDSHit;
+   !ioSpace<6>.AP = reset;	// GSR
+   ioSpace<6>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 2 | ioSpace<7>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 4 | 3 | 4 | 4
+INPUTS | 10 | DA<15>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 44 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   ioSpace<7>.D = DA<15>.PIN;
+   ioSpace<7>.CLK = autoConfigAdrDSHit;
+   !ioSpace<7>.AP = reset;	// GSR
+   ioSpace<7>.CE = !RW & autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 7 | 0 | memSpace<0>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 3 | 4 | 0 | 2 | 17 | 4 | 4
+INPUTS | 10 | DA<13>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 30 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   memSpace<0>.D = DA<13>.PIN;
+   memSpace<0>.CLK = autoConfigAdrDSHit;
+   !memSpace<0>.AP = reset;	// GSR
+   memSpace<0>.CE = !RW & !autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 6 | 15 | memSpace<1>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 3 | 4 | 0 | 2 | 16 | 4 | 4
+INPUTS | 10 | DA<14>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 37 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   memSpace<1>.D = DA<14>.PIN;
+   memSpace<1>.CLK = autoConfigAdrDSHit;
+   !memSpace<1>.AP = reset;	// GSR
+   memSpace<1>.CE = !RW & !autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 6 | 12 | memSpace<2>
+ATTRIBUTES | 8524640 | 0
+OUTPUTMC | 2 | 2 | 0 | 6 | 11
+INPUTS | 10 | DA<15>.PIN  | autoConfigAdrDSHit  | RW  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<4>  | A<1>  | A<5>
+INPUTMC | 2 | 2 | 16 | 6 | 17
+INPUTP | 8 | 44 | 36 | 79 | 82 | 88 | 86 | 72 | 90
+EQ | 5 | 
+   memSpace<2>.D = DA<15>.PIN;
+   memSpace<2>.CLK = autoConfigAdrDSHit;
+   !memSpace<2>.AP = reset;	// GSR
+   memSpace<2>.CE = !RW & !autoconfigDone_FSM_FFd2 & !A<2> & A<3> & 
+	A<6> & !A<4> & !A<1> & !A<5>;
+GLOBALS | 1 | 1 | reset
+
+MACROCELL | 6 | 16 | sigMONITORSW
+ATTRIBUTES | 8688450 | 0
+INPUTS | 6 | A<12>  | RW  | ioAdrHit  | vgaStatemachine_FSM_FFd10  | UDS  | A<15>
+INPUTMC | 2 | 4 | 2 | 3 | 3
+INPUTP | 4 | 68 | 36 | 24 | 64
+EQ | 5 | 
+   MONISW.D = A<12>;
+   MONISW.CLK = mclk;	// GCK
+   !MONISW.AP = reset;	// GSR
+   MONISW.CE = !RW & ioAdrHit & vgaStatemachine_FSM_FFd10 & !UDS & 
+	A<15>;
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 5 | 4 | sigBALE
+ATTRIBUTES | 4625154 | 0
+OUTPUTMC | 2 | 5 | 4 | 3 | 11
+INPUTS | 6 | IO<3>  | vgaStatemachine_FSM_FFd3  | ioAdrHit  | vgaStatemachine_FSM_FFd15  | memAdrHit  | vgaStatemachine_FSM_FFd12
+INPUTMC | 6 | 5 | 4 | 2 | 14 | 4 | 2 | 3 | 9 | 2 | 17 | 1 | 0
+EQ | 7 | 
+   IO<3>.T = !IO<3> & vgaStatemachine_FSM_FFd3
+	# IO<3> & !vgaStatemachine_FSM_FFd15 & 
+	!vgaStatemachine_FSM_FFd3 & vgaStatemachine_FSM_FFd12
+	# !IO<3> & !ioAdrHit & vgaStatemachine_FSM_FFd15 & 
+	!memAdrHit;
+   IO<3>.CLK = mclk;	// GCK
+   !IO<3>.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 7 | sigIOR
+ATTRIBUTES | 4625154 | 0
+OUTPUTMC | 1 | 3 | 7
+INPUTS | 7 | IOR  | vgaStatemachine_FSM_FFd4  | ioAdrHit  | vgaStatemachine_FSM_FFd15  | memAdrHit  | RW  | vgaStatemachine_FSM_FFd10
+INPUTMC | 6 | 3 | 7 | 5 | 5 | 4 | 2 | 3 | 9 | 2 | 17 | 3 | 3
+INPUTP | 1 | 36
+EQ | 8 | 
+   IOR.T = !IOR & vgaStatemachine_FSM_FFd4
+	# RW & !IOR & !ioAdrHit & vgaStatemachine_FSM_FFd10
+	# !IOR & !ioAdrHit & vgaStatemachine_FSM_FFd15 & 
+	!memAdrHit
+	# RW & IOR & ioAdrHit & !vgaStatemachine_FSM_FFd15 & 
+	vgaStatemachine_FSM_FFd10 & !vgaStatemachine_FSM_FFd4;
+   IOR.CLK = mclk;	// GCK
+   !IOR.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 13 | sigIOW
+ATTRIBUTES | 4625154 | 0
+OUTPUTMC | 1 | 3 | 13
+INPUTS | 7 | IOW  | vgaStatemachine_FSM_FFd5  | RW  | ioAdrHit  | vgaStatemachine_FSM_FFd10  | vgaStatemachine_FSM_FFd15  | memAdrHit
+INPUTMC | 6 | 3 | 13 | 5 | 3 | 4 | 2 | 3 | 3 | 3 | 9 | 2 | 17
+INPUTP | 1 | 36
+EQ | 8 | 
+   IOW.T = !IOW & vgaStatemachine_FSM_FFd5
+	# !RW & !IOW & !ioAdrHit & vgaStatemachine_FSM_FFd10
+	# !IOW & !ioAdrHit & vgaStatemachine_FSM_FFd15 & 
+	!memAdrHit
+	# !RW & IOW & ioAdrHit & !vgaStatemachine_FSM_FFd15 & 
+	vgaStatemachine_FSM_FFd10 & !vgaStatemachine_FSM_FFd5;
+   IOW.CLK = mclk;	// GCK
+   !IOW.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 5 | sigMEMR
+ATTRIBUTES | 4625154 | 0
+OUTPUTMC | 1 | 3 | 5
+INPUTS | 7 | MEMR  | vgaStatemachine_FSM_FFd4  | ioAdrHit  | vgaStatemachine_FSM_FFd15  | memAdrHit  | RW  | vgaStatemachine_FSM_FFd10
+INPUTMC | 6 | 3 | 5 | 5 | 5 | 4 | 2 | 3 | 9 | 2 | 17 | 3 | 3
+INPUTP | 1 | 36
+EQ | 10 | 
+   MEMR.T = !MEMR & vgaStatemachine_FSM_FFd4
+	# RW & !MEMR & !memAdrHit & 
+	vgaStatemachine_FSM_FFd10
+	# !MEMR & !ioAdrHit & vgaStatemachine_FSM_FFd15 & 
+	!memAdrHit
+	# RW & MEMR & !vgaStatemachine_FSM_FFd15 & 
+	memAdrHit & vgaStatemachine_FSM_FFd10 & 
+	!vgaStatemachine_FSM_FFd4;
+   MEMR.CLK = mclk;	// GCK
+   !MEMR.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 4 | sigMEMW
+ATTRIBUTES | 4625154 | 0
+OUTPUTMC | 1 | 3 | 4
+INPUTS | 7 | MEMW  | vgaStatemachine_FSM_FFd5  | RW  | memAdrHit  | vgaStatemachine_FSM_FFd10  | ioAdrHit  | vgaStatemachine_FSM_FFd15
+INPUTMC | 6 | 3 | 4 | 5 | 3 | 2 | 17 | 3 | 3 | 4 | 2 | 3 | 9
+INPUTP | 1 | 36
+EQ | 10 | 
+   MEMW.T = !MEMW & vgaStatemachine_FSM_FFd5
+	# !RW & !MEMW & !memAdrHit & 
+	vgaStatemachine_FSM_FFd10
+	# !MEMW & !ioAdrHit & vgaStatemachine_FSM_FFd15 & 
+	!memAdrHit
+	# !RW & MEMW & !vgaStatemachine_FSM_FFd15 & 
+	memAdrHit & vgaStatemachine_FSM_FFd10 & 
+	!vgaStatemachine_FSM_FFd5;
+   MEMW.CLK = mclk;	// GCK
+   !MEMW.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 16 | sigSA0
+ATTRIBUTES | 8819458 | 0
+OUTPUTMC | 1 | 3 | 16
+INPUTS | 7 | SA0  | vgaStatemachine_FSM_FFd3  | vgaStatemachine_FSM_FFd13  | memAdrHit  | UDS  | ioAdrHit  | A<12>
+INPUTMC | 5 | 3 | 16 | 2 | 14 | 5 | 6 | 2 | 17 | 4 | 2
+INPUTP | 2 | 24 | 68
+EQ | 10 | 
+   !SA0.D = !SA0 & !vgaStatemachine_FSM_FFd3 & 
+	!vgaStatemachine_FSM_FFd13
+	# !SA0 & !ioAdrHit & !memAdrHit & 
+	!vgaStatemachine_FSM_FFd3
+	# memAdrHit & !vgaStatemachine_FSM_FFd3 & 
+	vgaStatemachine_FSM_FFd13 & !UDS
+	# !A<12> & ioAdrHit & !vgaStatemachine_FSM_FFd3 & 
+	vgaStatemachine_FSM_FFd13 & !UDS;
+   SA0.CLK = mclk;	// GCK
+   !SA0.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 14 | sigSA12
+ATTRIBUTES | 8819458 | 0
+OUTPUTMC | 1 | 3 | 14
+INPUTS | 6 | vgaStatemachine_FSM_FFd3  | SA12  | vgaStatemachine_FSM_FFd13  | A<12>  | memAdrHit  | ioAdrHit
+INPUTMC | 5 | 2 | 14 | 3 | 14 | 5 | 6 | 2 | 17 | 4 | 2
+INPUTP | 1 | 68
+EQ | 6 | 
+   SA12.D = vgaStatemachine_FSM_FFd3
+	# SA12 & !vgaStatemachine_FSM_FFd13
+	# A<12> & memAdrHit & vgaStatemachine_FSM_FFd13
+	# SA12 & !ioAdrHit & !memAdrHit;
+   SA12.CLK = mclk;	// GCK
+   !SA12.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 0 | 5 | DA_0_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<0>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 3 | 17 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   !DA<0> = !RW & !DA_R<0>
+	# !autoConfigAdrHit & !AC_D1 & !DA_R<0>;
+   DA<0>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 0 | 10 | DA_12_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 6 | RW  | DA_R<12>  | autoConfigAdrHit  | autoConfigDataOut<0>  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 5 | 0 | 17 | 2 | 15 | 1 | 17 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 5 | 
+   DA<12> = !RW & DA_R<12>
+	# RW & autoConfigAdrHit & autoConfigDataOut<0>
+	# RW & AC_D1 & autoConfigDataOut<0>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<12>;
+   DA<12>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 0 | 14 | DA_13_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 6 | RW  | DA_R<13>  | autoConfigAdrHit  | autoConfigDataOut<1>  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 5 | 0 | 16 | 2 | 15 | 1 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 5 | 
+   DA<13> = !RW & DA_R<13>
+	# RW & autoConfigAdrHit & autoConfigDataOut<1>
+	# RW & AC_D1 & autoConfigDataOut<1>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<13>;
+   DA<13>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 2 | 5 | DA_14_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 6 | RW  | DA_R<14>  | autoConfigAdrHit  | autoConfigDataOut<2>  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 5 | 0 | 15 | 2 | 15 | 1 | 12 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 5 | 
+   DA<14> = !RW & DA_R<14>
+	# RW & autoConfigAdrHit & autoConfigDataOut<2>
+	# RW & AC_D1 & autoConfigDataOut<2>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<14>;
+   DA<14>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 2 | 8 | DA_15_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 6 | RW  | DA_R<15>  | autoConfigAdrHit  | AC_D1  | autoConfigDataOut<3>  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 5 | 0 | 13 | 2 | 15 | 5 | 7 | 1 | 11 | 5 | 12
+INPUTP | 1 | 36
+EQ | 5 | 
+   DA<15> = !RW & DA_R<15>
+	# RW & autoConfigAdrHit & autoConfigDataOut<3>
+	# RW & AC_D1 & autoConfigDataOut<3>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<15>;
+   DA<15>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 0 | 4 | DA_10_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<10>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 3 | 15 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<10> = !RW & DA_R<10>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<10>;
+   DA<10>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 0 | 7 | DA_11_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<11>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 5 | 17 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<11> = !RW & DA_R<11>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<11>;
+   DA<11>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 0 | 2 | DA_1_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<1>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 0 | 12 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<1> = !RW & DA_R<1>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<1>;
+   DA<1>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 1 | 16 | DA_2_IOBUFE
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 1 | 17
+INPUTS | 11 | RW  | DA_R<2>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<6>  | A<5>  | A<1>
+INPUTMC | 5 | 0 | 11 | 2 | 15 | 5 | 7 | 5 | 12 | 6 | 17
+INPUTP | 6 | 36 | 79 | 82 | 88 | 90 | 72
+EXPORTS | 1 | 1 | 17
+EQ | 6 | 
+   DA<2> = !RW & DA_R<2>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<2>;
+   DA<2>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+    DA_2_IOBUFE.EXP  =  autoconfigDone_FSM_FFd2 & A<2> & !A<3> & !A<6> & 
+	!A<5>
+	# A<2> & !A<3> & !A<6> & !A<1> & !A<5>
+
+MACROCELL | 1 | 13 | DA_3_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<3>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 0 | 9 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<3> = !RW & DA_R<3>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<3>;
+   DA<3>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 1 | 8 | DA_4_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<4>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 0 | 8 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<4> = !RW & DA_R<4>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<4>;
+   DA<4>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 1 | 4 | DA_5_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<5>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 1 | 9 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<5> = !RW & DA_R<5>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<5>;
+   DA<5>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 1 | 7 | DA_6_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<6>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 1 | 6 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<6> = !RW & DA_R<6>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<6>;
+   DA<6>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 1 | 10 | DA_7_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<7>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 1 | 5 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<7> = !RW & DA_R<7>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<7>;
+   DA<7>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 1 | 14 | DA_8_IOBUFE
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 1 | 15
+INPUTS | 11 | RW  | DA_R<8>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT  | A<2>  | A<3>  | A<6>  | A<4>  | A<5>  | A<1>
+INPUTMC | 4 | 1 | 3 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 7 | 36 | 79 | 82 | 88 | 86 | 90 | 72
+EXPORTS | 1 | 1 | 15
+EQ | 5 | 
+   DA<8> = !RW & DA_R<8>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<8>;
+   DA<8>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+    DA_8_IOBUFE.EXP  =  !A<2> & !A<3> & A<6> & !A<4> & !A<5>
+	# !A<2> & !A<3> & !A<4> & !A<1> & !A<5>
+
+MACROCELL | 0 | 1 | DA_9_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RW  | DA_R<9>  | autoConfigAdrHit  | AC_D1  | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+INPUTMC | 4 | 0 | 6 | 2 | 15 | 5 | 7 | 5 | 12
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA<9> = !RW & DA_R<9>
+	# !autoConfigAdrHit & !AC_D1 & DA_R<9>;
+   DA<9>.OE = !DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT;
+
+MACROCELL | 2 | 16 | autoConfigAdrDSHit
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 19 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 2 | 17
+INPUTS | 15 | autoconfigDone_FSM_FFd2  | ds  | BERR  | AS  | A<18>  | A<17>  | A<16>  | A<22>  | A<20>  | A<23>  | A<19>  | A<21>  | CFGIN  | autoconfigDone_FSM_FFd1  | memSpace<1>
+INPUTMC | 4 | 6 | 17 | 6 | 7 | 1 | 2 | 6 | 15
+INPUTP | 11 | 62 | 35 | 59 | 60 | 63 | 54 | 56 | 47 | 58 | 49 | 95
+EXPORTS | 1 | 2 | 17
+EQ | 10 | 
+   autoConfigAdrDSHit.D = !autoconfigDone_FSM_FFd2 & ds & BERR & !AS & 
+	!A<18> & !A<17> & !A<16> & A<22> & !A<20> & A<23> & A<19> & 
+	A<21> & !CFGIN
+	# !autoconfigDone_FSM_FFd1 & ds & BERR & !AS & 
+	!A<18> & !A<17> & !A<16> & A<22> & !A<20> & A<23> & A<19> & 
+	A<21> & !CFGIN;
+   autoConfigAdrDSHit.CLK = mclk;	// GCK
+   !autoConfigAdrDSHit.AR = reset;	// GSR
+    autoConfigAdrDSHit.EXP  =  memSpace<1> & !A<22>
+	# !memSpace<1> & A<22>
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 4 | 2 | ioAdrHit
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 20 | 6 | 16 | 5 | 4 | 3 | 7 | 3 | 13 | 3 | 5 | 3 | 4 | 3 | 16 | 3 | 14 | 3 | 9 | 6 | 9 | 3 | 12 | 3 | 10 | 5 | 15 | 6 | 8 | 3 | 6 | 4 | 16 | 6 | 14 | 3 | 11 | 5 | 10 | 5 | 12
+INPUTS | 7 | shutUp  | AS  | BERR  | ioSpace<0>  | A<16>  | EXP12_.EXP  | EXP13_.EXP
+INPUTMC | 4 | 1 | 1 | 7 | 17 | 4 | 1 | 4 | 3
+INPUTP | 3 | 35 | 62 | 63
+IMPORTS | 2 | 4 | 1 | 4 | 3
+EQ | 39 | 
+   !ioAdrHit.D = shutUp
+	# !BERR
+	# AS
+	# ioSpace<0> & !A<16>
+	# !ioSpace<0> & A<16>
+;Imported pterms FB5_2
+	# ioSpace<1> & !A<17>
+	# !ioSpace<1> & A<17>
+	# ioSpace<2> & !A<18>
+	# !ioSpace<2> & A<18>
+	# ioSpace<3> & !A<19>
+;Imported pterms FB5_1
+	# ioSpace<5> & !A<21>
+	# !ioSpace<5> & A<21>
+	# ioSpace<6> & !A<22>
+	# !ioSpace<6> & A<22>
+	# ioSpace<5> & memSpace<0> & memSpace<1> & A<22> & 
+	$OpTx$FX_DC$59
+;Imported pterms FB5_4
+	# !ioSpace<3> & A<19>
+	# ioSpace<4> & !A<20>
+	# !ioSpace<4> & A<20>
+	# ioSpace<7> & !A<23>
+	# !ioSpace<7> & A<23>
+;Imported pterms FB5_5
+	# ioSpace<5> & memSpace<0> & !memSpace<1> & !A<22> & 
+	$OpTx$FX_DC$59
+	# !ioSpace<5> & !memSpace<0> & memSpace<1> & A<22> & 
+	$OpTx$FX_DC$59
+	# !ioSpace<5> & !memSpace<0> & !memSpace<1> & !A<22> & 
+	$OpTx$FX_DC$59
+	# !autoconfigDone_FSM_FFd2 & !ioSpace<0> & 
+	!ioSpace<1> & !ioSpace<2> & ioSpace<3> & !ioSpace<4> & 
+	ioSpace<5> & ioSpace<6> & ioSpace<7> & !CFGIN
+	# !autoconfigDone_FSM_FFd1 & !ioSpace<0> & 
+	!ioSpace<1> & !ioSpace<2> & ioSpace<3> & !ioSpace<4> & 
+	ioSpace<5> & ioSpace<6> & ioSpace<7> & !CFGIN;
+   ioAdrHit.CLK = mclk;	// GCK
+   !ioAdrHit.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 9 | vgaStatemachine_FSM_FFd15
+ATTRIBUTES | 8557312 | 0
+OUTPUTMC | 9 | 5 | 4 | 3 | 7 | 3 | 13 | 3 | 5 | 3 | 4 | 3 | 9 | 3 | 12 | 5 | 15 | 3 | 11
+INPUTS | 4 | ioAdrHit  | memAdrHit  | vgaStatemachine_FSM_FFd1  | vgaStatemachine_FSM_FFd15
+INPUTMC | 4 | 4 | 2 | 2 | 17 | 3 | 10 | 3 | 9
+EQ | 4 | 
+   vgaStatemachine_FSM_FFd15.D = !ioAdrHit & vgaStatemachine_FSM_FFd15 & !memAdrHit
+	# !ioAdrHit & !memAdrHit & vgaStatemachine_FSM_FFd1;
+   vgaStatemachine_FSM_FFd15.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd15.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 2 | 17 | memAdrHit
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 17 | 5 | 4 | 3 | 7 | 3 | 13 | 3 | 5 | 3 | 4 | 3 | 16 | 3 | 14 | 3 | 9 | 3 | 12 | 3 | 10 | 5 | 15 | 3 | 6 | 4 | 16 | 6 | 14 | 3 | 11 | 5 | 10 | 5 | 12
+INPUTS | 7 | AS  | BERR  | shutUp  | memSpace<0>  | A<21>  | EXP10_.EXP  | autoConfigAdrDSHit.EXP
+INPUTMC | 4 | 1 | 1 | 7 | 0 | 2 | 0 | 2 | 16
+INPUTP | 3 | 35 | 62 | 49
+IMPORTS | 2 | 2 | 0 | 2 | 16
+EQ | 17 | 
+   !memAdrHit.D = shutUp
+	# !BERR
+	# AS
+	# memSpace<0> & !A<21>
+	# !memSpace<0> & A<21>
+;Imported pterms FB3_1
+	# memSpace<2> & !A<23>
+	# !memSpace<2> & A<23>
+	# !autoconfigDone_FSM_FFd2 & !A<18> & !A<17> & !A<16> & 
+	A<22> & !A<20> & A<23> & A<19> & A<21> & !CFGIN
+	# !autoconfigDone_FSM_FFd1 & !A<18> & !A<17> & !A<16> & 
+	A<22> & !A<20> & A<23> & A<19> & A<21> & !CFGIN
+;Imported pterms FB3_17
+	# memSpace<1> & !A<22>
+	# !memSpace<1> & A<22>;
+   memAdrHit.CLK = mclk;	// GCK
+   !memAdrHit.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 3 | vgaStatemachine_FSM_FFd10
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 6 | 6 | 16 | 3 | 7 | 3 | 13 | 3 | 5 | 3 | 4 | 2 | 12
+INPUTS | 1 | vgaStatemachine_FSM_FFd12
+INPUTMC | 1 | 1 | 0
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd10.D = vgaStatemachine_FSM_FFd12;
+   vgaStatemachine_FSM_FFd10.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd10.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 2 | 14 | vgaStatemachine_FSM_FFd3
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 21 | 7 | 14 | 7 | 5 | 7 | 7 | 7 | 8 | 7 | 10 | 7 | 11 | 7 | 13 | 5 | 1 | 3 | 1 | 5 | 16 | 5 | 14 | 5 | 8 | 5 | 11 | 5 | 13 | 7 | 1 | 7 | 4 | 5 | 4 | 3 | 16 | 3 | 14 | 3 | 0 | 3 | 11
+INPUTS | 1 | vgaStatemachine_FSM_FFd4
+INPUTMC | 1 | 5 | 5
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd3.D = vgaStatemachine_FSM_FFd4;
+   vgaStatemachine_FSM_FFd3.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd3.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 2 | 15 | autoConfigAdrHit
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 21 | 0 | 5 | 0 | 10 | 0 | 14 | 2 | 5 | 2 | 8 | 0 | 4 | 0 | 7 | 0 | 2 | 1 | 16 | 1 | 13 | 1 | 8 | 1 | 4 | 1 | 7 | 1 | 10 | 1 | 14 | 0 | 1 | 5 | 9 | 4 | 16 | 2 | 7 | 6 | 14 | 5 | 12
+INPUTS | 13 | autoconfigDone_FSM_FFd2  | BERR  | AS  | A<18>  | A<17>  | A<16>  | A<22>  | A<20>  | A<23>  | A<19>  | A<21>  | CFGIN  | autoconfigDone_FSM_FFd1
+INPUTMC | 2 | 6 | 17 | 1 | 2
+INPUTP | 11 | 62 | 35 | 59 | 60 | 63 | 54 | 56 | 47 | 58 | 49 | 95
+EQ | 8 | 
+   autoConfigAdrHit.D = !autoconfigDone_FSM_FFd2 & BERR & !AS & !A<18> & 
+	!A<17> & !A<16> & A<22> & !A<20> & A<23> & A<19> & A<21> & 
+	!CFGIN
+	# !autoconfigDone_FSM_FFd1 & BERR & !AS & !A<18> & 
+	!A<17> & !A<16> & A<22> & !A<20> & A<23> & A<19> & A<21> & 
+	!CFGIN;
+   autoConfigAdrHit.CLK = mclk;	// GCK
+   !autoConfigAdrHit.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 1 | 0 | vgaStatemachine_FSM_FFd12
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 20 | 7 | 14 | 7 | 5 | 7 | 7 | 7 | 8 | 7 | 10 | 7 | 11 | 7 | 13 | 5 | 1 | 3 | 1 | 5 | 16 | 5 | 14 | 5 | 8 | 5 | 11 | 5 | 13 | 7 | 1 | 7 | 4 | 5 | 4 | 3 | 3 | 3 | 11 | 1 | 17
+INPUTS | 8 | vgaStatemachine_FSM_FFd11  | RW  | vgaStatemachine_FSM_FFd13  | autoconfigDone_FSM_FFd2  | A<2>  | A<3>  | A<4>  | A<5>
+INPUTMC | 3 | 3 | 2 | 5 | 6 | 6 | 17
+INPUTP | 5 | 36 | 79 | 82 | 86 | 90
+EXPORTS | 1 | 1 | 17
+EQ | 6 | 
+   vgaStatemachine_FSM_FFd12.D = vgaStatemachine_FSM_FFd11
+	# !RW & vgaStatemachine_FSM_FFd13;
+   vgaStatemachine_FSM_FFd12.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd12.AR = reset;	// GSR
+    vgaStatemachine_FSM_FFd12.EXP  =  !autoconfigDone_FSM_FFd2 & !A<2> & !A<3> & !A<4> & 
+	!A<5>
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 6 | vgaStatemachine_FSM_FFd13
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 4 | 3 | 16 | 3 | 14 | 1 | 0 | 3 | 2
+INPUTS | 2 | ds  | vgaStatemachine_FSM_FFd14
+INPUTMC | 2 | 6 | 7 | 5 | 15
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd13.D = ds & vgaStatemachine_FSM_FFd14;
+   vgaStatemachine_FSM_FFd13.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd13.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 3 | vgaStatemachine_FSM_FFd5
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 19 | 3 | 13 | 3 | 4 | 5 | 5 | 3 | 17 | 3 | 15 | 5 | 17 | 0 | 17 | 0 | 16 | 0 | 15 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 9 | 0 | 8 | 1 | 9 | 1 | 6 | 1 | 5 | 1 | 3 | 0 | 6
+INPUTS | 1 | vgaStatemachine_FSM_FFd6
+INPUTMC | 1 | 6 | 9
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd5.D = vgaStatemachine_FSM_FFd6;
+   vgaStatemachine_FSM_FFd5.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd5.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 6 | 9 | vgaStatemachine_FSM_FFd6
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 18 | 5 | 3 | 3 | 12 | 3 | 17 | 3 | 15 | 5 | 17 | 0 | 17 | 0 | 16 | 0 | 15 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 9 | 0 | 8 | 1 | 9 | 1 | 6 | 1 | 5 | 1 | 3 | 0 | 6
+INPUTS | 3 | vgaStatemachine_FSM_FFd7  | WAIT  | ioAdrHit
+INPUTMC | 2 | 6 | 8 | 4 | 2
+INPUTP | 1 | 147
+EQ | 4 | 
+   vgaStatemachine_FSM_FFd6.D = ioAdrHit & vgaStatemachine_FSM_FFd7
+	# vgaStatemachine_FSM_FFd7 & WAIT;
+   vgaStatemachine_FSM_FFd6.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd6.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 6 | 7 | ds
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 3 | 2 | 16 | 5 | 6 | 5 | 15
+INPUTS | 2 | UDS  | LDS
+INPUTP | 2 | 24 | 28
+EQ | 3 | 
+   !ds.D = UDS & LDS;
+   ds.CLK = mclk;	// GCK
+   !ds.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 12 | sigDTACK
+ATTRIBUTES | 4363008 | 0
+OUTPUTMC | 2 | 3 | 12 | 2 | 7
+INPUTS | 6 | ioAdrHit  | memAdrHit  | sigDTACK  | vgaStatemachine_FSM_FFd1  | vgaStatemachine_FSM_FFd15  | vgaStatemachine_FSM_FFd6
+INPUTMC | 6 | 4 | 2 | 2 | 17 | 3 | 12 | 3 | 10 | 3 | 9 | 6 | 9
+EQ | 8 | 
+   sigDTACK.T = !ioAdrHit & vgaStatemachine_FSM_FFd15 & !memAdrHit & 
+	!sigDTACK
+	# !ioAdrHit & !memAdrHit & !sigDTACK & 
+	vgaStatemachine_FSM_FFd1
+	# !vgaStatemachine_FSM_FFd15 & 
+	vgaStatemachine_FSM_FFd6 & sigDTACK & !vgaStatemachine_FSM_FFd1;
+   sigDTACK.CLK = mclk;	// GCK
+   !sigDTACK.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 10 | vgaStatemachine_FSM_FFd1
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 3 | 3 | 9 | 3 | 12 | 3 | 10
+INPUTS | 4 | vgaStatemachine_FSM_FFd1  | vgaStatemachine_FSM_FFd2  | ioAdrHit  | memAdrHit
+INPUTMC | 4 | 3 | 10 | 3 | 0 | 4 | 2 | 2 | 17
+EQ | 5 | 
+   !vgaStatemachine_FSM_FFd1.D = !vgaStatemachine_FSM_FFd1 & 
+	!vgaStatemachine_FSM_FFd2
+	# !ioAdrHit & !memAdrHit & !vgaStatemachine_FSM_FFd2;
+   vgaStatemachine_FSM_FFd1.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd1.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 5 | vgaStatemachine_FSM_FFd4
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 3 | 3 | 7 | 3 | 5 | 2 | 14
+INPUTS | 1 | vgaStatemachine_FSM_FFd5
+INPUTMC | 1 | 5 | 3
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd4.D = vgaStatemachine_FSM_FFd5;
+   vgaStatemachine_FSM_FFd4.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd4.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 7 | AC_D1
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 17 | 0 | 5 | 0 | 10 | 0 | 14 | 2 | 5 | 2 | 8 | 0 | 4 | 0 | 7 | 0 | 2 | 1 | 16 | 1 | 13 | 1 | 8 | 1 | 4 | 1 | 7 | 1 | 10 | 1 | 14 | 0 | 1 | 5 | 12
+INPUTS | 1 | AC_D0
+INPUTMC | 1 | 5 | 9
+EQ | 3 | 
+   AC_D1.D = AC_D0;
+   AC_D1.CLK = mclk;	// GCK
+   !AC_D1.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 17 | DA_R<0>
+ATTRIBUTES | 8557312 | 0
+OUTPUTMC | 2 | 0 | 5 | 3 | 17
+INPUTS | 5 | RW  | DA_R<0>  | vgaStatemachine_FSM_FFd5  | DG<0>.PIN  | vgaStatemachine_FSM_FFd6
+INPUTMC | 3 | 3 | 17 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 116
+EQ | 7 | 
+   DA_R<0>.D = !RW & DA_R<0>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<0>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<0>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<0>;
+   DA_R<0>.CLK = mclk;	// GCK
+   !DA_R<0>.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 3 | 15 | DA_R<10>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 0 | 4 | 3 | 15
+INPUTS | 5 | RW  | DA_R<10>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<10>.PIN
+INPUTMC | 3 | 3 | 15 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 104
+EQ | 7 | 
+   DA_R<10>.D = !RW & DA_R<10>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<10>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<10>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<10>;
+   DA_R<10>.CLK = mclk;	// GCK
+   !DA_R<10>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 17 | DA_R<11>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 0 | 7 | 5 | 17
+INPUTS | 5 | RW  | DA_R<11>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<11>.PIN
+INPUTMC | 3 | 5 | 17 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 105
+EQ | 7 | 
+   DA_R<11>.D = !RW & DA_R<11>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<11>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<11>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<11>;
+   DA_R<11>.CLK = mclk;	// GCK
+   !DA_R<11>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 17 | DA_R<12>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 0 | 10 | 0 | 17
+INPUTS | 5 | RW  | DA_R<12>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<12>.PIN
+INPUTMC | 3 | 0 | 17 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 107
+EQ | 7 | 
+   DA_R<12>.D = !RW & DA_R<12>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<12>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<12>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<12>;
+   DA_R<12>.CLK = mclk;	// GCK
+   !DA_R<12>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 16 | DA_R<13>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 0 | 14 | 0 | 16
+INPUTS | 5 | RW  | DA_R<13>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<13>.PIN
+INPUTMC | 3 | 0 | 16 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 109
+EQ | 7 | 
+   DA_R<13>.D = !RW & DA_R<13>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<13>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<13>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<13>;
+   DA_R<13>.CLK = mclk;	// GCK
+   !DA_R<13>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 15 | DA_R<14>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 2 | 5 | 0 | 15
+INPUTS | 5 | RW  | DA_R<14>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<14>.PIN
+INPUTMC | 3 | 0 | 15 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 112
+EQ | 7 | 
+   DA_R<14>.D = !RW & DA_R<14>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<14>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<14>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<14>;
+   DA_R<14>.CLK = mclk;	// GCK
+   !DA_R<14>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 13 | DA_R<15>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 2 | 8 | 0 | 13
+INPUTS | 5 | RW  | DA_R<15>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<15>.PIN
+INPUTMC | 3 | 0 | 13 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 114
+EQ | 7 | 
+   DA_R<15>.D = !RW & DA_R<15>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<15>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<15>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<15>;
+   DA_R<15>.CLK = mclk;	// GCK
+   !DA_R<15>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 12 | DA_R<1>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 0 | 2 | 0 | 12
+INPUTS | 5 | RW  | DA_R<1>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<1>.PIN
+INPUTMC | 3 | 0 | 12 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 118
+EQ | 7 | 
+   DA_R<1>.D = !RW & DA_R<1>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<1>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<1>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<1>;
+   DA_R<1>.CLK = mclk;	// GCK
+   !DA_R<1>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 11 | DA_R<2>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 1 | 16 | 0 | 11
+INPUTS | 5 | RW  | DA_R<2>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<2>.PIN
+INPUTMC | 3 | 0 | 11 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 141
+EQ | 7 | 
+   DA_R<2>.D = !RW & DA_R<2>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<2>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<2>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<2>;
+   DA_R<2>.CLK = mclk;	// GCK
+   !DA_R<2>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 9 | DA_R<3>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 1 | 13 | 0 | 9
+INPUTS | 5 | RW  | DA_R<3>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<3>.PIN
+INPUTMC | 3 | 0 | 9 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 140
+EQ | 7 | 
+   DA_R<3>.D = !RW & DA_R<3>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<3>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<3>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<3>;
+   DA_R<3>.CLK = mclk;	// GCK
+   !DA_R<3>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 8 | DA_R<4>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 1 | 8 | 0 | 8
+INPUTS | 5 | RW  | DA_R<4>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<4>.PIN
+INPUTMC | 3 | 0 | 8 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 139
+EQ | 7 | 
+   DA_R<4>.D = !RW & DA_R<4>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<4>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<4>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<4>;
+   DA_R<4>.CLK = mclk;	// GCK
+   !DA_R<4>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 1 | 9 | DA_R<5>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 1 | 4 | 1 | 9
+INPUTS | 5 | RW  | DA_R<5>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<5>.PIN
+INPUTMC | 3 | 1 | 9 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 130
+EQ | 7 | 
+   DA_R<5>.D = !RW & DA_R<5>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<5>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<5>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<5>;
+   DA_R<5>.CLK = mclk;	// GCK
+   !DA_R<5>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 1 | 6 | DA_R<6>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 1 | 7 | 1 | 6
+INPUTS | 5 | RW  | DA_R<6>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<6>.PIN
+INPUTMC | 3 | 1 | 6 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 135
+EQ | 7 | 
+   DA_R<6>.D = !RW & DA_R<6>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<6>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<6>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<6>;
+   DA_R<6>.CLK = mclk;	// GCK
+   !DA_R<6>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 1 | 5 | DA_R<7>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 1 | 10 | 1 | 5
+INPUTS | 5 | RW  | DA_R<7>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<7>.PIN
+INPUTMC | 3 | 1 | 5 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 136
+EQ | 7 | 
+   DA_R<7>.D = !RW & DA_R<7>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<7>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<7>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<7>;
+   DA_R<7>.CLK = mclk;	// GCK
+   !DA_R<7>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 1 | 3 | DA_R<8>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 1 | 14 | 1 | 3
+INPUTS | 5 | RW  | DA_R<8>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<8>.PIN
+INPUTMC | 3 | 1 | 3 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 102
+EQ | 7 | 
+   DA_R<8>.D = !RW & DA_R<8>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<8>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<8>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<8>;
+   DA_R<8>.CLK = mclk;	// GCK
+   !DA_R<8>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 6 | DA_R<9>
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 0 | 1 | 0 | 6
+INPUTS | 5 | RW  | DA_R<9>  | vgaStatemachine_FSM_FFd5  | vgaStatemachine_FSM_FFd6  | DG<9>.PIN
+INPUTMC | 3 | 0 | 6 | 5 | 3 | 6 | 9
+INPUTP | 2 | 36 | 103
+EQ | 7 | 
+   DA_R<9>.D = !RW & DA_R<9>
+	# RW & vgaStatemachine_FSM_FFd5 & DG<9>.PIN
+	# RW & vgaStatemachine_FSM_FFd6 & DG<9>.PIN
+	# !vgaStatemachine_FSM_FFd5 & 
+	!vgaStatemachine_FSM_FFd6 & DA_R<9>;
+   DA_R<9>.CLK = mclk;	// GCK
+   !DA_R<9>.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 5 | 15 | vgaStatemachine_FSM_FFd14
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 5 | 6 | 5 | 15
+INPUTS | 5 | ioAdrHit  | vgaStatemachine_FSM_FFd15  | memAdrHit  | ds  | vgaStatemachine_FSM_FFd14
+INPUTMC | 5 | 4 | 2 | 3 | 9 | 2 | 17 | 6 | 7 | 5 | 15
+EQ | 5 | 
+   vgaStatemachine_FSM_FFd14.D = ioAdrHit & vgaStatemachine_FSM_FFd15
+	# vgaStatemachine_FSM_FFd15 & memAdrHit
+	# !ds & vgaStatemachine_FSM_FFd14;
+   vgaStatemachine_FSM_FFd14.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd14.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 6 | 8 | vgaStatemachine_FSM_FFd7
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 2 | 6 | 9 | 6 | 8
+INPUTS | 4 | vgaStatemachine_FSM_FFd8  | ioAdrHit  | vgaStatemachine_FSM_FFd7  | WAIT
+INPUTMC | 3 | 2 | 13 | 4 | 2 | 6 | 8
+INPUTP | 1 | 147
+EQ | 4 | 
+   vgaStatemachine_FSM_FFd7.D = vgaStatemachine_FSM_FFd8
+	# !ioAdrHit & vgaStatemachine_FSM_FFd7 & !WAIT;
+   vgaStatemachine_FSM_FFd7.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd7.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 1 | 17 | autoConfigDataOut<0>
+ATTRIBUTES | 8520544 | 0
+OUTPUTMC | 1 | 0 | 10
+INPUTS | 11 | A<2>  | A<6>  | A<4>  | A<1>  | A<5>  | A<3>  | vgaStatemachine_FSM_FFd12.EXP  | autoConfigAdrDSHit  | reset  | RW  | DA_2_IOBUFE.EXP
+INPUTMC | 3 | 1 | 0 | 2 | 16 | 1 | 16
+INPUTP | 8 | 79 | 88 | 86 | 72 | 90 | 82 | 160 | 36
+IMPORTS | 2 | 1 | 0 | 1 | 16
+EQ | 12 | 
+   !autoConfigDataOut<0>.D = A<2> & !A<6> & A<4> & A<1> & !A<5>
+	# !A<2> & !A<3> & A<6> & !A<4> & !A<5>
+	# !A<3> & !A<6> & !A<4> & !A<1> & !A<5>
+;Imported pterms FB2_1
+	# !autoconfigDone_FSM_FFd2 & !A<2> & !A<3> & !A<4> & 
+	!A<5>
+;Imported pterms FB2_17
+	# autoconfigDone_FSM_FFd2 & A<2> & !A<3> & !A<6> & 
+	!A<5>
+	# A<2> & !A<3> & !A<6> & !A<1> & !A<5>;
+   autoConfigDataOut<0>.CLK = autoConfigAdrDSHit;
+   autoConfigDataOut<0>.CE = reset & RW;
+
+MACROCELL | 1 | 15 | autoConfigDataOut<1>
+ATTRIBUTES | 8520544 | 0
+OUTPUTMC | 1 | 0 | 14
+INPUTS | 11 | A<2>  | A<6>  | A<4>  | A<1>  | A<5>  | A<3>  | autoconfigDone_FSM_FFd2  | autoConfigAdrDSHit  | reset  | RW  | DA_8_IOBUFE.EXP
+INPUTMC | 3 | 6 | 17 | 2 | 16 | 1 | 14
+INPUTP | 8 | 79 | 88 | 86 | 72 | 90 | 82 | 160 | 36
+IMPORTS | 1 | 1 | 14
+EQ | 9 | 
+   !autoConfigDataOut<1>.D = autoconfigDone_FSM_FFd2 & !A<2> & !A<3> & !A<4> & 
+	!A<5>
+	# A<2> & !A<3> & !A<6> & A<4> & !A<5>
+	# A<2> & !A<6> & A<4> & A<1> & !A<5>
+;Imported pterms FB2_15
+	# !A<2> & !A<3> & A<6> & !A<4> & !A<5>
+	# !A<2> & !A<3> & !A<4> & !A<1> & !A<5>;
+   autoConfigDataOut<1>.CLK = autoConfigAdrDSHit;
+   autoConfigDataOut<1>.CE = reset & RW;
+
+MACROCELL | 1 | 12 | autoConfigDataOut<2>
+ATTRIBUTES | 8520544 | 0
+OUTPUTMC | 1 | 2 | 5
+INPUTS | 10 | A<2>  | A<3>  | A<6>  | A<4>  | A<5>  | autoconfigDone_FSM_FFd2  | A<1>  | autoConfigAdrDSHit  | reset  | RW
+INPUTMC | 2 | 6 | 17 | 2 | 16
+INPUTP | 8 | 79 | 82 | 88 | 86 | 90 | 72 | 160 | 36
+EQ | 6 | 
+   !autoConfigDataOut<2>.D = A<2> & !A<3> & !A<6> & A<4> & !A<5>
+	# !A<2> & !A<3> & A<6> & !A<4> & !A<5>
+	# autoconfigDone_FSM_FFd2 & !A<2> & !A<3> & !A<4> & 
+	A<1> & !A<5>;
+   autoConfigDataOut<2>.CLK = autoConfigAdrDSHit;
+   autoConfigDataOut<2>.CE = reset & RW;
+
+MACROCELL | 1 | 11 | autoConfigDataOut<3>
+ATTRIBUTES | 8520544 | 0
+OUTPUTMC | 1 | 2 | 8
+INPUTS | 10 | A<2>  | A<3>  | A<6>  | A<4>  | A<5>  | A<1>  | autoconfigDone_FSM_FFd2  | autoConfigAdrDSHit  | reset  | RW
+INPUTMC | 2 | 6 | 17 | 2 | 16
+INPUTP | 8 | 79 | 82 | 88 | 86 | 90 | 72 | 160 | 36
+EQ | 6 | 
+   !autoConfigDataOut<3>.D = !A<2> & !A<3> & A<6> & !A<4> & !A<5>
+	# autoconfigDone_FSM_FFd2 & !A<2> & !A<3> & !A<6> & 
+	A<1> & !A<5>
+	# !A<2> & !A<3> & !A<6> & A<4> & A<1> & !A<5>;
+   autoConfigDataOut<3>.CLK = autoConfigAdrDSHit;
+   autoConfigDataOut<3>.CE = reset & RW;
+
+MACROCELL | 5 | 9 | AC_D0
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 1 | 5 | 7
+INPUTS | 1 | autoConfigAdrHit
+INPUTMC | 1 | 2 | 15
+EQ | 3 | 
+   AC_D0.D = autoConfigAdrHit;
+   AC_D0.CLK = mclk;	// GCK
+   !AC_D0.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 6 | VGA_D0
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 1 | 0 | 3
+INPUTS | 2 | ioAdrHit  | memAdrHit
+INPUTMC | 2 | 4 | 2 | 2 | 17
+EQ | 3 | 
+   !VGA_D0.D = !ioAdrHit & !memAdrHit;
+   VGA_D0.CLK = mclk;	// GCK
+   !VGA_D0.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 0 | 3 | VGA_D1
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 1 | 5 | 12
+INPUTS | 1 | VGA_D0
+INPUTMC | 1 | 3 | 6
+EQ | 3 | 
+   VGA_D1.D = VGA_D0;
+   VGA_D1.CLK = mclk;	// GCK
+   !VGA_D1.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 2 | vgaStatemachine_FSM_FFd11
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 1 | 1 | 0
+INPUTS | 2 | RW  | vgaStatemachine_FSM_FFd13
+INPUTMC | 1 | 5 | 6
+INPUTP | 1 | 36
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd11.D = RW & vgaStatemachine_FSM_FFd13;
+   vgaStatemachine_FSM_FFd11.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd11.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 3 | 0 | vgaStatemachine_FSM_FFd2
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 1 | 3 | 10
+INPUTS | 1 | vgaStatemachine_FSM_FFd3
+INPUTMC | 1 | 2 | 14
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd2.D = vgaStatemachine_FSM_FFd3;
+   vgaStatemachine_FSM_FFd2.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd2.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 2 | 13 | vgaStatemachine_FSM_FFd8
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 1 | 6 | 8
+INPUTS | 1 | vgaStatemachine_FSM_FFd9
+INPUTMC | 1 | 2 | 12
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd8.D = vgaStatemachine_FSM_FFd9;
+   vgaStatemachine_FSM_FFd8.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd8.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 2 | 12 | vgaStatemachine_FSM_FFd9
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 1 | 2 | 13
+INPUTS | 1 | vgaStatemachine_FSM_FFd10
+INPUTMC | 1 | 3 | 3
+EQ | 3 | 
+   vgaStatemachine_FSM_FFd9.D = vgaStatemachine_FSM_FFd10;
+   vgaStatemachine_FSM_FFd9.CLK = mclk;	// GCK
+   !vgaStatemachine_FSM_FFd9.AR = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 4 | reset
+
+MACROCELL | 6 | 13 | sigConfigOut
+ATTRIBUTES | 8688386 | 0
+INPUTS | 1 | autoconfigDone_FSM_FFd1
+INPUTMC | 1 | 1 | 2
+EQ | 3 | 
+   CFGOUT.D = !autoconfigDone_FSM_FFd1;
+   CFGOUT.CLK = AS;	// GCK
+   !CFGOUT.AP = reset;	// GSR
+GLOBALS | 2 | 2 | AS | 1 | reset
+
+MACROCELL | 4 | 16 | N0$BUF0
+ATTRIBUTES | 265986 | 0
+INPUTS | 3 | ioAdrHit  | memAdrHit  | autoConfigAdrHit
+INPUTMC | 3 | 4 | 2 | 2 | 17 | 2 | 15
+EQ | 2 | 
+   OVR = Gnd;
+   !OVR.OE = !ioAdrHit & !memAdrHit & !autoConfigAdrHit;
+
+MACROCELL | 2 | 7 | N0$BUF1
+ATTRIBUTES | 265986 | 0
+INPUTS | 2 | autoConfigAdrHit  | sigDTACK
+INPUTMC | 2 | 2 | 15 | 3 | 12
+EQ | 2 | 
+   DTACK = Gnd;
+   !DTACK.OE = !autoConfigAdrHit & sigDTACK;
+
+MACROCELL | 3 | 8 | CLRG_OBUF$BUF0
+ATTRIBUTES | 264962 | 0
+INPUTS | 1 | reset
+INPUTP | 1 | 160
+EQ | 1 | 
+   CLRG = reset;
+
+MACROCELL | 6 | 14 | SLAVE_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 3 | ioAdrHit  | memAdrHit  | autoConfigAdrHit
+INPUTMC | 3 | 4 | 2 | 2 | 17 | 2 | 15
+EQ | 1 | 
+   SLAVE = !ioAdrHit & !memAdrHit & !autoConfigAdrHit;
+
+MACROCELL | 3 | 11 | sigBALE$BUF0
+ATTRIBUTES | 8688386 | 0
+INPUTS | 6 | vgaStatemachine_FSM_FFd3  | IO<3>  | vgaStatemachine_FSM_FFd12  | vgaStatemachine_FSM_FFd15  | ioAdrHit  | memAdrHit
+INPUTMC | 6 | 2 | 14 | 5 | 4 | 1 | 0 | 3 | 9 | 4 | 2 | 2 | 17
+EQ | 6 | 
+   BALE.D = vgaStatemachine_FSM_FFd3
+	# IO<3> & vgaStatemachine_FSM_FFd15
+	# IO<3> & !vgaStatemachine_FSM_FFd12
+	# !ioAdrHit & vgaStatemachine_FSM_FFd15 & !memAdrHit;
+   BALE.CLK = mclk;	// GCK
+   !BALE.AP = reset;	// GSR
+GLOBALS | 2 | 2 | mclk | 1 | reset
+
+MACROCELL | 6 | 10 | N0
+ATTRIBUTES | 265986 | 0
+INPUTS | 0
+EQ | 2 | 
+   XRDYD = Gnd;
+   XRDYD.OE = Gnd;
+
+MACROCELL | 5 | 10 | $OpTx$$OpTx$FX_DC$23_INV$264
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 16 | 7 | 14 | 7 | 5 | 7 | 7 | 7 | 8 | 7 | 10 | 7 | 11 | 7 | 13 | 5 | 1 | 3 | 1 | 5 | 16 | 5 | 14 | 5 | 8 | 5 | 11 | 5 | 13 | 7 | 1 | 7 | 4
+INPUTS | 2 | ioAdrHit  | memAdrHit
+INPUTMC | 2 | 4 | 2 | 2 | 17
+EQ | 1 | 
+   $OpTx$$OpTx$FX_DC$23_INV$264 = !ioAdrHit & !memAdrHit;
+
+MACROCELL | 5 | 12 | DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 16 | 0 | 5 | 0 | 10 | 0 | 14 | 2 | 5 | 2 | 8 | 0 | 4 | 0 | 7 | 0 | 2 | 1 | 16 | 1 | 13 | 1 | 8 | 1 | 4 | 1 | 7 | 1 | 10 | 1 | 14 | 0 | 1
+INPUTS | 6 | RW  | ioAdrHit  | memAdrHit  | autoConfigAdrHit  | AC_D1  | VGA_D1
+INPUTMC | 5 | 4 | 2 | 2 | 17 | 2 | 15 | 5 | 7 | 0 | 3
+INPUTP | 1 | 36
+EQ | 3 | 
+   DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT = !RW
+	# !ioAdrHit & !memAdrHit & !autoConfigAdrHit & !AC_D1 & 
+	!VGA_D1;
+
+MACROCELL | 6 | 11 | $OpTx$FX_DC$59
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 2 | 4 | 0 | 4 | 4
+INPUTS | 2 | A<23>  | memSpace<2>
+INPUTMC | 1 | 6 | 12
+INPUTP | 1 | 47
+EQ | 2 | 
+   !$OpTx$FX_DC$59 = A<23>
+	$ memSpace<2>;
+
+MACROCELL | 2 | 0 | EXP10_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 17
+INPUTS | 12 | memSpace<2>  | A<23>  | autoconfigDone_FSM_FFd2  | A<18>  | A<17>  | A<16>  | A<22>  | A<20>  | A<19>  | A<21>  | CFGIN  | autoconfigDone_FSM_FFd1
+INPUTMC | 3 | 6 | 12 | 6 | 17 | 1 | 2
+INPUTP | 9 | 47 | 59 | 60 | 63 | 54 | 56 | 58 | 49 | 95
+EXPORTS | 1 | 2 | 17
+EQ | 6 | 
+       EXP10_.EXP  =  memSpace<2> & !A<23>
+	# !memSpace<2> & A<23>
+	# !autoconfigDone_FSM_FFd2 & !A<18> & !A<17> & !A<16> & 
+	A<22> & !A<20> & A<23> & A<19> & A<21> & !CFGIN
+	# !autoconfigDone_FSM_FFd1 & !A<18> & !A<17> & !A<16> & 
+	A<22> & !A<20> & A<23> & A<19> & A<21> & !CFGIN
+
+MACROCELL | 4 | 0 | EXP11_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 1
+INPUTS | 7 | ioSpace<5>  | A<21>  | ioSpace<6>  | A<22>  | memSpace<0>  | memSpace<1>  | $OpTx$FX_DC$59
+INPUTMC | 5 | 7 | 6 | 7 | 3 | 7 | 0 | 6 | 15 | 6 | 11
+INPUTP | 2 | 49 | 54
+EXPORTS | 1 | 4 | 1
+EQ | 6 | 
+       EXP11_.EXP  =  ioSpace<5> & !A<21>
+	# !ioSpace<5> & A<21>
+	# ioSpace<6> & !A<22>
+	# !ioSpace<6> & A<22>
+	# ioSpace<5> & memSpace<0> & memSpace<1> & A<22> & 
+	$OpTx$FX_DC$59
+
+MACROCELL | 4 | 1 | EXP12_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 2
+INPUTS | 7 | ioSpace<1>  | A<17>  | ioSpace<2>  | A<18>  | ioSpace<3>  | A<19>  | EXP11_.EXP
+INPUTMC | 4 | 7 | 16 | 7 | 15 | 7 | 12 | 4 | 0
+INPUTP | 3 | 60 | 59 | 58
+EXPORTS | 1 | 4 | 2
+IMPORTS | 1 | 4 | 0
+EQ | 12 | 
+       EXP12_.EXP  =  ioSpace<1> & !A<17>
+	# !ioSpace<1> & A<17>
+	# ioSpace<2> & !A<18>
+	# !ioSpace<2> & A<18>
+	# ioSpace<3> & !A<19>
+;Imported pterms FB5_1
+	# ioSpace<5> & !A<21>
+	# !ioSpace<5> & A<21>
+	# ioSpace<6> & !A<22>
+	# !ioSpace<6> & A<22>
+	# ioSpace<5> & memSpace<0> & memSpace<1> & A<22> & 
+	$OpTx$FX_DC$59
+
+MACROCELL | 4 | 3 | EXP13_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 2
+INPUTS | 7 | ioSpace<3>  | A<19>  | ioSpace<4>  | A<20>  | ioSpace<7>  | A<23>  | EXP14_.EXP
+INPUTMC | 4 | 7 | 12 | 7 | 9 | 7 | 2 | 4 | 4
+INPUTP | 3 | 58 | 56 | 47
+EXPORTS | 1 | 4 | 2
+IMPORTS | 1 | 4 | 4
+EQ | 18 | 
+       EXP13_.EXP  =  !ioSpace<3> & A<19>
+	# ioSpace<4> & !A<20>
+	# !ioSpace<4> & A<20>
+	# ioSpace<7> & !A<23>
+	# !ioSpace<7> & A<23>
+;Imported pterms FB5_5
+	# ioSpace<5> & memSpace<0> & !memSpace<1> & !A<22> & 
+	$OpTx$FX_DC$59
+	# !ioSpace<5> & !memSpace<0> & memSpace<1> & A<22> & 
+	$OpTx$FX_DC$59
+	# !ioSpace<5> & !memSpace<0> & !memSpace<1> & !A<22> & 
+	$OpTx$FX_DC$59
+	# !autoconfigDone_FSM_FFd2 & !ioSpace<0> & 
+	!ioSpace<1> & !ioSpace<2> & ioSpace<3> & !ioSpace<4> & 
+	ioSpace<5> & ioSpace<6> & ioSpace<7> & !CFGIN
+	# !autoconfigDone_FSM_FFd1 & !ioSpace<0> & 
+	!ioSpace<1> & !ioSpace<2> & ioSpace<3> & !ioSpace<4> & 
+	ioSpace<5> & ioSpace<6> & ioSpace<7> & !CFGIN
+
+MACROCELL | 4 | 4 | EXP14_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 3
+INPUTS | 15 | ioSpace<5>  | memSpace<0>  | memSpace<1>  | A<22>  | $OpTx$FX_DC$59  | autoconfigDone_FSM_FFd2  | ioSpace<0>  | ioSpace<1>  | ioSpace<2>  | ioSpace<3>  | ioSpace<4>  | ioSpace<6>  | ioSpace<7>  | CFGIN  | autoconfigDone_FSM_FFd1
+INPUTMC | 13 | 7 | 6 | 7 | 0 | 6 | 15 | 6 | 11 | 6 | 17 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 3 | 7 | 2 | 1 | 2
+INPUTP | 2 | 54 | 95
+EXPORTS | 1 | 4 | 3
+EQ | 12 | 
+       EXP14_.EXP  =  ioSpace<5> & memSpace<0> & !memSpace<1> & !A<22> & 
+	$OpTx$FX_DC$59
+	# !ioSpace<5> & !memSpace<0> & memSpace<1> & A<22> & 
+	$OpTx$FX_DC$59
+	# !ioSpace<5> & !memSpace<0> & !memSpace<1> & !A<22> & 
+	$OpTx$FX_DC$59
+	# !autoconfigDone_FSM_FFd2 & !ioSpace<0> & 
+	!ioSpace<1> & !ioSpace<2> & ioSpace<3> & !ioSpace<4> & 
+	ioSpace<5> & ioSpace<6> & ioSpace<7> & !CFGIN
+	# !autoconfigDone_FSM_FFd1 & !ioSpace<0> & 
+	!ioSpace<1> & !ioSpace<2> & ioSpace<3> & !ioSpace<4> & 
+	ioSpace<5> & ioSpace<6> & ioSpace<7> & !CFGIN
+
+PIN | mclk | 4096 | 0 | N/A | 33 | 66 | 7 | 14 | 7 | 5 | 7 | 7 | 7 | 8 | 7 | 10 | 7 | 11 | 7 | 13 | 5 | 1 | 3 | 1 | 5 | 16 | 5 | 14 | 5 | 8 | 5 | 11 | 5 | 13 | 7 | 1 | 7 | 4 | 6 | 16 | 5 | 4 | 3 | 7 | 3 | 13 | 3 | 5 | 3 | 4 | 3 | 16 | 3 | 14 | 2 | 16 | 4 | 2 | 3 | 9 | 2 | 17 | 3 | 3 | 2 | 14 | 2 | 15 | 1 | 0 | 5 | 6 | 5 | 3 | 6 | 9 | 6 | 7 | 3 | 12 | 3 | 10 | 5 | 5 | 5 | 7 | 3 | 17 | 3 | 15 | 5 | 17 | 0 | 17 | 0 | 16 | 0 | 15 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 9 | 0 | 8 | 1 | 9 | 1 | 6 | 1 | 5 | 1 | 3 | 0 | 6 | 5 | 15 | 6 | 8 | 5 | 9 | 3 | 6 | 0 | 3 | 3 | 2 | 3 | 0 | 2 | 13 | 2 | 12 | 3 | 11
+PIN | reset | 65600 | 0 | N/A | 160 | 86 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 3 | 8 | 7 | 14 | 7 | 5 | 7 | 7 | 7 | 8 | 7 | 10 | 7 | 11 | 7 | 13 | 5 | 1 | 3 | 1 | 5 | 16 | 5 | 14 | 5 | 8 | 5 | 11 | 5 | 13 | 7 | 1 | 7 | 4 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 6 | 16 | 5 | 4 | 3 | 7 | 3 | 13 | 3 | 5 | 3 | 4 | 3 | 16 | 3 | 14 | 2 | 16 | 4 | 2 | 3 | 9 | 2 | 17 | 3 | 3 | 2 | 14 | 2 | 15 | 1 | 0 | 5 | 6 | 5 | 3 | 6 | 9 | 6 | 7 | 3 | 12 | 3 | 10 | 5 | 5 | 5 | 7 | 3 | 17 | 3 | 15 | 5 | 17 | 0 | 17 | 0 | 16 | 0 | 15 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 9 | 0 | 8 | 1 | 9 | 1 | 6 | 1 | 5 | 1 | 3 | 0 | 6 | 5 | 15 | 6 | 8 | 5 | 9 | 3 | 6 | 0 | 3 | 3 | 2 | 3 | 0 | 2 | 13 | 2 | 12 | 6 | 13 | 3 | 11
+PIN | RW | 64 | 0 | N/A | 36 | 74 | 7 | 14 | 7 | 5 | 7 | 7 | 7 | 8 | 7 | 10 | 7 | 11 | 7 | 13 | 5 | 1 | 3 | 1 | 5 | 16 | 5 | 14 | 5 | 8 | 5 | 11 | 5 | 13 | 7 | 1 | 7 | 4 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 6 | 16 | 3 | 7 | 3 | 13 | 3 | 5 | 3 | 4 | 0 | 5 | 0 | 10 | 0 | 14 | 2 | 5 | 2 | 8 | 0 | 4 | 0 | 7 | 0 | 2 | 1 | 16 | 1 | 13 | 1 | 8 | 1 | 4 | 1 | 7 | 1 | 10 | 1 | 14 | 0 | 1 | 1 | 0 | 3 | 17 | 3 | 15 | 5 | 17 | 0 | 17 | 0 | 16 | 0 | 15 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 9 | 0 | 8 | 1 | 9 | 1 | 6 | 1 | 5 | 1 | 3 | 0 | 6 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 3 | 2 | 5 | 12
+PIN | A<4> | 64 | 0 | N/A | 86 | 20 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 1 | 0 | 1 | 14
+PIN | A<6> | 64 | 0 | N/A | 88 | 20 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 1 | 14 | 1 | 16
+PIN | A<1> | 64 | 0 | N/A | 72 | 20 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 1 | 14 | 1 | 16
+PIN | A<3> | 64 | 0 | N/A | 82 | 21 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 1 | 0 | 1 | 14 | 1 | 16
+PIN | A<5> | 64 | 0 | N/A | 90 | 21 | 6 | 17 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 1 | 0 | 1 | 14 | 1 | 16
+PIN | A<2> | 64 | 0 | N/A | 79 | 20 | 1 | 2 | 1 | 1 | 7 | 17 | 7 | 16 | 7 | 15 | 7 | 12 | 7 | 9 | 7 | 6 | 7 | 3 | 7 | 2 | 7 | 0 | 6 | 15 | 6 | 12 | 1 | 17 | 1 | 15 | 1 | 12 | 1 | 11 | 1 | 0 | 1 | 14 | 1 | 16
+PIN | A<12> | 64 | 0 | N/A | 68 | 3 | 6 | 16 | 3 | 16 | 3 | 14
+PIN | UDS | 64 | 0 | N/A | 24 | 3 | 6 | 16 | 3 | 16 | 6 | 7
+PIN | A<15> | 64 | 0 | N/A | 64 | 1 | 6 | 16
+PIN | AS | 8256 | 0 | N/A | 35 | 5 | 2 | 16 | 4 | 2 | 2 | 17 | 2 | 15 | 6 | 13
+PIN | A<21> | 64 | 0 | N/A | 49 | 5 | 2 | 16 | 4 | 0 | 2 | 17 | 2 | 15 | 2 | 0
+PIN | A<22> | 64 | 0 | N/A | 54 | 5 | 2 | 16 | 4 | 0 | 2 | 0 | 2 | 15 | 4 | 4
+PIN | A<23> | 64 | 0 | N/A | 47 | 5 | 2 | 16 | 6 | 11 | 2 | 0 | 2 | 15 | 4 | 3
+PIN | A<16> | 64 | 0 | N/A | 63 | 4 | 2 | 16 | 4 | 2 | 2 | 0 | 2 | 15
+PIN | A<17> | 64 | 0 | N/A | 60 | 4 | 2 | 16 | 4 | 1 | 2 | 0 | 2 | 15
+PIN | A<18> | 64 | 0 | N/A | 59 | 4 | 2 | 16 | 4 | 1 | 2 | 0 | 2 | 15
+PIN | A<19> | 64 | 0 | N/A | 58 | 5 | 2 | 16 | 4 | 1 | 2 | 0 | 2 | 15 | 4 | 3
+PIN | A<20> | 64 | 0 | N/A | 56 | 4 | 2 | 16 | 2 | 15 | 2 | 0 | 4 | 3
+PIN | BERR | 64 | 0 | N/A | 62 | 4 | 2 | 16 | 4 | 2 | 2 | 17 | 2 | 15
+PIN | CFGIN | 64 | 0 | N/A | 95 | 4 | 2 | 16 | 2 | 15 | 2 | 0 | 4 | 4
+PIN | WAIT | 64 | 0 | N/A | 147 | 2 | 6 | 9 | 6 | 8
+PIN | LDS | 64 | 0 | N/A | 28 | 1 | 6 | 7
+PIN | MONISW | 536871040 | 0 | N/A | 98
+PIN | IO<3> | 536871040 | 0 | N/A | 123
+PIN | IOR | 536871040 | 0 | N/A | 145
+PIN | IOW | 536871040 | 0 | N/A | 153
+PIN | MEMR | 536871040 | 0 | N/A | 144
+PIN | MEMW | 536871040 | 0 | N/A | 143
+PIN | SA0 | 536871040 | 0 | N/A | 157
+PIN | SA12 | 536871040 | 0 | N/A | 155
+PIN | CFGOUT | 536871040 | 0 | N/A | 96
+PIN | OVR | 536871040 | 0 | N/A | 77
+PIN | DTACK | 536871040 | 0 | N/A | 42
+PIN | CLRG | 536871040 | 0 | N/A | 146
+PIN | SLAVE | 536871040 | 0 | N/A | 97
+PIN | BALE | 536871040 | 0 | N/A | 149
+PIN | XRDYD | 536871040 | 0 | N/A | 92
+PIN | DG<0> | 536870976 | 0 | N/A | 116 | 1 | 3 | 17
+PIN | DG<10> | 536870976 | 0 | N/A | 104 | 1 | 3 | 15
+PIN | DG<11> | 536870976 | 0 | N/A | 105 | 1 | 5 | 17
+PIN | DG<12> | 536870976 | 0 | N/A | 107 | 1 | 0 | 17
+PIN | DG<13> | 536870976 | 0 | N/A | 109 | 1 | 0 | 16
+PIN | DG<14> | 536870976 | 0 | N/A | 112 | 1 | 0 | 15
+PIN | DG<15> | 536870976 | 0 | N/A | 114 | 1 | 0 | 13
+PIN | DG<1> | 536870976 | 0 | N/A | 118 | 1 | 0 | 12
+PIN | DG<2> | 536870976 | 0 | N/A | 141 | 1 | 0 | 11
+PIN | DG<3> | 536870976 | 0 | N/A | 140 | 1 | 0 | 9
+PIN | DG<4> | 536870976 | 0 | N/A | 139 | 1 | 0 | 8
+PIN | DG<5> | 536870976 | 0 | N/A | 130 | 1 | 1 | 9
+PIN | DG<6> | 536870976 | 0 | N/A | 135 | 1 | 1 | 6
+PIN | DG<7> | 536870976 | 0 | N/A | 136 | 1 | 1 | 5
+PIN | DG<8> | 536870976 | 0 | N/A | 102 | 1 | 1 | 3
+PIN | DG<9> | 536870976 | 0 | N/A | 103 | 1 | 0 | 6
+PIN | DA<0> | 536870976 | 0 | N/A | 22 | 1 | 7 | 14
+PIN | DA<12> | 536870976 | 0 | N/A | 26 | 2 | 7 | 8 | 7 | 9
+PIN | DA<13> | 536870976 | 0 | N/A | 30 | 3 | 7 | 10 | 7 | 6 | 7 | 0
+PIN | DA<14> | 536870976 | 0 | N/A | 37 | 3 | 7 | 11 | 7 | 3 | 6 | 15
+PIN | DA<15> | 536870976 | 0 | N/A | 44 | 3 | 7 | 13 | 7 | 2 | 6 | 12
+PIN | DA<10> | 536870976 | 0 | N/A | 21 | 2 | 7 | 5 | 7 | 15
+PIN | DA<11> | 536870976 | 0 | N/A | 23 | 2 | 7 | 7 | 7 | 12
+PIN | DA<1> | 536870976 | 0 | N/A | 19 | 1 | 5 | 1
+PIN | DA<2> | 536870976 | 0 | N/A | 17 | 1 | 3 | 1
+PIN | DA<3> | 536870976 | 0 | N/A | 13 | 1 | 5 | 16
+PIN | DA<4> | 536870976 | 0 | N/A | 8 | 1 | 5 | 14
+PIN | DA<5> | 536870976 | 0 | N/A | 2 | 1 | 5 | 8
+PIN | DA<6> | 536870976 | 0 | N/A | 6 | 1 | 5 | 11
+PIN | DA<7> | 536870976 | 0 | N/A | 11 | 1 | 5 | 13
+PIN | DA<8> | 536870976 | 0 | N/A | 15 | 2 | 7 | 1 | 7 | 17
+PIN | DA<9> | 536870976 | 0 | N/A | 18 | 2 | 7 | 4 | 7 | 16
