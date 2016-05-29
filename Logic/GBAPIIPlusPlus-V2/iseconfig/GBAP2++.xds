@@ -6,13 +6,14 @@
   <DeviceList devices="xc9500xl"/>
 
   <Properties>
-    <property name="Synthesize - XST:Optimization Goal" value="Area"/>
+    <property name="Synthesize - XST:Optimization Goal" value="Speed"/>
     <property name="Synthesize - XST:Optimization Effort" value="High"/>
-    <property name="Synthesize - XST:Netlist Hierarchy" value="Rebuilt"/>
-    <property name="Fit:Implementation Template" value="Optimize Density"/>
-    <property name="Fit:Use Location Constraints" value="Try"/>
+    <property name="Synthesize - XST:Netlist Hierarchy" value="As Optimized"/>
+    <property name="Synthesize - XST:Safe Implementation" value="Yes"/>
+    <property name="Fit:Implementation Template" value="Optimize Balance"/>
+    <property name="Fit:Use Location Constraints" value="Always"/>
     <property name="Fit:I/O Pin Termination" value="Float"/>
-    <property name="Fit:Logic Optimization" value="Density"/>
+    <property name="Fit:Logic Optimization" value="Speed"/>
   </Properties>
 
 </DesignStrategy>

@@ -88,28 +88,28 @@ PARTITION FB2_1 vgaStatemachine_FSM_FFd12 shutUp autoconfigDone_FSM_FFd1 DA_R<8>
 		 DA_4_IOBUFE DA_R<5> DA_7_IOBUFE autoConfigDataOut<3>
 		 autoConfigDataOut<2> DA_3_IOBUFE DA_8_IOBUFE autoConfigDataOut<1>
 		 DA_2_IOBUFE autoConfigDataOut<0>
-PARTITION FB3_1 EXP10_
 PARTITION FB3_6 DA_14_IOBUFE
 PARTITION FB3_8 N0$BUF1 DA_15_IOBUFE
-PARTITION FB3_13 vgaStatemachine_FSM_FFd9 vgaStatemachine_FSM_FFd8 vgaStatemachine_FSM_FFd3 autoConfigAdrHit
-		 autoConfigAdrDSHit memAdrHit
+PARTITION FB3_13 vgaStatemachine_FSM_FFd8 vgaStatemachine_FSM_FFd3 vgaStatemachine_FSM_FFd7 memSpace<2>
+		 memSpace<1> autoconfigDone_FSM_FFd2
 PARTITION FB4_1 vgaStatemachine_FSM_FFd2 DG_R<2> vgaStatemachine_FSM_FFd11 vgaStatemachine_FSM_FFd10
 		 sigMEMW sigMEMR VGA_D0 sigIOR
 		 CLRG_OBUF$BUF0 vgaStatemachine_FSM_FFd15 vgaStatemachine_FSM_FFd1 sigBALE$BUF0
 		 sigDTACK sigIOW sigSA12 DA_R<10>
 		 sigSA0 DA_R<0>
-PARTITION FB5_1 EXP11_ EXP12_ ioAdrHit EXP13_
-		 EXP14_
+PARTITION FB5_1 EXP10_ EXP11_ ioAdrHit EXP12_
+		 EXP13_
 PARTITION FB5_17 N0$BUF0
 
 PARTITION FB6_2 DG_R<1>
 PARTITION FB6_4 vgaStatemachine_FSM_FFd5 sigBALE vgaStatemachine_FSM_FFd4 vgaStatemachine_FSM_FFd13
-		 AC_D1 DG_R<5> AC_D0 $OpTx$$OpTx$FX_DC$23_INV$264
+		 AC_D1 DG_R<5> AC_D0 $OpTx$$OpTx$FX_DC$27_INV$210
 		 DG_R<6> DA_9_IOBUFE/DA_9_IOBUFE_TRST__$INT DG_R<7> DG_R<4>
 		 vgaStatemachine_FSM_FFd14 DG_R<3> DA_R<11>
-PARTITION FB7_8 ds vgaStatemachine_FSM_FFd7 vgaStatemachine_FSM_FFd6 N0
-		 $OpTx$FX_DC$59 memSpace<2> sigConfigOut SLAVE_OBUF
-		 memSpace<1> sigMONITORSW autoconfigDone_FSM_FFd2
+PARTITION FB7_1 EXP14_
+PARTITION FB7_8 vgaStatemachine_FSM_FFd9 ds vgaStatemachine_FSM_FFd6 N0
+		 autoConfigAdrHit autoConfigAdrDSHit sigConfigOut SLAVE_OBUF
+		 $OpTx$FX_DC$63 sigMONITORSW memAdrHit
 PARTITION FB8_1 memSpace<0> DG_R<8> ioSpace<7> ioSpace<6>
 		 DG_R<9> DG_R<10> ioSpace<5> DG_R<11>
 		 DG_R<12> ioSpace<4> DG_R<13> DG_R<14>

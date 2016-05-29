@@ -3,9 +3,9 @@
 <script src="paths.js"></script><script src="eqns.js"></script><script>
       var design = "GBAPIIPlusPlus";
       var device = "XC95144XL";
-      signals = new Array("AC_D0","AC_D1","BALE","CFGOUT","CLRG","DA0_SPECSIG","DA10_SPECSIG","DA11_SPECSIG","DA12_SPECSIG","DA13_SPECSIG","DA14_SPECSIG","DA15_SPECSIG","DA1_SPECSIG","DA2_SPECSIG","DA3_SPECSIG","DA4_SPECSIG","DA5_SPECSIG","DA6_SPECSIG","DA7_SPECSIG","DA8_SPECSIG","DA9_SPECSIG","DA_9_IOBUFEDA_9_IOBUFE_TRST__INT_SPECSIG","DA_R0_SPECSIG","DA_R10_SPECSIG","DA_R11_SPECSIG","DA_R12_SPECSIG","DA_R13_SPECSIG","DA_R14_SPECSIG","DA_R15_SPECSIG","DA_R1_SPECSIG","DA_R2_SPECSIG","DA_R3_SPECSIG","DA_R4_SPECSIG","DA_R5_SPECSIG","DA_R6_SPECSIG","DA_R7_SPECSIG","DA_R8_SPECSIG","DA_R9_SPECSIG","DG0_SPECSIG","DG10_SPECSIG","DG11_SPECSIG","DG12_SPECSIG","DG13_SPECSIG","DG14_SPECSIG","DG15_SPECSIG","DG1_SPECSIG","DG2_SPECSIG","DG3_SPECSIG","DG4_SPECSIG","DG5_SPECSIG","DG6_SPECSIG","DG7_SPECSIG","DG8_SPECSIG","DG9_SPECSIG","DTACK","IO3_SPECSIG","IOR","IOW","MEMR","MEMW","MONISW","OVR","OpTxFX_DC59_SPECSIG","OpTxOpTxFX_DC23_INV264_SPECSIG","SA0","SA12","SLAVE","VGA_D0","VGA_D1","XRDYD","autoConfigAdrDSHit","autoConfigAdrHit","autoConfigDataOut0_SPECSIG","autoConfigDataOut1_SPECSIG","autoConfigDataOut2_SPECSIG","autoConfigDataOut3_SPECSIG","autoconfigDone_FSM_FFd1","autoconfigDone_FSM_FFd2","ds","ioAdrHit","ioSpace0_SPECSIG","ioSpace1_SPECSIG","ioSpace2_SPECSIG","ioSpace3_SPECSIG","ioSpace4_SPECSIG","ioSpace5_SPECSIG","ioSpace6_SPECSIG","ioSpace7_SPECSIG","memAdrHit","memSpace0_SPECSIG","memSpace1_SPECSIG","memSpace2_SPECSIG","shutUp","sigDTACK","vgaStatemachine_FSM_FFd1","vgaStatemachine_FSM_FFd10","vgaStatemachine_FSM_FFd11","vgaStatemachine_FSM_FFd12","vgaStatemachine_FSM_FFd13","vgaStatemachine_FSM_FFd14","vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd2","vgaStatemachine_FSM_FFd3","vgaStatemachine_FSM_FFd4","vgaStatemachine_FSM_FFd5","vgaStatemachine_FSM_FFd6","vgaStatemachine_FSM_FFd7","vgaStatemachine_FSM_FFd8","vgaStatemachine_FSM_FFd9");
-      sigNegs = new Array("OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","ON","OFF","OFF","ON","OFF","OFF","OFF","OFF","ON","ON","ON","ON","OFF","OFF","ON","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF");
-      sigTypes = new Array("D","D","D","D","","","","","","","","","","","","","","","","","","","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","","T","T","T","T","T","D","","","","D","D","","D","D","","D","D","D","D","D","D","T","T","D","D","D","D","D","D","D","D","D","D","D","D","D","D","T","T","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D");
+      signals = new Array("AC_D0","AC_D1","BALE","CFGOUT","CLRG","DA0_SPECSIG","DA10_SPECSIG","DA11_SPECSIG","DA12_SPECSIG","DA13_SPECSIG","DA14_SPECSIG","DA15_SPECSIG","DA1_SPECSIG","DA2_SPECSIG","DA3_SPECSIG","DA4_SPECSIG","DA5_SPECSIG","DA6_SPECSIG","DA7_SPECSIG","DA8_SPECSIG","DA9_SPECSIG","DA_9_IOBUFEDA_9_IOBUFE_TRST__INT_SPECSIG","DA_R0_SPECSIG","DA_R10_SPECSIG","DA_R11_SPECSIG","DA_R12_SPECSIG","DA_R13_SPECSIG","DA_R14_SPECSIG","DA_R15_SPECSIG","DA_R1_SPECSIG","DA_R2_SPECSIG","DA_R3_SPECSIG","DA_R4_SPECSIG","DA_R5_SPECSIG","DA_R6_SPECSIG","DA_R7_SPECSIG","DA_R8_SPECSIG","DA_R9_SPECSIG","DG0_SPECSIG","DG10_SPECSIG","DG11_SPECSIG","DG12_SPECSIG","DG13_SPECSIG","DG14_SPECSIG","DG15_SPECSIG","DG1_SPECSIG","DG2_SPECSIG","DG3_SPECSIG","DG4_SPECSIG","DG5_SPECSIG","DG6_SPECSIG","DG7_SPECSIG","DG8_SPECSIG","DG9_SPECSIG","DTACK","IO3_SPECSIG","IOR","IOW","MEMR","MEMW","MONISW","OVR","OpTxFX_DC63_SPECSIG","OpTxOpTxFX_DC27_INV210_SPECSIG","SA0","SA12","SLAVE","VGA_D0","VGA_D1","XRDYD","autoConfigAdrDSHit","autoConfigAdrHit","autoConfigDataOut0_SPECSIG","autoConfigDataOut1_SPECSIG","autoConfigDataOut2_SPECSIG","autoConfigDataOut3_SPECSIG","autoconfigDone_FSM_FFd1","autoconfigDone_FSM_FFd2","ds","ioAdrHit","ioSpace0_SPECSIG","ioSpace1_SPECSIG","ioSpace2_SPECSIG","ioSpace3_SPECSIG","ioSpace4_SPECSIG","ioSpace5_SPECSIG","ioSpace6_SPECSIG","ioSpace7_SPECSIG","memAdrHit","memSpace0_SPECSIG","memSpace1_SPECSIG","memSpace2_SPECSIG","shutUp","sigDTACK","vgaStatemachine_FSM_FFd1","vgaStatemachine_FSM_FFd10","vgaStatemachine_FSM_FFd11","vgaStatemachine_FSM_FFd12","vgaStatemachine_FSM_FFd13","vgaStatemachine_FSM_FFd14","vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd2","vgaStatemachine_FSM_FFd3","vgaStatemachine_FSM_FFd4","vgaStatemachine_FSM_FFd5","vgaStatemachine_FSM_FFd6","vgaStatemachine_FSM_FFd7","vgaStatemachine_FSM_FFd8","vgaStatemachine_FSM_FFd9");
+      sigNegs = new Array("OFF","OFF","ON","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","ON","OFF","OFF","ON","OFF","OFF","OFF","OFF","ON","ON","ON","ON","OFF","OFF","ON","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF");
+      sigTypes = new Array("D","D","D","D","","","","","","","","","","","","","","","","","","","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","","T","T","T","T","T","T","","","","D","D","","D","D","","D","D","D","D","D","D","T","T","D","D","D","D","D","D","D","D","D","D","D","D","D","D","T","T","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D");
 
       
         specSig["DA0PIN_SPECSIG"]=new Array("DA<0>.PIN");
@@ -52,25 +52,25 @@
       
         specSig["A2_SPECSIG"]=new Array("A<2>");
       
-        specSig["A12_SPECSIG"]=new Array("A<12>");
-      
-        specSig["A15_SPECSIG"]=new Array("A<15>");
-      
-        specSig["A21_SPECSIG"]=new Array("A<21>");
+        specSig["A23_SPECSIG"]=new Array("A<23>");
       
         specSig["A22_SPECSIG"]=new Array("A<22>");
       
-        specSig["A23_SPECSIG"]=new Array("A<23>");
-      
-        specSig["A16_SPECSIG"]=new Array("A<16>");
-      
-        specSig["A17_SPECSIG"]=new Array("A<17>");
-      
-        specSig["A18_SPECSIG"]=new Array("A<18>");
+        specSig["A21_SPECSIG"]=new Array("A<21>");
       
         specSig["A19_SPECSIG"]=new Array("A<19>");
       
         specSig["A20_SPECSIG"]=new Array("A<20>");
+      
+        specSig["A18_SPECSIG"]=new Array("A<18>");
+      
+        specSig["A12_SPECSIG"]=new Array("A<12>");
+      
+        specSig["A15_SPECSIG"]=new Array("A<15>");
+      
+        specSig["A16_SPECSIG"]=new Array("A<16>");
+      
+        specSig["A17_SPECSIG"]=new Array("A<17>");
       
         specSig["DG0PIN_SPECSIG"]=new Array("DG<0>.PIN");
       
@@ -150,6 +150,8 @@
       
         specSig["DA15_SPECSIG"]=new Array("DA<15>");
       
+        specSig["memSpace1_SPECSIG"]=new Array("memSpace<1>");
+      
         specSig["DG2_SPECSIG"]=new Array("DG<2>");
       
         specSig["DG1_SPECSIG"]=new Array("DG<1>");
@@ -158,7 +160,7 @@
       
         specSig["DG5_SPECSIG"]=new Array("DG<5>");
       
-        specSig["OpTxOpTxFX_DC23_INV264_SPECSIG"]=new Array("$OpTx$$OpTx$FX_DC$23_INV$264");
+        specSig["OpTxOpTxFX_DC27_INV210_SPECSIG"]=new Array("$OpTx$$OpTx$FX_DC$27_INV$210");
       
         specSig["DG6_SPECSIG"]=new Array("DG<6>");
       
@@ -224,13 +226,9 @@
       
         specSig["autoConfigDataOut2_SPECSIG"]=new Array("autoConfigDataOut<2>");
       
-        specSig["memSpace0_SPECSIG"]=new Array("memSpace<0>");
-      
-        specSig["memSpace1_SPECSIG"]=new Array("memSpace<1>");
-      
         specSig["memSpace2_SPECSIG"]=new Array("memSpace<2>");
       
-        specSig["OpTxFX_DC59_SPECSIG"]=new Array("$OpTx$FX_DC$59");
+        specSig["OpTxFX_DC63_SPECSIG"]=new Array("$OpTx$FX_DC$63");
       
         specSig["ioSpace0_SPECSIG"]=new Array("ioSpace<0>");
       
@@ -245,6 +243,8 @@
         specSig["ioSpace6_SPECSIG"]=new Array("ioSpace<6>");
       
         specSig["ioSpace7_SPECSIG"]=new Array("ioSpace<7>");
+      
+        specSig["memSpace0_SPECSIG"]=new Array("memSpace<0>");
       
             pterms["FB1_2_1"]=new Array("/RW","DA_R9_SPECSIG");
           
@@ -374,19 +374,19 @@
           
             pterms["FB2_1_2"]=new Array("/RW","vgaStatemachine_FSM_FFd13");
           
-            pterms["FB2_1_3"]=new Array("/autoconfigDone_FSM_FFd2","/A2_SPECSIG","/A3_SPECSIG","/A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_1_3"]=new Array("/autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_2_1"]=new Array("/shutUp","A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_2_1"]=new Array("/shutUp","/A5_SPECSIG","/A4_SPECSIG","A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
-            pterms["FB2_2_2"]=new Array("autoconfigDone_FSM_FFd2","shutUp","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_2_2"]=new Array("autoconfigDone_FSM_FFd2","shutUp","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB2_2_3"]=new Array("autoConfigAdrDSHit");
           
             pterms["FB2_2_4"]=new Array("/RW");
           
-            pterms["FB2_3_1"]=new Array("autoconfigDone_FSM_FFd2","/autoconfigDone_FSM_FFd1","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_3_1"]=new Array("autoconfigDone_FSM_FFd2","/autoconfigDone_FSM_FFd1","/A5_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
-            pterms["FB2_3_2"]=new Array("/autoconfigDone_FSM_FFd1","A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_3_2"]=new Array("/autoconfigDone_FSM_FFd1","/A5_SPECSIG","/A4_SPECSIG","A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB2_3_3"]=new Array("autoConfigAdrDSHit");
           
@@ -448,21 +448,21 @@
           
             pterms["FB2_11_3"]=new Array("/DA_9_IOBUFEDA_9_IOBUFE_TRST__INT_SPECSIG");
           
-            pterms["FB2_12_1"]=new Array("/A2_SPECSIG","/A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_12_1"]=new Array("/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_12_2"]=new Array("autoconfigDone_FSM_FFd2","/A2_SPECSIG","/A3_SPECSIG","/A6_SPECSIG","A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_12_2"]=new Array("autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A2_SPECSIG","A1_SPECSIG","/A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_12_3"]=new Array("/A2_SPECSIG","/A3_SPECSIG","/A6_SPECSIG","A4_SPECSIG","A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_12_3"]=new Array("/A5_SPECSIG","A4_SPECSIG","/A2_SPECSIG","A1_SPECSIG","/A6_SPECSIG","/A3_SPECSIG");
           
             pterms["FB2_12_4"]=new Array("autoConfigAdrDSHit");
           
             pterms["FB2_12_5"]=new Array("reset","RW");
           
-            pterms["FB2_13_1"]=new Array("A2_SPECSIG","/A3_SPECSIG","/A6_SPECSIG","A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_13_1"]=new Array("/A5_SPECSIG","A4_SPECSIG","A2_SPECSIG","/A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_13_2"]=new Array("/A2_SPECSIG","/A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_13_2"]=new Array("/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_13_3"]=new Array("autoconfigDone_FSM_FFd2","/A2_SPECSIG","/A3_SPECSIG","/A4_SPECSIG","A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_13_3"]=new Array("autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","A1_SPECSIG","/A3_SPECSIG");
           
             pterms["FB2_13_4"]=new Array("autoConfigAdrDSHit");
           
@@ -480,15 +480,15 @@
           
             pterms["FB2_15_3"]=new Array("/DA_9_IOBUFEDA_9_IOBUFE_TRST__INT_SPECSIG");
           
-            pterms["FB2_15_4"]=new Array("/A2_SPECSIG","/A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_15_4"]=new Array("autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_15_5"]=new Array("/A2_SPECSIG","/A3_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_15_5"]=new Array("/A5_SPECSIG","A4_SPECSIG","A2_SPECSIG","A1_SPECSIG","/A6_SPECSIG");
           
-            pterms["FB2_16_1"]=new Array("autoconfigDone_FSM_FFd2","/A2_SPECSIG","/A3_SPECSIG","/A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_16_1"]=new Array("/A5_SPECSIG","A4_SPECSIG","A2_SPECSIG","/A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_16_2"]=new Array("A2_SPECSIG","/A3_SPECSIG","/A6_SPECSIG","A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_16_2"]=new Array("/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_16_3"]=new Array("A2_SPECSIG","/A6_SPECSIG","A4_SPECSIG","A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_16_3"]=new Array("/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","A6_SPECSIG","/A3_SPECSIG");
           
             pterms["FB2_16_4"]=new Array("autoConfigAdrDSHit");
           
@@ -500,27 +500,19 @@
           
             pterms["FB2_17_3"]=new Array("/DA_9_IOBUFEDA_9_IOBUFE_TRST__INT_SPECSIG");
           
-            pterms["FB2_17_4"]=new Array("autoconfigDone_FSM_FFd2","A2_SPECSIG","/A3_SPECSIG","/A6_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_17_4"]=new Array("autoconfigDone_FSM_FFd2","/A5_SPECSIG","A2_SPECSIG","/A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_17_5"]=new Array("A2_SPECSIG","/A3_SPECSIG","/A6_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_17_5"]=new Array("/A5_SPECSIG","A4_SPECSIG","A2_SPECSIG","A1_SPECSIG","/A6_SPECSIG");
           
-            pterms["FB2_18_1"]=new Array("A2_SPECSIG","/A6_SPECSIG","A4_SPECSIG","A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_18_1"]=new Array("/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_18_2"]=new Array("/A2_SPECSIG","/A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_18_2"]=new Array("/A5_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A6_SPECSIG","/A3_SPECSIG");
           
-            pterms["FB2_18_3"]=new Array("/A3_SPECSIG","/A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB2_18_3"]=new Array("/A5_SPECSIG","A2_SPECSIG","/A1_SPECSIG","/A6_SPECSIG","/A3_SPECSIG");
           
             pterms["FB2_18_4"]=new Array("autoConfigAdrDSHit");
           
             pterms["FB2_18_5"]=new Array("reset","RW");
-          
-            pterms["FB3_1_1"]=new Array("memSpace2_SPECSIG","/A23_SPECSIG");
-          
-            pterms["FB3_1_2"]=new Array("/memSpace2_SPECSIG","A23_SPECSIG");
-          
-            pterms["FB3_1_3"]=new Array("/autoconfigDone_FSM_FFd2","/A18_SPECSIG","/A17_SPECSIG","/A16_SPECSIG","A22_SPECSIG","/A20_SPECSIG","A23_SPECSIG","A19_SPECSIG","A21_SPECSIG","/CFGIN");
-          
-            pterms["FB3_1_4"]=new Array("/autoconfigDone_FSM_FFd1","/A18_SPECSIG","/A17_SPECSIG","/A16_SPECSIG","A22_SPECSIG","/A20_SPECSIG","A23_SPECSIG","A19_SPECSIG","A21_SPECSIG","/CFGIN");
           
             pterms["FB3_6_1"]=new Array("/RW","DA_R14_SPECSIG");
           
@@ -544,43 +536,43 @@
           
             pterms["FB3_9_5"]=new Array("/DA_9_IOBUFEDA_9_IOBUFE_TRST__INT_SPECSIG");
           
-            pterms["FB3_13_1"]=new Array("vgaStatemachine_FSM_FFd10");
+            pterms["FB3_13_1"]=new Array("vgaStatemachine_FSM_FFd9");
           
-            pterms["FB3_14_1"]=new Array("vgaStatemachine_FSM_FFd9");
+            pterms["FB3_14_1"]=new Array("vgaStatemachine_FSM_FFd4");
           
-            pterms["FB3_15_1"]=new Array("vgaStatemachine_FSM_FFd4");
+            pterms["FB3_15_1"]=new Array("vgaStatemachine_FSM_FFd8");
           
-            pterms["FB3_16_1"]=new Array("/autoconfigDone_FSM_FFd2","BERR","/AS","/A18_SPECSIG","/A17_SPECSIG","/A16_SPECSIG","A22_SPECSIG","/A20_SPECSIG","A23_SPECSIG","A19_SPECSIG","A21_SPECSIG","/CFGIN");
+            pterms["FB3_15_2"]=new Array("/ioAdrHit","vgaStatemachine_FSM_FFd7","/WAIT");
           
-            pterms["FB3_16_2"]=new Array("/autoconfigDone_FSM_FFd1","BERR","/AS","/A18_SPECSIG","/A17_SPECSIG","/A16_SPECSIG","A22_SPECSIG","/A20_SPECSIG","A23_SPECSIG","A19_SPECSIG","A21_SPECSIG","/CFGIN");
+            pterms["FB3_16_1"]=new Array("DA15PIN_SPECSIG");
           
-            pterms["FB3_17_1"]=new Array("/autoconfigDone_FSM_FFd2","ds","BERR","/AS","/A18_SPECSIG","/A17_SPECSIG","/A16_SPECSIG","A22_SPECSIG","/A20_SPECSIG","A23_SPECSIG","A19_SPECSIG","A21_SPECSIG","/CFGIN");
+            pterms["FB3_16_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB3_17_2"]=new Array("/autoconfigDone_FSM_FFd1","ds","BERR","/AS","/A18_SPECSIG","/A17_SPECSIG","/A16_SPECSIG","A22_SPECSIG","/A20_SPECSIG","A23_SPECSIG","A19_SPECSIG","A21_SPECSIG","/CFGIN");
+            pterms["FB3_16_3"]=new Array("/RW","/autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
-            pterms["FB3_17_3"]=new Array("memSpace1_SPECSIG","/A22_SPECSIG");
+            pterms["FB3_17_1"]=new Array("DA14PIN_SPECSIG");
           
-            pterms["FB3_17_4"]=new Array("/memSpace1_SPECSIG","A22_SPECSIG");
+            pterms["FB3_17_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB3_18_1"]=new Array("shutUp");
+            pterms["FB3_17_3"]=new Array("/RW","/autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
-            pterms["FB3_18_2"]=new Array("/BERR");
+            pterms["FB3_18_1"]=new Array("/autoconfigDone_FSM_FFd2","autoconfigDone_FSM_FFd1");
           
-            pterms["FB3_18_3"]=new Array("AS");
+            pterms["FB3_18_2"]=new Array("/autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
-            pterms["FB3_18_4"]=new Array("memSpace0_SPECSIG","/A21_SPECSIG");
+            pterms["FB3_18_3"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB3_18_5"]=new Array("/memSpace0_SPECSIG","A21_SPECSIG");
+            pterms["FB3_18_4"]=new Array("/RW");
           
             pterms["FB4_1_1"]=new Array("vgaStatemachine_FSM_FFd3");
           
             pterms["FB4_2_1"]=new Array("DG2_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB4_2_2"]=new Array("DG2_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB4_2_2"]=new Array("DG2_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB4_2_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","DA2PIN_SPECSIG");
           
-            pterms["FB4_2_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB4_2_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB4_3_1"]=new Array("RW","vgaStatemachine_FSM_FFd13");
           
@@ -590,17 +582,17 @@
           
             pterms["FB4_5_2"]=new Array("/RW","/MEMW","/memAdrHit","vgaStatemachine_FSM_FFd10");
           
-            pterms["FB4_5_3"]=new Array("/MEMW","/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit");
+            pterms["FB4_5_3"]=new Array("/MEMW","/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd15");
           
-            pterms["FB4_5_4"]=new Array("/RW","MEMW","/vgaStatemachine_FSM_FFd15","memAdrHit","vgaStatemachine_FSM_FFd10","/vgaStatemachine_FSM_FFd5");
+            pterms["FB4_5_4"]=new Array("/RW","MEMW","/vgaStatemachine_FSM_FFd5","memAdrHit","/vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd10");
           
             pterms["FB4_6_1"]=new Array("/MEMR","vgaStatemachine_FSM_FFd4");
           
             pterms["FB4_6_2"]=new Array("RW","/MEMR","/memAdrHit","vgaStatemachine_FSM_FFd10");
           
-            pterms["FB4_6_3"]=new Array("/MEMR","/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit");
+            pterms["FB4_6_3"]=new Array("/MEMR","/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd15");
           
-            pterms["FB4_6_4"]=new Array("RW","MEMR","/vgaStatemachine_FSM_FFd15","memAdrHit","vgaStatemachine_FSM_FFd10","/vgaStatemachine_FSM_FFd4");
+            pterms["FB4_6_4"]=new Array("RW","MEMR","memAdrHit","/vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd10","/vgaStatemachine_FSM_FFd4");
           
             pterms["FB4_7_1"]=new Array("/ioAdrHit","/memAdrHit");
           
@@ -608,13 +600,13 @@
           
             pterms["FB4_8_2"]=new Array("RW","/IOR","/ioAdrHit","vgaStatemachine_FSM_FFd10");
           
-            pterms["FB4_8_3"]=new Array("/IOR","/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit");
+            pterms["FB4_8_3"]=new Array("/IOR","/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd15");
           
             pterms["FB4_8_4"]=new Array("RW","IOR","ioAdrHit","/vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd10","/vgaStatemachine_FSM_FFd4");
           
             pterms["FB4_9_1"]=new Array("reset");
           
-            pterms["FB4_10_1"]=new Array("/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit");
+            pterms["FB4_10_1"]=new Array("/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd15");
           
             pterms["FB4_10_2"]=new Array("/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd1");
           
@@ -622,27 +614,27 @@
           
             pterms["FB4_11_2"]=new Array("/ioAdrHit","/memAdrHit","/vgaStatemachine_FSM_FFd2");
           
-            pterms["FB4_12_1"]=new Array("vgaStatemachine_FSM_FFd3");
+            pterms["FB4_12_1"]=new Array("/IO3_SPECSIG","/vgaStatemachine_FSM_FFd3","ioAdrHit");
           
-            pterms["FB4_12_2"]=new Array("IO3_SPECSIG","vgaStatemachine_FSM_FFd15");
+            pterms["FB4_12_2"]=new Array("/IO3_SPECSIG","/vgaStatemachine_FSM_FFd3","memAdrHit");
           
-            pterms["FB4_12_3"]=new Array("IO3_SPECSIG","/vgaStatemachine_FSM_FFd12");
+            pterms["FB4_12_3"]=new Array("/IO3_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd15");
           
-            pterms["FB4_12_4"]=new Array("/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit");
+            pterms["FB4_12_4"]=new Array("vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd15");
           
-            pterms["FB4_13_1"]=new Array("/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit","/sigDTACK");
+            pterms["FB4_13_1"]=new Array("vgaStatemachine_FSM_FFd6","/vgaStatemachine_FSM_FFd15","sigDTACK","/vgaStatemachine_FSM_FFd1");
           
-            pterms["FB4_13_2"]=new Array("/ioAdrHit","/memAdrHit","/sigDTACK","vgaStatemachine_FSM_FFd1");
+            pterms["FB4_13_2"]=new Array("/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd15","/sigDTACK");
           
-            pterms["FB4_13_3"]=new Array("/vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd6","sigDTACK","/vgaStatemachine_FSM_FFd1");
+            pterms["FB4_13_3"]=new Array("/ioAdrHit","/memAdrHit","/sigDTACK","vgaStatemachine_FSM_FFd1");
           
             pterms["FB4_14_1"]=new Array("/IOW","vgaStatemachine_FSM_FFd5");
           
             pterms["FB4_14_2"]=new Array("/RW","/IOW","/ioAdrHit","vgaStatemachine_FSM_FFd10");
           
-            pterms["FB4_14_3"]=new Array("/IOW","/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit");
+            pterms["FB4_14_3"]=new Array("/IOW","/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd15");
           
-            pterms["FB4_14_4"]=new Array("/RW","IOW","ioAdrHit","/vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd10","/vgaStatemachine_FSM_FFd5");
+            pterms["FB4_14_4"]=new Array("/RW","IOW","/vgaStatemachine_FSM_FFd5","ioAdrHit","/vgaStatemachine_FSM_FFd15","vgaStatemachine_FSM_FFd10");
           
             pterms["FB4_15_1"]=new Array("vgaStatemachine_FSM_FFd3");
           
@@ -662,11 +654,11 @@
           
             pterms["FB4_17_1"]=new Array("/SA0","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd13");
           
-            pterms["FB4_17_2"]=new Array("/SA0","/ioAdrHit","/memAdrHit","/vgaStatemachine_FSM_FFd3");
+            pterms["FB4_17_2"]=new Array("/SA0","/vgaStatemachine_FSM_FFd3","/ioAdrHit","/memAdrHit");
           
-            pterms["FB4_17_3"]=new Array("memAdrHit","/vgaStatemachine_FSM_FFd3","vgaStatemachine_FSM_FFd13","/UDS");
+            pterms["FB4_17_3"]=new Array("/vgaStatemachine_FSM_FFd3","memAdrHit","vgaStatemachine_FSM_FFd13","/UDS");
           
-            pterms["FB4_17_4"]=new Array("/A12_SPECSIG","ioAdrHit","/vgaStatemachine_FSM_FFd3","vgaStatemachine_FSM_FFd13","/UDS");
+            pterms["FB4_17_4"]=new Array("/A12_SPECSIG","/vgaStatemachine_FSM_FFd3","ioAdrHit","vgaStatemachine_FSM_FFd13","/UDS");
           
             pterms["FB4_18_1"]=new Array("/RW","DA_R0_SPECSIG");
           
@@ -676,73 +668,73 @@
           
             pterms["FB4_18_4"]=new Array("/vgaStatemachine_FSM_FFd5","/vgaStatemachine_FSM_FFd6","DA_R0_SPECSIG");
           
-            pterms["FB5_1_1"]=new Array("ioSpace5_SPECSIG","/A21_SPECSIG");
+            pterms["FB5_1_1"]=new Array("ioSpace1_SPECSIG","/A17_SPECSIG");
           
-            pterms["FB5_1_2"]=new Array("/ioSpace5_SPECSIG","A21_SPECSIG");
+            pterms["FB5_1_2"]=new Array("/ioSpace1_SPECSIG","A17_SPECSIG");
           
-            pterms["FB5_1_3"]=new Array("ioSpace6_SPECSIG","/A22_SPECSIG");
+            pterms["FB5_1_3"]=new Array("ioSpace4_SPECSIG","/A20_SPECSIG");
           
-            pterms["FB5_1_4"]=new Array("/ioSpace6_SPECSIG","A22_SPECSIG");
+            pterms["FB5_1_4"]=new Array("/ioSpace4_SPECSIG","A20_SPECSIG");
           
-            pterms["FB5_1_5"]=new Array("ioSpace5_SPECSIG","memSpace0_SPECSIG","memSpace1_SPECSIG","A22_SPECSIG","OpTxFX_DC59_SPECSIG");
+            pterms["FB5_1_5"]=new Array("ioSpace5_SPECSIG","memSpace0_SPECSIG","memSpace1_SPECSIG","A22_SPECSIG","OpTxFX_DC63_SPECSIG");
           
-            pterms["FB5_2_1"]=new Array("ioSpace1_SPECSIG","/A17_SPECSIG");
+            pterms["FB5_2_1"]=new Array("ioSpace0_SPECSIG","/A16_SPECSIG");
           
-            pterms["FB5_2_2"]=new Array("/ioSpace1_SPECSIG","A17_SPECSIG");
+            pterms["FB5_2_2"]=new Array("/ioSpace0_SPECSIG","A16_SPECSIG");
           
-            pterms["FB5_2_3"]=new Array("ioSpace2_SPECSIG","/A18_SPECSIG");
+            pterms["FB5_2_3"]=new Array("ioSpace3_SPECSIG","/A19_SPECSIG");
           
-            pterms["FB5_2_4"]=new Array("/ioSpace2_SPECSIG","A18_SPECSIG");
+            pterms["FB5_2_4"]=new Array("/ioSpace3_SPECSIG","A19_SPECSIG");
           
-            pterms["FB5_2_5"]=new Array("ioSpace3_SPECSIG","/A19_SPECSIG");
+            pterms["FB5_2_5"]=new Array("ioSpace7_SPECSIG","/A23_SPECSIG");
           
-            pterms["FB5_3_1"]=new Array("shutUp");
+            pterms["FB5_3_1"]=new Array("/BERR");
           
-            pterms["FB5_3_2"]=new Array("/BERR");
+            pterms["FB5_3_2"]=new Array("AS");
           
-            pterms["FB5_3_3"]=new Array("AS");
+            pterms["FB5_3_3"]=new Array("shutUp");
           
-            pterms["FB5_3_4"]=new Array("ioSpace0_SPECSIG","/A16_SPECSIG");
+            pterms["FB5_3_4"]=new Array("ioSpace5_SPECSIG","/A21_SPECSIG");
           
-            pterms["FB5_3_5"]=new Array("/ioSpace0_SPECSIG","A16_SPECSIG");
+            pterms["FB5_3_5"]=new Array("/ioSpace5_SPECSIG","A21_SPECSIG");
           
-            pterms["FB5_4_1"]=new Array("/ioSpace3_SPECSIG","A19_SPECSIG");
+            pterms["FB5_4_1"]=new Array("ioSpace2_SPECSIG","/A18_SPECSIG");
           
-            pterms["FB5_4_2"]=new Array("ioSpace4_SPECSIG","/A20_SPECSIG");
+            pterms["FB5_4_2"]=new Array("/ioSpace2_SPECSIG","A18_SPECSIG");
           
-            pterms["FB5_4_3"]=new Array("/ioSpace4_SPECSIG","A20_SPECSIG");
+            pterms["FB5_4_3"]=new Array("ioSpace6_SPECSIG","/A22_SPECSIG");
           
-            pterms["FB5_4_4"]=new Array("ioSpace7_SPECSIG","/A23_SPECSIG");
+            pterms["FB5_4_4"]=new Array("/ioSpace6_SPECSIG","A22_SPECSIG");
           
             pterms["FB5_4_5"]=new Array("/ioSpace7_SPECSIG","A23_SPECSIG");
           
-            pterms["FB5_5_1"]=new Array("ioSpace5_SPECSIG","memSpace0_SPECSIG","/memSpace1_SPECSIG","/A22_SPECSIG","OpTxFX_DC59_SPECSIG");
+            pterms["FB5_5_1"]=new Array("ioSpace5_SPECSIG","memSpace0_SPECSIG","/memSpace1_SPECSIG","/A22_SPECSIG","OpTxFX_DC63_SPECSIG");
           
-            pterms["FB5_5_2"]=new Array("/ioSpace5_SPECSIG","/memSpace0_SPECSIG","memSpace1_SPECSIG","A22_SPECSIG","OpTxFX_DC59_SPECSIG");
+            pterms["FB5_5_2"]=new Array("/ioSpace5_SPECSIG","/memSpace0_SPECSIG","memSpace1_SPECSIG","A22_SPECSIG","OpTxFX_DC63_SPECSIG");
           
-            pterms["FB5_5_3"]=new Array("/ioSpace5_SPECSIG","/memSpace0_SPECSIG","/memSpace1_SPECSIG","/A22_SPECSIG","OpTxFX_DC59_SPECSIG");
+            pterms["FB5_5_3"]=new Array("/ioSpace5_SPECSIG","/memSpace0_SPECSIG","/memSpace1_SPECSIG","/A22_SPECSIG","OpTxFX_DC63_SPECSIG");
           
-            pterms["FB5_5_4"]=new Array("/autoconfigDone_FSM_FFd2","/ioSpace0_SPECSIG","/ioSpace1_SPECSIG","/ioSpace2_SPECSIG","ioSpace3_SPECSIG","/ioSpace4_SPECSIG","ioSpace5_SPECSIG","ioSpace6_SPECSIG","ioSpace7_SPECSIG","/CFGIN");
+            pterms["FB5_5_4"]=new Array("/autoconfigDone_FSM_FFd2","/ioSpace0_SPECSIG","/ioSpace2_SPECSIG","ioSpace3_SPECSIG","ioSpace5_SPECSIG","ioSpace6_SPECSIG","ioSpace7_SPECSIG","/CFGIN","/A20_SPECSIG","/A17_SPECSIG");
           
-            pterms["FB5_5_5"]=new Array("/autoconfigDone_FSM_FFd1","/ioSpace0_SPECSIG","/ioSpace1_SPECSIG","/ioSpace2_SPECSIG","ioSpace3_SPECSIG","/ioSpace4_SPECSIG","ioSpace5_SPECSIG","ioSpace6_SPECSIG","ioSpace7_SPECSIG","/CFGIN");
+            pterms["FB5_5_5"]=new Array("/autoconfigDone_FSM_FFd1","/ioSpace0_SPECSIG","/ioSpace2_SPECSIG","ioSpace3_SPECSIG","ioSpace5_SPECSIG","ioSpace6_SPECSIG","ioSpace7_SPECSIG","/CFGIN","/A20_SPECSIG","/A17_SPECSIG");
           
             pterms["FB5_17_1"]=new Array("/ioAdrHit","/memAdrHit","/autoConfigAdrHit");
           
             pterms["FB6_2_1"]=new Array("DG1_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB6_2_2"]=new Array("DG1_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB6_2_2"]=new Array("DG1_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB6_2_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","DA1PIN_SPECSIG");
           
-            pterms["FB6_2_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB6_2_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB6_4_1"]=new Array("vgaStatemachine_FSM_FFd6");
           
             pterms["FB6_5_1"]=new Array("/IO3_SPECSIG","vgaStatemachine_FSM_FFd3");
           
-            pterms["FB6_5_2"]=new Array("IO3_SPECSIG","/vgaStatemachine_FSM_FFd15","/vgaStatemachine_FSM_FFd3","vgaStatemachine_FSM_FFd12");
+            pterms["FB6_5_2"]=new Array("IO3_SPECSIG","vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd15");
           
-            pterms["FB6_5_3"]=new Array("/IO3_SPECSIG","/ioAdrHit","vgaStatemachine_FSM_FFd15","/memAdrHit");
+            pterms["FB6_5_3"]=new Array("/IO3_SPECSIG","/ioAdrHit","/memAdrHit","vgaStatemachine_FSM_FFd15");
           
             pterms["FB6_6_1"]=new Array("vgaStatemachine_FSM_FFd5");
           
@@ -752,11 +744,11 @@
           
             pterms["FB6_9_1"]=new Array("DG5_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB6_9_2"]=new Array("DG5_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB6_9_2"]=new Array("DG5_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB6_9_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","DA5PIN_SPECSIG");
           
-            pterms["FB6_9_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB6_9_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB6_10_1"]=new Array("autoConfigAdrHit");
           
@@ -764,11 +756,11 @@
           
             pterms["FB6_12_1"]=new Array("DG6_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB6_12_2"]=new Array("DG6_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB6_12_2"]=new Array("DG6_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB6_12_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","DA6PIN_SPECSIG");
           
-            pterms["FB6_12_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB6_12_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB6_13_1"]=new Array("/RW");
           
@@ -776,33 +768,33 @@
           
             pterms["FB6_14_1"]=new Array("DG7_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB6_14_2"]=new Array("DG7_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB6_14_2"]=new Array("DG7_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB6_14_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","DA7PIN_SPECSIG");
           
-            pterms["FB6_14_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB6_14_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB6_15_1"]=new Array("DG4_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB6_15_2"]=new Array("DG4_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB6_15_2"]=new Array("DG4_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB6_15_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","DA4PIN_SPECSIG");
           
-            pterms["FB6_15_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB6_15_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB6_16_1"]=new Array("ioAdrHit","vgaStatemachine_FSM_FFd15");
           
-            pterms["FB6_16_2"]=new Array("vgaStatemachine_FSM_FFd15","memAdrHit");
+            pterms["FB6_16_2"]=new Array("memAdrHit","vgaStatemachine_FSM_FFd15");
           
             pterms["FB6_16_3"]=new Array("/ds","vgaStatemachine_FSM_FFd14");
           
             pterms["FB6_17_1"]=new Array("DG3_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB6_17_2"]=new Array("DG3_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB6_17_2"]=new Array("DG3_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB6_17_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","DA3PIN_SPECSIG");
           
-            pterms["FB6_17_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB6_17_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB6_18_1"]=new Array("/RW","DA_R11_SPECSIG");
           
@@ -812,173 +804,185 @@
           
             pterms["FB6_18_4"]=new Array("/vgaStatemachine_FSM_FFd5","/vgaStatemachine_FSM_FFd6","DA_R11_SPECSIG");
           
-            pterms["FB7_8_1"]=new Array("UDS","LDS");
+            pterms["FB7_1_1"]=new Array("/memSpace0_SPECSIG","A21_SPECSIG");
           
-            pterms["FB7_9_1"]=new Array("vgaStatemachine_FSM_FFd8");
+            pterms["FB7_1_2"]=new Array("memSpace1_SPECSIG","/A22_SPECSIG");
           
-            pterms["FB7_9_2"]=new Array("/ioAdrHit","vgaStatemachine_FSM_FFd7","/WAIT");
+            pterms["FB7_1_3"]=new Array("/memSpace1_SPECSIG","A22_SPECSIG");
+          
+            pterms["FB7_1_4"]=new Array("/autoconfigDone_FSM_FFd2","A23_SPECSIG","A22_SPECSIG","A21_SPECSIG","A19_SPECSIG","/CFGIN","/A20_SPECSIG","/A18_SPECSIG","/A16_SPECSIG","/A17_SPECSIG");
+          
+            pterms["FB7_1_5"]=new Array("/autoconfigDone_FSM_FFd1","A23_SPECSIG","A22_SPECSIG","A21_SPECSIG","A19_SPECSIG","/CFGIN","/A20_SPECSIG","/A18_SPECSIG","/A16_SPECSIG","/A17_SPECSIG");
+          
+            pterms["FB7_8_1"]=new Array("vgaStatemachine_FSM_FFd10");
+          
+            pterms["FB7_9_1"]=new Array("UDS","LDS");
           
             pterms["FB7_10_1"]=new Array("ioAdrHit","vgaStatemachine_FSM_FFd7");
           
             pterms["FB7_10_2"]=new Array("vgaStatemachine_FSM_FFd7","WAIT");
           
-            pterms["FB7_12_1"]=new Array("A23_SPECSIG");
+            pterms["FB7_12_1"]=new Array("BERR","/AS","/autoconfigDone_FSM_FFd2","A23_SPECSIG","A22_SPECSIG","A21_SPECSIG","A19_SPECSIG","/CFGIN","/A20_SPECSIG","/A18_SPECSIG","/A16_SPECSIG","/A17_SPECSIG");
           
-            pterms["FB7_12_2"]=new Array("memSpace2_SPECSIG");
+            pterms["FB7_12_2"]=new Array("BERR","/AS","/autoconfigDone_FSM_FFd1","A23_SPECSIG","A22_SPECSIG","A21_SPECSIG","A19_SPECSIG","/CFGIN","/A20_SPECSIG","/A18_SPECSIG","/A16_SPECSIG","/A17_SPECSIG");
           
-            pterms["FB7_13_1"]=new Array("DA15PIN_SPECSIG");
+            pterms["FB7_13_1"]=new Array("BERR","/AS","/autoconfigDone_FSM_FFd2","A23_SPECSIG","A22_SPECSIG","A21_SPECSIG","A19_SPECSIG","/CFGIN","/A20_SPECSIG","/A18_SPECSIG","ds","/A16_SPECSIG","/A17_SPECSIG");
           
-            pterms["FB7_13_2"]=new Array("autoConfigAdrDSHit");
-          
-            pterms["FB7_13_3"]=new Array("/RW","/autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB7_13_2"]=new Array("BERR","/AS","/autoconfigDone_FSM_FFd1","A23_SPECSIG","A22_SPECSIG","A21_SPECSIG","A19_SPECSIG","/CFGIN","/A20_SPECSIG","/A18_SPECSIG","ds","/A16_SPECSIG","/A17_SPECSIG");
           
             pterms["FB7_14_1"]=new Array("/autoconfigDone_FSM_FFd1");
           
             pterms["FB7_15_1"]=new Array("/ioAdrHit","/memAdrHit","/autoConfigAdrHit");
           
-            pterms["FB7_16_1"]=new Array("DA14PIN_SPECSIG");
+            pterms["FB7_16_1"]=new Array("A23_SPECSIG");
           
-            pterms["FB7_16_2"]=new Array("autoConfigAdrDSHit");
+            pterms["FB7_16_2"]=new Array("memSpace2_SPECSIG");
           
-            pterms["FB7_16_3"]=new Array("/RW","/autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB7_17_1"]=new Array("/RW","A12_SPECSIG","/MONISW","ioAdrHit","vgaStatemachine_FSM_FFd10","/UDS","A15_SPECSIG");
           
-            pterms["FB7_17_1"]=new Array("A12_SPECSIG");
+            pterms["FB7_17_2"]=new Array("/RW","A12_SPECSIG","/MONISW","ioAdrHit","vgaStatemachine_FSM_FFd10","/LDS","A15_SPECSIG");
           
-            pterms["FB7_17_2"]=new Array("/RW","ioAdrHit","vgaStatemachine_FSM_FFd10","/UDS","A15_SPECSIG");
+            pterms["FB7_17_3"]=new Array("/RW","/A12_SPECSIG","MONISW","ioAdrHit","vgaStatemachine_FSM_FFd10","/UDS","A15_SPECSIG");
           
-            pterms["FB7_18_1"]=new Array("/autoconfigDone_FSM_FFd2","autoconfigDone_FSM_FFd1");
+            pterms["FB7_17_4"]=new Array("/RW","/A12_SPECSIG","MONISW","ioAdrHit","vgaStatemachine_FSM_FFd10","/LDS","A15_SPECSIG");
           
-            pterms["FB7_18_2"]=new Array("/autoconfigDone_FSM_FFd2","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB7_17_5"]=new Array("memSpace0_SPECSIG","/A21_SPECSIG");
           
-            pterms["FB7_18_3"]=new Array("autoConfigAdrDSHit");
+            pterms["FB7_18_1"]=new Array("/BERR");
           
-            pterms["FB7_18_4"]=new Array("/RW");
+            pterms["FB7_18_2"]=new Array("AS");
+          
+            pterms["FB7_18_3"]=new Array("shutUp");
+          
+            pterms["FB7_18_4"]=new Array("memSpace2_SPECSIG","/A23_SPECSIG");
+          
+            pterms["FB7_18_5"]=new Array("/memSpace2_SPECSIG","A23_SPECSIG");
           
             pterms["FB8_1_1"]=new Array("DA13PIN_SPECSIG");
           
             pterms["FB8_1_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_1_3"]=new Array("/RW","/autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_1_3"]=new Array("/RW","/autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_2_1"]=new Array("DG8_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_2_2"]=new Array("DG8_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_2_2"]=new Array("DG8_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_2_3"]=new Array("/RW","DA8PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_2_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_2_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_3_1"]=new Array("DA15PIN_SPECSIG");
           
             pterms["FB8_3_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_3_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_3_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_4_1"]=new Array("DA14PIN_SPECSIG");
           
             pterms["FB8_4_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_4_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_4_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_5_1"]=new Array("DG9_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_5_2"]=new Array("DG9_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_5_2"]=new Array("DG9_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_5_3"]=new Array("/RW","DA9PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_5_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_5_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_6_1"]=new Array("DG10_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_6_2"]=new Array("DG10_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_6_2"]=new Array("DG10_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_6_3"]=new Array("/RW","DA10PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_6_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_6_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_7_1"]=new Array("DA13PIN_SPECSIG");
           
             pterms["FB8_7_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_7_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_7_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_8_1"]=new Array("DG11_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_8_2"]=new Array("DG11_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_8_2"]=new Array("DG11_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_8_3"]=new Array("/RW","DA11PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_8_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_8_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_9_1"]=new Array("DG12_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_9_2"]=new Array("DG12_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_9_2"]=new Array("DG12_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_9_3"]=new Array("/RW","DA12PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_9_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_9_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_10_1"]=new Array("DA12PIN_SPECSIG");
           
             pterms["FB8_10_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_10_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_10_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_11_1"]=new Array("DG13_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_11_2"]=new Array("DG13_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_11_2"]=new Array("DG13_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_11_3"]=new Array("/RW","DA13PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_11_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_11_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_12_1"]=new Array("DG14_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_12_2"]=new Array("DG14_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_12_2"]=new Array("DG14_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_12_3"]=new Array("/RW","DA14PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_12_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_12_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_13_1"]=new Array("DA11PIN_SPECSIG");
           
             pterms["FB8_13_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_13_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_13_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_14_1"]=new Array("DG15_SPECSIG","RW","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_14_2"]=new Array("DG15_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_14_2"]=new Array("DG15_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
             pterms["FB8_14_3"]=new Array("/RW","DA15PIN_SPECSIG","vgaStatemachine_FSM_FFd12");
           
-            pterms["FB8_14_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_14_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_15_1"]=new Array("/DG0_SPECSIG","RW","/vgaStatemachine_FSM_FFd3");
           
-            pterms["FB8_15_2"]=new Array("/DG0_SPECSIG","/vgaStatemachine_FSM_FFd3","/vgaStatemachine_FSM_FFd12");
+            pterms["FB8_15_2"]=new Array("/DG0_SPECSIG","/vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3");
           
-            pterms["FB8_15_3"]=new Array("/RW","/vgaStatemachine_FSM_FFd3","vgaStatemachine_FSM_FFd12","/DA0PIN_SPECSIG");
+            pterms["FB8_15_3"]=new Array("/RW","vgaStatemachine_FSM_FFd12","/vgaStatemachine_FSM_FFd3","/DA0PIN_SPECSIG");
           
-            pterms["FB8_15_4"]=new Array("/RW","/OpTxOpTxFX_DC23_INV264_SPECSIG");
+            pterms["FB8_15_4"]=new Array("/RW","/OpTxOpTxFX_DC27_INV210_SPECSIG");
           
             pterms["FB8_16_1"]=new Array("DA10PIN_SPECSIG");
           
             pterms["FB8_16_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_16_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_16_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_17_1"]=new Array("DA9PIN_SPECSIG");
           
             pterms["FB8_17_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_17_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_17_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
             pterms["FB8_18_1"]=new Array("DA8PIN_SPECSIG");
           
             pterms["FB8_18_2"]=new Array("autoConfigAdrDSHit");
           
-            pterms["FB8_18_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A2_SPECSIG","A3_SPECSIG","A6_SPECSIG","/A4_SPECSIG","/A1_SPECSIG","/A5_SPECSIG");
+            pterms["FB8_18_3"]=new Array("/RW","autoconfigDone_FSM_FFd2","/A5_SPECSIG","/A4_SPECSIG","/A2_SPECSIG","/A1_SPECSIG","A6_SPECSIG","A3_SPECSIG");
           
           d2["DA9_SPECSIG"]=new Array("FB1_2_1","FB1_2_2");
           
@@ -1312,15 +1316,7 @@
               
                 trstimp["DA15_SPECSIG"]=new Array("1");
               
-          d2["vgaStatemachine_FSM_FFd9"]=new Array("FB3_13_1");
-          
-            d2imp["vgaStatemachine_FSM_FFd9"]=new Array("1");
-          
-              gblclk["vgaStatemachine_FSM_FFd9"]=new Array("mclk");
-            
-              gblrst["vgaStatemachine_FSM_FFd9"]=new Array("reset");
-            prld["vgaStatemachine_FSM_FFd9"]="GND";
-          d2["vgaStatemachine_FSM_FFd8"]=new Array("FB3_14_1");
+          d2["vgaStatemachine_FSM_FFd8"]=new Array("FB3_13_1");
           
             d2imp["vgaStatemachine_FSM_FFd8"]=new Array("1");
           
@@ -1328,7 +1324,7 @@
             
               gblrst["vgaStatemachine_FSM_FFd8"]=new Array("reset");
             prld["vgaStatemachine_FSM_FFd8"]="GND";
-          d2["vgaStatemachine_FSM_FFd3"]=new Array("FB3_15_1");
+          d2["vgaStatemachine_FSM_FFd3"]=new Array("FB3_14_1");
           
             d2imp["vgaStatemachine_FSM_FFd3"]=new Array("1");
           
@@ -1336,30 +1332,56 @@
             
               gblrst["vgaStatemachine_FSM_FFd3"]=new Array("reset");
             prld["vgaStatemachine_FSM_FFd3"]="GND";
-          d2["autoConfigAdrHit"]=new Array("FB3_16_1","FB3_16_2");
+          d2["vgaStatemachine_FSM_FFd7"]=new Array("FB3_15_1","FB3_15_2");
           
-            d2imp["autoConfigAdrHit"]=new Array("1","1");
+            d2imp["vgaStatemachine_FSM_FFd7"]=new Array("1","1");
           
-              gblclk["autoConfigAdrHit"]=new Array("mclk");
+              gblclk["vgaStatemachine_FSM_FFd7"]=new Array("mclk");
             
-              gblrst["autoConfigAdrHit"]=new Array("reset");
-            prld["autoConfigAdrHit"]="GND";
-          d2["autoConfigAdrDSHit"]=new Array("FB3_17_1","FB3_17_2");
+              gblrst["vgaStatemachine_FSM_FFd7"]=new Array("reset");
+            prld["vgaStatemachine_FSM_FFd7"]="GND";
+          d2["memSpace2_SPECSIG"]=new Array("FB3_16_1");
           
-            d2imp["autoConfigAdrDSHit"]=new Array("1","1");
+            d2imp["memSpace2_SPECSIG"]=new Array("1");
           
-              gblclk["autoConfigAdrDSHit"]=new Array("mclk");
+              clk["memSpace2_SPECSIG"]=new Array("FB3_16_2");
+              
+                clkimp["memSpace2_SPECSIG"]=new Array("1");
+              
+              gblset["memSpace2_SPECSIG"]=new Array("reset");
             
-              gblrst["autoConfigAdrDSHit"]=new Array("reset");
-            prld["autoConfigAdrDSHit"]="GND";
-          d2["memAdrHit"]=new Array("FB3_18_1","FB3_18_2","FB3_18_3","FB3_18_4","FB3_18_5","FB3_1_1","FB3_1_2","FB3_1_3","FB3_1_4","FB3_17_3","FB3_17_4");
+          ce["memSpace2_SPECSIG"]=new Array("FB3_16_3");
           
-            d2imp["memAdrHit"]=new Array("1","1","1","1","1","1","1","1","1","1","1");
+            ceimp["memSpace2_SPECSIG"]=new Array("1");
+          prld["memSpace2_SPECSIG"]="GND";
+          d2["memSpace1_SPECSIG"]=new Array("FB3_17_1");
           
-              gblclk["memAdrHit"]=new Array("mclk");
+            d2imp["memSpace1_SPECSIG"]=new Array("1");
+          
+              clk["memSpace1_SPECSIG"]=new Array("FB3_17_2");
+              
+                clkimp["memSpace1_SPECSIG"]=new Array("1");
+              
+              gblset["memSpace1_SPECSIG"]=new Array("reset");
             
-              gblrst["memAdrHit"]=new Array("reset");
-            prld["memAdrHit"]="GND";
+          ce["memSpace1_SPECSIG"]=new Array("FB3_17_3");
+          
+            ceimp["memSpace1_SPECSIG"]=new Array("1");
+          prld["memSpace1_SPECSIG"]="GND";
+          d2["autoconfigDone_FSM_FFd2"]=new Array("FB3_18_1","FB3_18_2");
+          
+            d2imp["autoconfigDone_FSM_FFd2"]=new Array("1","1");
+          
+              clk["autoconfigDone_FSM_FFd2"]=new Array("FB3_18_3");
+              
+                clkimp["autoconfigDone_FSM_FFd2"]=new Array("1");
+              
+              gblrst["autoconfigDone_FSM_FFd2"]=new Array("reset");
+            
+          ce["autoconfigDone_FSM_FFd2"]=new Array("FB3_18_4");
+          
+            ceimp["autoconfigDone_FSM_FFd2"]=new Array("1");
+          prld["autoconfigDone_FSM_FFd2"]="GND";
           d2["vgaStatemachine_FSM_FFd2"]=new Array("FB4_1_1");
           
             d2imp["vgaStatemachine_FSM_FFd2"]=new Array("1");
@@ -1592,9 +1614,9 @@
             
               gblrst["AC_D0"]=new Array("reset");
             prld["AC_D0"]="GND";
-          d2["OpTxOpTxFX_DC23_INV264_SPECSIG"]=new Array("FB6_11_1");
+          d2["OpTxOpTxFX_DC27_INV210_SPECSIG"]=new Array("FB6_11_1");
           
-            d2imp["OpTxOpTxFX_DC23_INV264_SPECSIG"]=new Array("1");
+            d2imp["OpTxOpTxFX_DC27_INV210_SPECSIG"]=new Array("1");
           
           d2["DG6_SPECSIG"]=new Array("FB6_12_1","FB6_12_2","FB6_12_3");
           
@@ -1664,7 +1686,15 @@
             
               gblrst["DA_R11_SPECSIG"]=new Array("reset");
             prld["DA_R11_SPECSIG"]="GND";
-          d2["ds"]=new Array("FB7_8_1");
+          d2["vgaStatemachine_FSM_FFd9"]=new Array("FB7_8_1");
+          
+            d2imp["vgaStatemachine_FSM_FFd9"]=new Array("1");
+          
+              gblclk["vgaStatemachine_FSM_FFd9"]=new Array("mclk");
+            
+              gblrst["vgaStatemachine_FSM_FFd9"]=new Array("reset");
+            prld["vgaStatemachine_FSM_FFd9"]="GND";
+          d2["ds"]=new Array("FB7_9_1");
           
             d2imp["ds"]=new Array("1");
           
@@ -1672,14 +1702,6 @@
             
               gblrst["ds"]=new Array("reset");
             prld["ds"]="GND";
-          d2["vgaStatemachine_FSM_FFd7"]=new Array("FB7_9_1","FB7_9_2");
-          
-            d2imp["vgaStatemachine_FSM_FFd7"]=new Array("1","1");
-          
-              gblclk["vgaStatemachine_FSM_FFd7"]=new Array("mclk");
-            
-              gblrst["vgaStatemachine_FSM_FFd7"]=new Array("reset");
-            prld["vgaStatemachine_FSM_FFd7"]="GND";
           d2["vgaStatemachine_FSM_FFd6"]=new Array("FB7_10_1","FB7_10_2");
           
             d2imp["vgaStatemachine_FSM_FFd6"]=new Array("1","1");
@@ -1696,28 +1718,22 @@
               
                 trstimp["XRDYD"]=new Array("1");
               
-          d1["OpTxFX_DC59_SPECSIG"]=new Array("FB7_12_1");
+          d2["autoConfigAdrHit"]=new Array("FB7_12_1","FB7_12_2");
           
-            d1imp["OpTxFX_DC59_SPECSIG"]=new Array("1");
+            d2imp["autoConfigAdrHit"]=new Array("1","1");
           
-          d2["OpTxFX_DC59_SPECSIG"]=new Array("FB7_12_2");
-          
-            d2imp["OpTxFX_DC59_SPECSIG"]=new Array("1");
-          
-          d2["memSpace2_SPECSIG"]=new Array("FB7_13_1");
-          
-            d2imp["memSpace2_SPECSIG"]=new Array("1");
-          
-              clk["memSpace2_SPECSIG"]=new Array("FB7_13_2");
-              
-                clkimp["memSpace2_SPECSIG"]=new Array("1");
-              
-              gblset["memSpace2_SPECSIG"]=new Array("reset");
+              gblclk["autoConfigAdrHit"]=new Array("mclk");
             
-          ce["memSpace2_SPECSIG"]=new Array("FB7_13_3");
+              gblrst["autoConfigAdrHit"]=new Array("reset");
+            prld["autoConfigAdrHit"]="GND";
+          d2["autoConfigAdrDSHit"]=new Array("FB7_13_1","FB7_13_2");
           
-            ceimp["memSpace2_SPECSIG"]=new Array("1");
-          prld["memSpace2_SPECSIG"]="GND";
+            d2imp["autoConfigAdrDSHit"]=new Array("1","1");
+          
+              gblclk["autoConfigAdrDSHit"]=new Array("mclk");
+            
+              gblrst["autoConfigAdrDSHit"]=new Array("reset");
+            prld["autoConfigAdrDSHit"]="GND";
           d2["CFGOUT"]=new Array("FB7_14_1");
           
             d2imp["CFGOUT"]=new Array("1");
@@ -1730,46 +1746,30 @@
           
             d2imp["SLAVE"]=new Array("1");
           
-          d2["memSpace1_SPECSIG"]=new Array("FB7_16_1");
+          d1["OpTxFX_DC63_SPECSIG"]=new Array("FB7_16_1");
           
-            d2imp["memSpace1_SPECSIG"]=new Array("1");
+            d1imp["OpTxFX_DC63_SPECSIG"]=new Array("1");
           
-              clk["memSpace1_SPECSIG"]=new Array("FB7_16_2");
-              
-                clkimp["memSpace1_SPECSIG"]=new Array("1");
-              
-              gblset["memSpace1_SPECSIG"]=new Array("reset");
-            
-          ce["memSpace1_SPECSIG"]=new Array("FB7_16_3");
+          d2["OpTxFX_DC63_SPECSIG"]=new Array("FB7_16_2");
           
-            ceimp["memSpace1_SPECSIG"]=new Array("1");
-          prld["memSpace1_SPECSIG"]="GND";
-          d2["MONISW"]=new Array("FB7_17_1");
+            d2imp["OpTxFX_DC63_SPECSIG"]=new Array("1");
           
-            d2imp["MONISW"]=new Array("1");
+          d2["MONISW"]=new Array("FB7_17_1","FB7_17_2","FB7_17_3","FB7_17_4");
+          
+            d2imp["MONISW"]=new Array("1","1","1","1");
           
               gblclk["MONISW"]=new Array("mclk");
             
               gblset["MONISW"]=new Array("reset");
+            prld["MONISW"]="GND";
+          d2["memAdrHit"]=new Array("FB7_18_1","FB7_18_2","FB7_18_3","FB7_18_4","FB7_18_5","FB7_1_1","FB7_1_2","FB7_1_3","FB7_1_4","FB7_1_5","FB7_17_5");
+          
+            d2imp["memAdrHit"]=new Array("1","1","1","1","1","1","1","1","1","1","1");
+          
+              gblclk["memAdrHit"]=new Array("mclk");
             
-          ce["MONISW"]=new Array("FB7_17_2");
-          
-            ceimp["MONISW"]=new Array("1");
-          prld["MONISW"]="GND";
-          d2["autoconfigDone_FSM_FFd2"]=new Array("FB7_18_1","FB7_18_2");
-          
-            d2imp["autoconfigDone_FSM_FFd2"]=new Array("1","1");
-          
-              clk["autoconfigDone_FSM_FFd2"]=new Array("FB7_18_3");
-              
-                clkimp["autoconfigDone_FSM_FFd2"]=new Array("1");
-              
-              gblrst["autoconfigDone_FSM_FFd2"]=new Array("reset");
-            
-          ce["autoconfigDone_FSM_FFd2"]=new Array("FB7_18_4");
-          
-            ceimp["autoconfigDone_FSM_FFd2"]=new Array("1");
-          prld["autoconfigDone_FSM_FFd2"]="GND";
+              gblrst["memAdrHit"]=new Array("reset");
+            prld["memAdrHit"]="GND";
           d2["memSpace0_SPECSIG"]=new Array("FB8_1_1");
           
             d2imp["memSpace0_SPECSIG"]=new Array("1");

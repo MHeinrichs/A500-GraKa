@@ -275,7 +275,7 @@ module GBAPIIPlusPlus(
 							//DG_R		<=  DA;
 							sigIOW	<= ~ioAdrHit; // just the invertion of the signals
 							sigMEMW	<= ~memAdrHit;
-							if(ioAdrHit == 1 && A[15] == 1 && UDS == 0)begin //monitor switch
+							if(ioAdrHit == 1 && A[15] == 1 && (UDS == 0 || LDS == 0))begin //monitor switch
 								sigMONITORSW <= A[12];
 							end												
 						end
@@ -363,24 +363,24 @@ module GBAPIIPlusPlus(
 						else
 							autoConfigDataOut <= 4'h1; // 64kb IO-space						
 					6'b000010: // $04
-						autoConfigDataOut <= 4'hE;
-					6'b000011: // $06
+						autoConfigDataOut <= 4'hE;		// 0F04 =11 PII+/ 0E0F = 16 GBAPII++ / 0B0A = 69 Kyroflux /0F05 = PiccoloSD64
+					6'b000011: // $06						// 0F03 =12 PII+/ 0E0E = 17 GBAPII++ / 0B09 = 70 Kryoflux /0F04 = PiccoloSD64
 						if(autoconfigDone[0] == 0)
-							autoConfigDataOut <= 4'hF; // 04 =11 / 0E0F = 16
+							autoConfigDataOut <= 4'hF; 
 						else
-							autoConfigDataOut <= 4'hE; // 03 =12 / 0E0E = 17
+							autoConfigDataOut <= 4'hE; 
 					6'b000100: // $08
 						autoConfigDataOut <= 4'hF;
 					6'b000101: // $0a
 						autoConfigDataOut <= 4'hF;
 
-					6'b001000: // $10
+					6'b001000: // $10							//eigene ID: F788 ->Villagetronic ; EC68 -> Kryoflux ;F76c =Helfrich
 						autoConfigDataOut <= 4'hF;
 					6'b001001: // $12
 						autoConfigDataOut <= 4'h7;
 
 					6'b001010: // $14
-						autoConfigDataOut <= 4'h8; //eigene ID
+						autoConfigDataOut <= 4'h8; 
 					6'b001011: // $16
 						autoConfigDataOut <= 4'h8;
 

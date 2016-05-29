@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-08T14:35:32</DateModified>
+  <DateModified>2016-05-16T23:45:56</DateModified>
   <ModuleName>GBAPIIPlusPlus</ModuleName>
-  <SummaryTimeStamp>2015-02-19T20:40:23</SummaryTimeStamp>
+  <SummaryTimeStamp>2016-03-03T20:41:52</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Matze/Documents/GitHub/A500-Graka/Logic/GBAPIIPlusPlus-V2/iseconfig/GBAPIIPlusPlus.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/Matze/Documents/GitHub/A500-Graka/Logic/GBAPIIPlusPlus-V2\</ImplementationReportsDirectory>
   <DateInitialized>2014-07-06T12:17:53</DateInitialized>

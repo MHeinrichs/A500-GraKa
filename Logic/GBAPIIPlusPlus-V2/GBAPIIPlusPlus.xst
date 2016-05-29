@@ -7,11 +7,11 @@ run
 -ofmt NGC
 -p xc9500xl
 -top GBAPIIPlusPlus
--opt_mode Area
--opt_level 2
+-opt_mode Speed
+-opt_level 1
 -iuc NO
 -keep_hierarchy Yes
--netlist_hierarchy Rebuilt
+-netlist_hierarchy As_Optimized
 -rtlview Yes
 -hierarchy_separator /
 -bus_delimiter <>

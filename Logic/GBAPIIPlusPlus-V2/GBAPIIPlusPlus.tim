@@ -1,0 +1,1072 @@
+                           Performance Summary Report
+                           --------------------------
+
+Design:     GBAPIIPlusPlus
+Device:     XC95144XL-5-TQ100
+Speed File: Version 3.0
+Program:    Timing Report Generator:  version P.68d
+Date:       Thu Mar 03 20:42:05 2016
+
+Performance Summary:
+
+Pad to Pad (tPD)                          :         10.4ns (2 macrocell levels)
+Pad 'RW' to Pad 'DA<0>'                                           
+
+Clock net 'AS' path delays:
+
+Clock Pad to Output Pad (tCO)             :          3.5ns (1 macrocell levels)
+Clock Pad 'AS' to Output Pad 'CFGOUT'                                     (GCK)
+
+                          Minimum Clock Period: 5.6ns
+                     Maximum Internal Clock Speed: 178.5Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'autoConfigAdrDSHit.Q' path delays:
+
+Clock to Setup (tCYC)                     :          6.3ns (1 macrocell levels)
+Clock to Q, net 'autoconfigDone_FSM_FFd2.Q' to DFF Setup(D) at 'autoConfigDataOut<1>.D'(Pterm Clock)
+Target FF drives output net 'autoConfigDataOut<1>'
+
+Setup to Clock at the Pad (tSU)           :          1.6ns (0 macrocell levels)
+Data signal 'A<4>' to DFF D input Pin at 'autoConfigDataOut<0>.D'
+Clock pad 'autoConfigAdrDSHit.Q'                                  (Pterm Clock)
+
+                          Minimum Clock Period: 10.0ns
+                     Maximum Internal Clock Speed: 100.0Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'mclk' path delays:
+
+Clock Pad to Output Pad (tCO)             :         12.3ns (3 macrocell levels)
+Clock Pad 'mclk' to Output Pad 'DA<0>'                                    (GCK)
+
+Clock to Setup (tCYC)                     :          5.6ns (1 macrocell levels)
+Clock to Q, net 'DG<0>.Q' to DFF Setup(D) at 'DG<0>.D'                    (GCK)
+Target FF drives output net 'DG<0>'
+
+Setup to Clock at the Pad (tSU)           :          8.1ns (1 macrocell levels)
+Data signal 'A<23>' to DFF D input Pin at 'ioAdrHit.D'
+Clock pad 'mclk'                                                          (GCK)
+
+                          Minimum Clock Period: 5.6ns
+                     Maximum Internal Clock Speed: 178.5Mhz
+                         (Limited by Clock Pulse Width)
+
+--------------------------------------------------------------------------------
+                            Pad to Pad (tPD) (nsec)
+
+\ From      R     r
+ \          W     e
+  \               s
+   \              e
+    \             t
+     \             
+      \            
+  To   \------------
+
+CLRG            5.0
+DA<0>    10.4      
+DA<10>   10.4      
+DA<11>   10.4      
+DA<12>   10.4      
+DA<13>   10.4      
+DA<14>   10.4      
+DA<15>   10.4      
+DA<1>    10.4      
+DA<2>    10.4      
+DA<3>    10.4      
+DA<4>    10.4      
+DA<5>    10.4      
+DA<6>    10.4      
+DA<7>    10.4      
+DA<8>    10.4      
+DA<9>    10.4      
+DG<0>     7.0      
+DG<10>    7.0      
+DG<11>    7.0      
+DG<12>    7.0      
+DG<13>    7.0      
+DG<14>    7.0      
+DG<15>    7.0      
+DG<1>     7.0      
+DG<2>     7.0      
+DG<3>     7.0      
+DG<4>     7.0      
+DG<5>     7.0      
+DG<6>     7.0      
+DG<7>     7.0      
+DG<8>     7.0      
+DG<9>     7.0      
+
+--------------------------------------------------------------------------------
+                      Clock Pad to Output Pad (tCO) (nsec)
+
+\ From      A     m
+ \          S     c
+  \               l
+   \              k
+    \              
+     \             
+      \            
+  To   \------------
+
+BALE            3.5
+CFGOUT    3.5      
+DA<0>          12.3
+DA<10>         12.3
+DA<11>         12.3
+DA<12>         12.3
+DA<13>         12.3
+DA<14>         12.3
+DA<15>         12.3
+DA<1>          12.3
+DA<2>          12.3
+DA<3>          12.3
+DA<4>          12.3
+DA<5>          12.3
+DA<6>          12.3
+DA<7>          12.3
+DA<8>          12.3
+DA<9>          12.3
+DG<0>          12.3
+DG<10>         12.3
+DG<11>         12.3
+DG<12>         12.3
+DG<13>         12.3
+DG<14>         12.3
+DG<15>         12.3
+DG<1>          12.3
+DG<2>          12.3
+DG<3>          12.3
+DG<4>          12.3
+DG<5>          12.3
+DG<6>          12.3
+DG<7>          12.3
+DG<8>          12.3
+DG<9>          12.3
+DTACK           8.9
+IO<3>           3.5
+IOR             3.5
+IOW             3.5
+MEMR            3.5
+MEMW            3.5
+MONISW          3.5
+OVR             8.9
+SA0             3.5
+SA12            3.5
+SLAVE           6.9
+
+--------------------------------------------------------------------------------
+                   Setup to Clock at Pad (tSU or tSUF) (nsec)
+
+\ From      m
+ \          c
+  \         l
+   \        k
+    \        
+     \       
+      \      
+  To   \------
+
+A<12>     3.7
+A<15>     3.7
+A<16>     4.4
+A<17>     4.7
+A<18>     4.4
+A<19>     4.4
+A<20>     4.7
+A<21>     4.4
+A<22>     4.7
+A<23>     8.1
+AS        3.7
+BERR      3.7
+CFGIN     4.7
+DA<0>     3.7
+DA<10>    3.7
+DA<11>    3.7
+DA<12>    3.7
+DA<13>    3.7
+DA<14>    3.7
+DA<15>    3.7
+DA<1>     3.7
+DA<2>     3.7
+DA<3>     3.7
+DA<4>     3.7
+DA<5>     3.7
+DA<6>     3.7
+DA<7>     3.7
+DA<8>     3.7
+DA<9>     3.7
+DG<0>     3.7
+DG<10>    3.7
+DG<11>    3.7
+DG<12>    3.7
+DG<13>    3.7
+DG<14>    3.7
+DG<15>    3.7
+DG<1>     3.7
+DG<2>     3.7
+DG<3>     3.7
+DG<4>     3.7
+DG<5>     3.7
+DG<6>     3.7
+DG<7>     3.7
+DG<8>     3.7
+DG<9>     3.7
+LDS       3.7
+RW        3.7
+UDS       3.7
+WAIT      3.7
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                         (Clock: autoConfigAdrDSHit.Q)
+
+\ From                        a     a     s
+ \                            u     u     h
+  \                           t     t     u
+   \                          o     o     t
+    \                         c     c     U
+     \                        o     o     p
+      \                       n     n     .
+       \                      f     f     Q
+        \                     i     i      
+         \                    g     g      
+          \                   D     D      
+           \                  o     o      
+            \                 n     n      
+             \                e     e      
+              \               _     _      
+               \              F     F      
+                \             S     S      
+                 \            M     M      
+                  \           _     _      
+                   \          F     F      
+                    \         F     F      
+                     \        d     d      
+                      \       1     2      
+                       \      .     .      
+                        \     Q     Q      
+  To                     \------------------
+
+autoConfigDataOut<0>.D            5.6      
+autoConfigDataOut<1>.D            6.3      
+autoConfigDataOut<2>.D            5.6      
+autoConfigDataOut<3>.D            5.6      
+autoconfigDone_FSM_FFd1.D   5.6   5.6      
+autoconfigDone_FSM_FFd2.D   5.6   5.6      
+ioSpace<0>.CE                     5.6      
+ioSpace<1>.CE                     5.6      
+ioSpace<2>.CE                     5.6      
+ioSpace<3>.CE                     5.6      
+ioSpace<4>.CE                     5.6      
+ioSpace<5>.CE                     5.6      
+ioSpace<6>.CE                     5.6      
+ioSpace<7>.CE                     5.6      
+memSpace<0>.CE                    5.6      
+memSpace<1>.CE                    5.6      
+memSpace<2>.CE                    5.6      
+shutUp.D                          5.6   5.6
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          A     D     D     D     D     D     D     D
+ \                              C     A     A     A     A     A     A     A
+  \                             _     _     _     _     _     _     _     _
+   \                            D     R     R     R     R     R     R     R
+    \                           0     <     <     <     <     <     <     <
+     \                          .     0     1     1     1     1     1     1
+      \                         Q     >     0     1     2     3     4     5
+       \                              .     >     >     >     >     >     >
+        \                             Q     .     .     .     .     .     .
+         \                                  Q     Q     Q     Q     Q     Q
+          \                                                                
+           \                                                               
+            \                                                              
+             \                                                             
+              \                                                            
+               \                                                           
+                \                                                          
+                 \                                                         
+                  \                                                        
+                   \                                                       
+                    \                                                      
+                     \                                                     
+                      \                                                    
+                       \                                                   
+                        \                                                  
+                         \                                                 
+                          \                                                
+  To                       \------------------------------------------------
+
+AC_D0.D                                                                    
+AC_D1.D                       5.6                                          
+BALE.D                                                                     
+DA_R<0>.D                           5.6                                    
+DA_R<10>.D                                5.6                              
+DA_R<11>.D                                      5.6                        
+DA_R<12>.D                                            5.6                  
+DA_R<13>.D                                                  5.6            
+DA_R<14>.D                                                        5.6      
+DA_R<15>.D                                                              5.6
+DA_R<1>.D                                                                  
+DA_R<2>.D                                                                  
+DA_R<3>.D                                                                  
+DA_R<4>.D                                                                  
+DA_R<5>.D                                                                  
+DA_R<6>.D                                                                  
+DA_R<7>.D                                                                  
+DA_R<8>.D                                                                  
+DA_R<9>.D                                                                  
+DG<0>.D                                                                    
+DG<10>.D                                                                   
+DG<11>.D                                                                   
+DG<12>.D                                                                   
+DG<13>.D                                                                   
+DG<14>.D                                                                   
+DG<15>.D                                                                   
+DG<1>.D                                                                    
+DG<2>.D                                                                    
+DG<3>.D                                                                    
+DG<4>.D                                                                    
+DG<5>.D                                                                    
+DG<6>.D                                                                    
+DG<7>.D                                                                    
+DG<8>.D                                                                    
+DG<9>.D                                                                    
+IO<3>.D                                                                    
+IOR.D                                                                      
+IOW.D                                                                      
+MEMR.D                                                                     
+MEMW.D                                                                     
+MONISW.CE                                                                  
+SA0.D                                                                      
+SA12.D                                                                     
+VGA_D0.D                                                                   
+VGA_D1.D                                                                   
+autoConfigAdrDSHit.D                                                       
+sigDTACK.D                                                                 
+vgaStatemachine_FSM_FFd1.D                                                 
+vgaStatemachine_FSM_FFd10.D                                                
+vgaStatemachine_FSM_FFd11.D                                                
+vgaStatemachine_FSM_FFd12.D                                                
+vgaStatemachine_FSM_FFd13.D                                                
+vgaStatemachine_FSM_FFd14.D                                                
+vgaStatemachine_FSM_FFd15.D                                                
+vgaStatemachine_FSM_FFd2.D                                                 
+vgaStatemachine_FSM_FFd3.D                                                 
+vgaStatemachine_FSM_FFd4.D                                                 
+vgaStatemachine_FSM_FFd5.D                                                 
+vgaStatemachine_FSM_FFd6.D                                                 
+vgaStatemachine_FSM_FFd7.D                                                 
+vgaStatemachine_FSM_FFd8.D                                                 
+vgaStatemachine_FSM_FFd9.D                                                 
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          D     D     D     D     D     D     D     D
+ \                              A     A     A     A     A     A     A     A
+  \                             _     _     _     _     _     _     _     _
+   \                            R     R     R     R     R     R     R     R
+    \                           <     <     <     <     <     <     <     <
+     \                          1     2     3     4     5     6     7     8
+      \                         >     >     >     >     >     >     >     >
+       \                        .     .     .     .     .     .     .     .
+        \                       Q     Q     Q     Q     Q     Q     Q     Q
+         \                                                                 
+          \                                                                
+           \                                                               
+            \                                                              
+             \                                                             
+              \                                                            
+               \                                                           
+                \                                                          
+                 \                                                         
+                  \                                                        
+                   \                                                       
+                    \                                                      
+                     \                                                     
+                      \                                                    
+                       \                                                   
+                        \                                                  
+                         \                                                 
+                          \                                                
+  To                       \------------------------------------------------
+
+AC_D0.D                                                                    
+AC_D1.D                                                                    
+BALE.D                                                                     
+DA_R<0>.D                                                                  
+DA_R<10>.D                                                                 
+DA_R<11>.D                                                                 
+DA_R<12>.D                                                                 
+DA_R<13>.D                                                                 
+DA_R<14>.D                                                                 
+DA_R<15>.D                                                                 
+DA_R<1>.D                     5.6                                          
+DA_R<2>.D                           5.6                                    
+DA_R<3>.D                                 5.6                              
+DA_R<4>.D                                       5.6                        
+DA_R<5>.D                                             5.6                  
+DA_R<6>.D                                                   5.6            
+DA_R<7>.D                                                         5.6      
+DA_R<8>.D                                                               5.6
+DA_R<9>.D                                                                  
+DG<0>.D                                                                    
+DG<10>.D                                                                   
+DG<11>.D                                                                   
+DG<12>.D                                                                   
+DG<13>.D                                                                   
+DG<14>.D                                                                   
+DG<15>.D                                                                   
+DG<1>.D                                                                    
+DG<2>.D                                                                    
+DG<3>.D                                                                    
+DG<4>.D                                                                    
+DG<5>.D                                                                    
+DG<6>.D                                                                    
+DG<7>.D                                                                    
+DG<8>.D                                                                    
+DG<9>.D                                                                    
+IO<3>.D                                                                    
+IOR.D                                                                      
+IOW.D                                                                      
+MEMR.D                                                                     
+MEMW.D                                                                     
+MONISW.CE                                                                  
+SA0.D                                                                      
+SA12.D                                                                     
+VGA_D0.D                                                                   
+VGA_D1.D                                                                   
+autoConfigAdrDSHit.D                                                       
+sigDTACK.D                                                                 
+vgaStatemachine_FSM_FFd1.D                                                 
+vgaStatemachine_FSM_FFd10.D                                                
+vgaStatemachine_FSM_FFd11.D                                                
+vgaStatemachine_FSM_FFd12.D                                                
+vgaStatemachine_FSM_FFd13.D                                                
+vgaStatemachine_FSM_FFd14.D                                                
+vgaStatemachine_FSM_FFd15.D                                                
+vgaStatemachine_FSM_FFd2.D                                                 
+vgaStatemachine_FSM_FFd3.D                                                 
+vgaStatemachine_FSM_FFd4.D                                                 
+vgaStatemachine_FSM_FFd5.D                                                 
+vgaStatemachine_FSM_FFd6.D                                                 
+vgaStatemachine_FSM_FFd7.D                                                 
+vgaStatemachine_FSM_FFd8.D                                                 
+vgaStatemachine_FSM_FFd9.D                                                 
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          D     D     D     D     D     D     D     D
+ \                              A     G     G     G     G     G     G     G
+  \                             _     <     <     <     <     <     <     <
+   \                            R     0     1     1     1     1     1     1
+    \                           <     >     0     1     2     3     4     5
+     \                          9     .     >     >     >     >     >     >
+      \                         >     Q     .     .     .     .     .     .
+       \                        .           Q     Q     Q     Q     Q     Q
+        \                       Q                                          
+         \                                                                 
+          \                                                                
+           \                                                               
+            \                                                              
+             \                                                             
+              \                                                            
+               \                                                           
+                \                                                          
+                 \                                                         
+                  \                                                        
+                   \                                                       
+                    \                                                      
+                     \                                                     
+                      \                                                    
+                       \                                                   
+                        \                                                  
+                         \                                                 
+                          \                                                
+  To                       \------------------------------------------------
+
+AC_D0.D                                                                    
+AC_D1.D                                                                    
+BALE.D                                                                     
+DA_R<0>.D                                                                  
+DA_R<10>.D                                                                 
+DA_R<11>.D                                                                 
+DA_R<12>.D                                                                 
+DA_R<13>.D                                                                 
+DA_R<14>.D                                                                 
+DA_R<15>.D                                                                 
+DA_R<1>.D                                                                  
+DA_R<2>.D                                                                  
+DA_R<3>.D                                                                  
+DA_R<4>.D                                                                  
+DA_R<5>.D                                                                  
+DA_R<6>.D                                                                  
+DA_R<7>.D                                                                  
+DA_R<8>.D                                                                  
+DA_R<9>.D                     5.6                                          
+DG<0>.D                             5.6                                    
+DG<10>.D                                  5.6                              
+DG<11>.D                                        5.6                        
+DG<12>.D                                              5.6                  
+DG<13>.D                                                    5.6            
+DG<14>.D                                                          5.6      
+DG<15>.D                                                                5.6
+DG<1>.D                                                                    
+DG<2>.D                                                                    
+DG<3>.D                                                                    
+DG<4>.D                                                                    
+DG<5>.D                                                                    
+DG<6>.D                                                                    
+DG<7>.D                                                                    
+DG<8>.D                                                                    
+DG<9>.D                                                                    
+IO<3>.D                                                                    
+IOR.D                                                                      
+IOW.D                                                                      
+MEMR.D                                                                     
+MEMW.D                                                                     
+MONISW.CE                                                                  
+SA0.D                                                                      
+SA12.D                                                                     
+VGA_D0.D                                                                   
+VGA_D1.D                                                                   
+autoConfigAdrDSHit.D                                                       
+sigDTACK.D                                                                 
+vgaStatemachine_FSM_FFd1.D                                                 
+vgaStatemachine_FSM_FFd10.D                                                
+vgaStatemachine_FSM_FFd11.D                                                
+vgaStatemachine_FSM_FFd12.D                                                
+vgaStatemachine_FSM_FFd13.D                                                
+vgaStatemachine_FSM_FFd14.D                                                
+vgaStatemachine_FSM_FFd15.D                                                
+vgaStatemachine_FSM_FFd2.D                                                 
+vgaStatemachine_FSM_FFd3.D                                                 
+vgaStatemachine_FSM_FFd4.D                                                 
+vgaStatemachine_FSM_FFd5.D                                                 
+vgaStatemachine_FSM_FFd6.D                                                 
+vgaStatemachine_FSM_FFd7.D                                                 
+vgaStatemachine_FSM_FFd8.D                                                 
+vgaStatemachine_FSM_FFd9.D                                                 
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          D     D     D     D     D     D     D     D
+ \                              G     G     G     G     G     G     G     G
+  \                             <     <     <     <     <     <     <     <
+   \                            1     2     3     4     5     6     7     8
+    \                           >     >     >     >     >     >     >     >
+     \                          .     .     .     .     .     .     .     .
+      \                         Q     Q     Q     Q     Q     Q     Q     Q
+       \                                                                   
+        \                                                                  
+         \                                                                 
+          \                                                                
+           \                                                               
+            \                                                              
+             \                                                             
+              \                                                            
+               \                                                           
+                \                                                          
+                 \                                                         
+                  \                                                        
+                   \                                                       
+                    \                                                      
+                     \                                                     
+                      \                                                    
+                       \                                                   
+                        \                                                  
+                         \                                                 
+                          \                                                
+  To                       \------------------------------------------------
+
+AC_D0.D                                                                    
+AC_D1.D                                                                    
+BALE.D                                                                     
+DA_R<0>.D                                                                  
+DA_R<10>.D                                                                 
+DA_R<11>.D                                                                 
+DA_R<12>.D                                                                 
+DA_R<13>.D                                                                 
+DA_R<14>.D                                                                 
+DA_R<15>.D                                                                 
+DA_R<1>.D                                                                  
+DA_R<2>.D                                                                  
+DA_R<3>.D                                                                  
+DA_R<4>.D                                                                  
+DA_R<5>.D                                                                  
+DA_R<6>.D                                                                  
+DA_R<7>.D                                                                  
+DA_R<8>.D                                                                  
+DA_R<9>.D                                                                  
+DG<0>.D                                                                    
+DG<10>.D                                                                   
+DG<11>.D                                                                   
+DG<12>.D                                                                   
+DG<13>.D                                                                   
+DG<14>.D                                                                   
+DG<15>.D                                                                   
+DG<1>.D                       5.6                                          
+DG<2>.D                             5.6                                    
+DG<3>.D                                   5.6                              
+DG<4>.D                                         5.6                        
+DG<5>.D                                               5.6                  
+DG<6>.D                                                     5.6            
+DG<7>.D                                                           5.6      
+DG<8>.D                                                                 5.6
+DG<9>.D                                                                    
+IO<3>.D                                                                    
+IOR.D                                                                      
+IOW.D                                                                      
+MEMR.D                                                                     
+MEMW.D                                                                     
+MONISW.CE                                                                  
+SA0.D                                                                      
+SA12.D                                                                     
+VGA_D0.D                                                                   
+VGA_D1.D                                                                   
+autoConfigAdrDSHit.D                                                       
+sigDTACK.D                                                                 
+vgaStatemachine_FSM_FFd1.D                                                 
+vgaStatemachine_FSM_FFd10.D                                                
+vgaStatemachine_FSM_FFd11.D                                                
+vgaStatemachine_FSM_FFd12.D                                                
+vgaStatemachine_FSM_FFd13.D                                                
+vgaStatemachine_FSM_FFd14.D                                                
+vgaStatemachine_FSM_FFd15.D                                                
+vgaStatemachine_FSM_FFd2.D                                                 
+vgaStatemachine_FSM_FFd3.D                                                 
+vgaStatemachine_FSM_FFd4.D                                                 
+vgaStatemachine_FSM_FFd5.D                                                 
+vgaStatemachine_FSM_FFd6.D                                                 
+vgaStatemachine_FSM_FFd7.D                                                 
+vgaStatemachine_FSM_FFd8.D                                                 
+vgaStatemachine_FSM_FFd9.D                                                 
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          D     I     I     I     M     M     S     S
+ \                              G     O     O     O     E     E     A     A
+  \                             <     <     R     W     M     M     0     1
+   \                            9     3     .     .     R     W     .     2
+    \                           >     >     Q     Q     .     .     Q     .
+     \                          .     .                 Q     Q           Q
+      \                         Q     Q                                    
+       \                                                                   
+        \                                                                  
+         \                                                                 
+          \                                                                
+           \                                                               
+            \                                                              
+             \                                                             
+              \                                                            
+               \                                                           
+                \                                                          
+                 \                                                         
+                  \                                                        
+                   \                                                       
+                    \                                                      
+                     \                                                     
+                      \                                                    
+                       \                                                   
+                        \                                                  
+                         \                                                 
+                          \                                                
+  To                       \------------------------------------------------
+
+AC_D0.D                                                                    
+AC_D1.D                                                                    
+BALE.D                              5.6                                    
+DA_R<0>.D                                                                  
+DA_R<10>.D                                                                 
+DA_R<11>.D                                                                 
+DA_R<12>.D                                                                 
+DA_R<13>.D                                                                 
+DA_R<14>.D                                                                 
+DA_R<15>.D                                                                 
+DA_R<1>.D                                                                  
+DA_R<2>.D                                                                  
+DA_R<3>.D                                                                  
+DA_R<4>.D                                                                  
+DA_R<5>.D                                                                  
+DA_R<6>.D                                                                  
+DA_R<7>.D                                                                  
+DA_R<8>.D                                                                  
+DA_R<9>.D                                                                  
+DG<0>.D                                                                    
+DG<10>.D                                                                   
+DG<11>.D                                                                   
+DG<12>.D                                                                   
+DG<13>.D                                                                   
+DG<14>.D                                                                   
+DG<15>.D                                                                   
+DG<1>.D                                                                    
+DG<2>.D                                                                    
+DG<3>.D                                                                    
+DG<4>.D                                                                    
+DG<5>.D                                                                    
+DG<6>.D                                                                    
+DG<7>.D                                                                    
+DG<8>.D                                                                    
+DG<9>.D                       5.6                                          
+IO<3>.D                             5.6                                    
+IOR.D                                     5.6                              
+IOW.D                                           5.6                        
+MEMR.D                                                5.6                  
+MEMW.D                                                      5.6            
+MONISW.CE                                                                  
+SA0.D                                                             5.6      
+SA12.D                                                                  5.6
+VGA_D0.D                                                                   
+VGA_D1.D                                                                   
+autoConfigAdrDSHit.D                                                       
+sigDTACK.D                                                                 
+vgaStatemachine_FSM_FFd1.D                                                 
+vgaStatemachine_FSM_FFd10.D                                                
+vgaStatemachine_FSM_FFd11.D                                                
+vgaStatemachine_FSM_FFd12.D                                                
+vgaStatemachine_FSM_FFd13.D                                                
+vgaStatemachine_FSM_FFd14.D                                                
+vgaStatemachine_FSM_FFd15.D                                                
+vgaStatemachine_FSM_FFd2.D                                                 
+vgaStatemachine_FSM_FFd3.D                                                 
+vgaStatemachine_FSM_FFd4.D                                                 
+vgaStatemachine_FSM_FFd5.D                                                 
+vgaStatemachine_FSM_FFd6.D                                                 
+vgaStatemachine_FSM_FFd7.D                                                 
+vgaStatemachine_FSM_FFd8.D                                                 
+vgaStatemachine_FSM_FFd9.D                                                 
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          V     a     d     i     m     s     v     v
+ \                              G     u     s     o     e     i     g     g
+  \                             A     t     .     A     m     g     a     a
+   \                            _     o     Q     d     A     D     S     S
+    \                           D     C           r     d     T     t     t
+     \                          0     o           H     r     A     a     a
+      \                         .     n           i     H     C     t     t
+       \                        Q     f           t     i     K     e     e
+        \                             i           .     t     .     m     m
+         \                            g           Q     .     Q     a     a
+          \                           A                 Q           c     c
+           \                          d                             h     h
+            \                         r                             i     i
+             \                        H                             n     n
+              \                       i                             e     e
+               \                      t                             _     _
+                \                     .                             F     F
+                 \                    Q                             S     S
+                  \                                                 M     M
+                   \                                                _     _
+                    \                                               F     F
+                     \                                              F     F
+                      \                                             d     d
+                       \                                            1     1
+                        \                                           .     0
+                         \                                          Q     .
+                          \                                               Q
+  To                       \------------------------------------------------
+
+AC_D0.D                             5.6                                    
+AC_D1.D                                                                    
+BALE.D                                          5.6   5.6                  
+DA_R<0>.D                                                                  
+DA_R<10>.D                                                                 
+DA_R<11>.D                                                                 
+DA_R<12>.D                                                                 
+DA_R<13>.D                                                                 
+DA_R<14>.D                                                                 
+DA_R<15>.D                                                                 
+DA_R<1>.D                                                                  
+DA_R<2>.D                                                                  
+DA_R<3>.D                                                                  
+DA_R<4>.D                                                                  
+DA_R<5>.D                                                                  
+DA_R<6>.D                                                                  
+DA_R<7>.D                                                                  
+DA_R<8>.D                                                                  
+DA_R<9>.D                                                                  
+DG<0>.D                                                                    
+DG<10>.D                                                                   
+DG<11>.D                                                                   
+DG<12>.D                                                                   
+DG<13>.D                                                                   
+DG<14>.D                                                                   
+DG<15>.D                                                                   
+DG<1>.D                                                                    
+DG<2>.D                                                                    
+DG<3>.D                                                                    
+DG<4>.D                                                                    
+DG<5>.D                                                                    
+DG<6>.D                                                                    
+DG<7>.D                                                                    
+DG<8>.D                                                                    
+DG<9>.D                                                                    
+IO<3>.D                                         5.6   5.6                  
+IOR.D                                           5.6   5.6               5.6
+IOW.D                                           5.6   5.6               5.6
+MEMR.D                                          5.6   5.6               5.6
+MEMW.D                                          5.6   5.6               5.6
+MONISW.CE                                       5.6                     5.6
+SA0.D                                           5.6   5.6                  
+SA12.D                                          5.6   5.6                  
+VGA_D0.D                                        5.6   5.6                  
+VGA_D1.D                      5.6                                          
+autoConfigAdrDSHit.D                      5.6                              
+sigDTACK.D                                      5.6   5.6   5.6   5.6      
+vgaStatemachine_FSM_FFd1.D                      5.6   5.6         5.6      
+vgaStatemachine_FSM_FFd10.D                                                
+vgaStatemachine_FSM_FFd11.D                                                
+vgaStatemachine_FSM_FFd12.D                                                
+vgaStatemachine_FSM_FFd13.D               5.6                              
+vgaStatemachine_FSM_FFd14.D               5.6   5.6   5.6                  
+vgaStatemachine_FSM_FFd15.D                     5.6   5.6         5.6      
+vgaStatemachine_FSM_FFd2.D                                                 
+vgaStatemachine_FSM_FFd3.D                                                 
+vgaStatemachine_FSM_FFd4.D                                                 
+vgaStatemachine_FSM_FFd5.D                                                 
+vgaStatemachine_FSM_FFd6.D                      5.6                        
+vgaStatemachine_FSM_FFd7.D                      5.6                        
+vgaStatemachine_FSM_FFd8.D                                                 
+vgaStatemachine_FSM_FFd9.D                                              5.6
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          v     v     v     v     v     v     v     v
+ \                              g     g     g     g     g     g     g     g
+  \                             a     a     a     a     a     a     a     a
+   \                            S     S     S     S     S     S     S     S
+    \                           t     t     t     t     t     t     t     t
+     \                          a     a     a     a     a     a     a     a
+      \                         t     t     t     t     t     t     t     t
+       \                        e     e     e     e     e     e     e     e
+        \                       m     m     m     m     m     m     m     m
+         \                      a     a     a     a     a     a     a     a
+          \                     c     c     c     c     c     c     c     c
+           \                    h     h     h     h     h     h     h     h
+            \                   i     i     i     i     i     i     i     i
+             \                  n     n     n     n     n     n     n     n
+              \                 e     e     e     e     e     e     e     e
+               \                _     _     _     _     _     _     _     _
+                \               F     F     F     F     F     F     F     F
+                 \              S     S     S     S     S     S     S     S
+                  \             M     M     M     M     M     M     M     M
+                   \            _     _     _     _     _     _     _     _
+                    \           F     F     F     F     F     F     F     F
+                     \          F     F     F     F     F     F     F     F
+                      \         d     d     d     d     d     d     d     d
+                       \        1     1     1     1     1     2     3     4
+                        \       1     2     3     4     5     .     .     .
+                         \      .     .     .     .     .     Q     Q     Q
+                          \     Q     Q     Q     Q     Q                  
+  To                       \------------------------------------------------
+
+AC_D0.D                                                                    
+AC_D1.D                                                                    
+BALE.D                              5.6               5.6         5.6      
+DA_R<0>.D                                                                  
+DA_R<10>.D                                                                 
+DA_R<11>.D                                                                 
+DA_R<12>.D                                                                 
+DA_R<13>.D                                                                 
+DA_R<14>.D                                                                 
+DA_R<15>.D                                                                 
+DA_R<1>.D                                                                  
+DA_R<2>.D                                                                  
+DA_R<3>.D                                                                  
+DA_R<4>.D                                                                  
+DA_R<5>.D                                                                  
+DA_R<6>.D                                                                  
+DA_R<7>.D                                                                  
+DA_R<8>.D                                                                  
+DA_R<9>.D                                                                  
+DG<0>.D                             5.6                           5.6      
+DG<10>.D                            5.6                           5.6      
+DG<11>.D                            5.6                           5.6      
+DG<12>.D                            5.6                           5.6      
+DG<13>.D                            5.6                           5.6      
+DG<14>.D                            5.6                           5.6      
+DG<15>.D                            5.6                           5.6      
+DG<1>.D                             5.6                           5.6      
+DG<2>.D                             5.6                           5.6      
+DG<3>.D                             5.6                           5.6      
+DG<4>.D                             5.6                           5.6      
+DG<5>.D                             5.6                           5.6      
+DG<6>.D                             5.6                           5.6      
+DG<7>.D                             5.6                           5.6      
+DG<8>.D                             5.6                           5.6      
+DG<9>.D                             5.6                           5.6      
+IO<3>.D                             5.6               5.6         5.6      
+IOR.D                                                 5.6               5.6
+IOW.D                                                 5.6                  
+MEMR.D                                                5.6               5.6
+MEMW.D                                                5.6                  
+MONISW.CE                                                                  
+SA0.D                                     5.6                     5.6      
+SA12.D                                    5.6                     5.6      
+VGA_D0.D                                                                   
+VGA_D1.D                                                                   
+autoConfigAdrDSHit.D                                                       
+sigDTACK.D                                            5.6                  
+vgaStatemachine_FSM_FFd1.D                                  5.6            
+vgaStatemachine_FSM_FFd10.D         5.6                                    
+vgaStatemachine_FSM_FFd11.D               5.6                              
+vgaStatemachine_FSM_FFd12.D   5.6         5.6                              
+vgaStatemachine_FSM_FFd13.D                     5.6                        
+vgaStatemachine_FSM_FFd14.D                     5.6   5.6                  
+vgaStatemachine_FSM_FFd15.D                           5.6                  
+vgaStatemachine_FSM_FFd2.D                                        5.6      
+vgaStatemachine_FSM_FFd3.D                                              5.6
+vgaStatemachine_FSM_FFd4.D                                                 
+vgaStatemachine_FSM_FFd5.D                                                 
+vgaStatemachine_FSM_FFd6.D                                                 
+vgaStatemachine_FSM_FFd7.D                                                 
+vgaStatemachine_FSM_FFd8.D                                                 
+vgaStatemachine_FSM_FFd9.D                                                 
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: mclk)
+
+\ From                          v     v     v     v     v
+ \                              g     g     g     g     g
+  \                             a     a     a     a     a
+   \                            S     S     S     S     S
+    \                           t     t     t     t     t
+     \                          a     a     a     a     a
+      \                         t     t     t     t     t
+       \                        e     e     e     e     e
+        \                       m     m     m     m     m
+         \                      a     a     a     a     a
+          \                     c     c     c     c     c
+           \                    h     h     h     h     h
+            \                   i     i     i     i     i
+             \                  n     n     n     n     n
+              \                 e     e     e     e     e
+               \                _     _     _     _     _
+                \               F     F     F     F     F
+                 \              S     S     S     S     S
+                  \             M     M     M     M     M
+                   \            _     _     _     _     _
+                    \           F     F     F     F     F
+                     \          F     F     F     F     F
+                      \         d     d     d     d     d
+                       \        5     6     7     8     9
+                        \       .     .     .     .     .
+                         \      Q     Q     Q     Q     Q
+                          \                              
+  To                       \------------------------------
+
+AC_D0.D                                                  
+AC_D1.D                                                  
+BALE.D                                                   
+DA_R<0>.D                     5.6   5.6                  
+DA_R<10>.D                    5.6   5.6                  
+DA_R<11>.D                    5.6   5.6                  
+DA_R<12>.D                    5.6   5.6                  
+DA_R<13>.D                    5.6   5.6                  
+DA_R<14>.D                    5.6   5.6                  
+DA_R<15>.D                    5.6   5.6                  
+DA_R<1>.D                     5.6   5.6                  
+DA_R<2>.D                     5.6   5.6                  
+DA_R<3>.D                     5.6   5.6                  
+DA_R<4>.D                     5.6   5.6                  
+DA_R<5>.D                     5.6   5.6                  
+DA_R<6>.D                     5.6   5.6                  
+DA_R<7>.D                     5.6   5.6                  
+DA_R<8>.D                     5.6   5.6                  
+DA_R<9>.D                     5.6   5.6                  
+DG<0>.D                                                  
+DG<10>.D                                                 
+DG<11>.D                                                 
+DG<12>.D                                                 
+DG<13>.D                                                 
+DG<14>.D                                                 
+DG<15>.D                                                 
+DG<1>.D                                                  
+DG<2>.D                                                  
+DG<3>.D                                                  
+DG<4>.D                                                  
+DG<5>.D                                                  
+DG<6>.D                                                  
+DG<7>.D                                                  
+DG<8>.D                                                  
+DG<9>.D                                                  
+IO<3>.D                                                  
+IOR.D                                                    
+IOW.D                         5.6                        
+MEMR.D                                                   
+MEMW.D                        5.6                        
+MONISW.CE                                                
+SA0.D                                                    
+SA12.D                                                   
+VGA_D0.D                                                 
+VGA_D1.D                                                 
+autoConfigAdrDSHit.D                                     
+sigDTACK.D                          5.6                  
+vgaStatemachine_FSM_FFd1.D                               
+vgaStatemachine_FSM_FFd10.D                              
+vgaStatemachine_FSM_FFd11.D                              
+vgaStatemachine_FSM_FFd12.D                              
+vgaStatemachine_FSM_FFd13.D                              
+vgaStatemachine_FSM_FFd14.D                              
+vgaStatemachine_FSM_FFd15.D                              
+vgaStatemachine_FSM_FFd2.D                               
+vgaStatemachine_FSM_FFd3.D                               
+vgaStatemachine_FSM_FFd4.D    5.6                        
+vgaStatemachine_FSM_FFd5.D          5.6                  
+vgaStatemachine_FSM_FFd6.D                5.6            
+vgaStatemachine_FSM_FFd7.D                5.6   5.6      
+vgaStatemachine_FSM_FFd8.D                            5.6
+vgaStatemachine_FSM_FFd9.D                               
+
+Path Type Definition: 
+
+Pad to Pad (tPD) -                        Reports pad to pad paths that start 
+                                          at input pads and end at output pads. 
+                                          Paths are not traced through 
+                                          registers. 
+
+Clock Pad to Output Pad (tCO) -           Reports paths that start at input 
+                                          pads trace through clock inputs of 
+                                          registers and end at output pads. 
+                                          Paths are not traced through PRE/CLR 
+                                          inputs of registers. 
+
+Setup to Clock at Pad (tSU or tSUF) -     Reports external setup time of data 
+                                          to clock at pad. Data path starts at 
+                                          an input pad and ends at register 
+                                          (Fast Input Register for tSUF) D/T 
+                                          input. Clock path starts at input pad 
+                                          and ends at the register clock input. 
+                                          Paths are not traced through 
+                                          registers. Pin-to-pin setup 
+                                          requirement is not reported or 
+                                          guaranteed for product-term clocks 
+                                          derived from macrocell feedback 
+                                          signals. 
+
+Clock to Setup (tCYC) -                   Register to register cycle time. 
+                                          Include source register tCO and 
+                                          destination register tSU. Note that 
+                                          when the computed Maximum Clock Speed 
+                                          is limited by tCYC it is computed 
+                                          assuming that all registers are 
+                                          rising-edge sensitive. 
+
